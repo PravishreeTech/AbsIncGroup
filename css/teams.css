@@ -1,0 +1,288 @@
+/* ===== ADVANCED CSS RESET AND BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette */
+    --primary-blue: #0066ff;
+    --secondary-blue: #004dd9;
+    --accent-gold: #ffd700;
+    --dark-bg: #0a0a0a;
+    --light-bg: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-light: #ffffff;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #0066ff, #004dd9);
+    --gradient-secondary: linear-gradient(135deg, #667eea, #764ba2);
+    --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+    --gradient-dark: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    
+    /* Shadows */
+    --shadow-light: 0 4px 20px rgba(0, 102, 255, 0.1);
+    --shadow-medium: 0 8px 40px rgba(0, 102, 255, 0.2);
+    --shadow-heavy: 0 20px 60px rgba(0, 102, 255, 0.3);
+    --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.5);
+    
+    /* Animations */
+    --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 1s cubic-bezier(0.4, 0, 0.2, 1);
+
+        /* Our code */
+    /* colors */
+    --primary-color-1: #bd270d;
+    --primary-color-2: #123E7C;
+    --primary-color-2-hover: #135dc4;
+    --primary-color-3: #fda50b;
+    --primary-color-4: #ffdf0d;
+    --primary-color-5: #2A966F;
+
+    /* font-sizes */
+    --navbar-elements-size: 20px;
+    --navbar-social-icons: 20px;
+    --banner-heading: 32px;
+    --banner-subheading: 24px;
+    --section-headings: 30px;
+    --section-subheadings: 28px;
+    --section-main-content: 20px;
+    --section-content: 18px;
+    --section-normal: 16px;
+    --footer-elements: 16px;
+    --footer-social-icons: 18px;
+    --copyright-section: 16px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--dark-bg);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/***************** Teams Section Starts *****************/
+.teams-overview {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.teams-overview .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.teams-overview .overview-text {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+}
+
+.teams-overview .overview-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+/***************** Teams Section End *****************/
+
+/***************** Leadership Section Starts *****************/
+.leadership-overview {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2));
+    color: white;
+}
+
+.leadership-overview .leadership-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.leadership-overview .leadership-description > p {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leadership-overview .leadership-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.leadership-overview .highlight-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.leadership-overview .highlight-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.leadership-overview .highlight-item i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #60a5fa;
+}
+
+.leadership-overview .highlight-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+/***************** Leadership Section End *****************/
+
+/***************** Team Members Section Starts *****************/
+.team-members {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.team-members .section-header{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.team-members .section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-color-2);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.team-members .section-header p {
+    font-size: 1.2rem;
+    color: #6b7280;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.team-members .teams-grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.team-members .team-member {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.team-members .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color-2-hover);
+}
+
+.team-members .member-avatar {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.team-members .member-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.team-members .member-info h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color-2);
+    margin-bottom: 1rem;
+}
+
+.team-members .member-education {
+    font-style: italic;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.team-members .member-highlights {
+    list-style: none;
+}
+
+.team-members .member-highlights li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 2rem;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.team-members .member-highlights li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color-2);
+    font-size: 1.2rem;
+}
+/***************** Team Members Section End *****************/
+
+/* Footer */
+.footer{
+    position: relative;
+    top: 0px;
+}
+
+/* Animation utilities */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(50px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}

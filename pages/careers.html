@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Website Icon -->
-    <link rel="icon" href="./assets/icon.png" type="image/png">
+    <link rel="icon" href="../assets/icon.png" type="image/png">
 
     <!-- Website Title -->
     <title>Powering Healthcare with Connected Intelligence - ABSincGroup</title>
@@ -21,7 +21,9 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/careers.css">
+    <!-- <link rel="stylesheet" href="../css/about.css"> -->
+    <!-- <link rel="stylesheet" href="../css/teams.css"> -->
 
     <!-- Google Fonts -->
     <link rel="stylesheet"
@@ -31,6 +33,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="dna-helix">
+                    <div class="helix-strand"></div>
+                    <div class="helix-strand"></div>
+                </div>
+            </div>
+            <div class="loading-text">Loading AbsIncGroup...</div>
+        </div>
+    </div>
+
     <!-- NavBar section -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -43,7 +59,7 @@
                 <li><a href="../index.html" class="nav-link">Home</a></li>
                 <li><a href="../pages/about.html" class="nav-link">About Us</a></li>
                 <li><a href="../pages/services.html" class="nav-link">Services</a></li>
-                <li><a href="../pages/team.html" class="nav-link">Team</a></li>
+                <li><a href="../pages/teams.html" class="nav-link">Team</a></li>
                 <li><a href="../pages/careers.html" class="nav-link">Careers</a></li>
                 <li><a href="../pages/news.html" class="nav-link">News</a></li>
                 <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
@@ -56,7 +72,110 @@
         </div>
     </nav>
 
-    <!-- Footer -->
+    <!-- Careers Section Start-->
+    <section class="careers-overview" id="careers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Careers at ABSINCGROUP USA</h2>
+                <p>Join a Global Network of Biopharma Experts</p>
+            </div>
+
+            <div class="overview-content">
+                <div class="overview-text">
+                    <p>At ABSINCGROUP USA, we believe our consultants are the foundation of our success. As a strategic consulting consortium serving the global biopharmaceutical, pharmaceutical, biotechnology, and medical device industries, we foster a people-first culture rooted in professional growth, work-life balance, and mission-driven impact.</p>
+                    <p>Our projects support some of the world’s most innovative life sciences companies, from emerging biotechs to Fortune 500 giants. We offer flexible work arrangements, competitive compensation, and meaningful opportunities to shape the future of global health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Careers Section End-->
+
+    <!-- Now Hiring Section Start -->
+    <section id="careers" class="careers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Now Hiring</h2>
+                <p>Join our team of industry experts and make an impact in medical consulting</p>
+            </div>
+            <div class="careers-grid">
+                <div class="career-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="career-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Quality & Manufacturing</h3>
+                    <p>Lead quality initiatives and manufacturing excellence in pharmaceutical operations</p>
+                    <div class="career-overlay">
+                        <h4>Key Responsibilities:</h4>
+                        <ul>
+                            <li>Quality system development</li>
+                            <li>Manufacturing operations oversight</li>
+                            <li>Regulatory compliance</li>
+                            <li>Process optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="career-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="career-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Analytical & QC</h3>
+                    <p>Drive analytical excellence and quality control in pharmaceutical development</p>
+                    <div class="career-overlay">
+                        <h4>Key Responsibilities:</h4>
+                        <ul>
+                            <li>Method development & validation</li>
+                            <li>Quality control operations</li>
+                            <li>Data integrity oversight</li>
+                            <li>Analytical troubleshooting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="career-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="career-icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3>Regulatory & Compliance</h3>
+                    <p>Navigate complex regulatory landscapes and ensure compliance excellence</p>
+                    <div class="career-overlay">
+                        <h4>Key Responsibilities:</h4>
+                        <ul>
+                            <li>FDA/EMA submissions</li>
+                            <li>Regulatory strategy development</li>
+                            <li>Compliance monitoring</li>
+                            <li>Risk assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="career-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="career-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Project Leadership</h3>
+                    <p>Lead cross-functional teams and drive successful project outcomes</p>
+                    <div class="career-overlay">
+                        <h4>Key Responsibilities:</h4>
+                        <ul>
+                            <li>Project management</li>
+                            <li>Team leadership</li>
+                            <li>Strategic planning</li>
+                            <li>Stakeholder management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="careers-footer">
+                <div class="resume-info">
+                    <h3>Ready to Join Us?</h3>
+                    <p>Send your resumes to <a href="mailto:info@absincgroup.com">info@absincgroup.com</a></p>
+                    <small>All submissions are treated confidentially and in compliance with data protection
+                        laws</small>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Now Hiring Section End -->
+
+    <!-- Footer Section Start -->
     <footer class="footer">
         <div class="footer-main">
             <div class="container">
@@ -66,7 +185,7 @@
                             <!-- <div class="logo-icon">
                                 <i class="fas fa-dna"></i>
                             </div> -->
-                            <span class="logo-text" style="color: #fff;">ABSIncGroup</span>
+                            <h4>ABSIncGroup</h4> 
                         </div>
                         <p class="footer-description">
                             Leading biopharmaceutical consulting firm dedicated to accelerating healthcare innovation
@@ -144,7 +263,14 @@
                 </div>
             </div>
         </div>
+
+        <div class="final-copyright">
+            <a href="https://pravishree.com/" target="_blank" rel="noopener noreferrer">
+                <p>Developed by <b>Pravishree</b></p>
+            </a>
+        </div>
     </footer>
+    <!-- Footer Section End -->
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
@@ -155,5 +281,4 @@
     <script src="../js/main.js"></script>
     <script src="../js/lazy-loading.js"></script>
     <script src="../js/animations.js"></script>
-    <script src="../js/about.js"></script>
 </body>

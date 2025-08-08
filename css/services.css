@@ -33,13 +33,36 @@
     --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-medium: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 1s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Our Code */
+    /* colors */
+    --primary-color-1: #bd270d;
+    --primary-color-1-hover: #e03f1b;
+    --primary-color-2: #123E7C;
+    --primary-color-2-hover: #135dc4;
+    --primary-color-3: #fda50b;
+    --primary-color-4: #ffdf0d;
+    --primary-color-5: #2A966F;
+
+    /* font-sizes */
+    --navbar-elements-size: 20px;
+    --navbar-social-icons: 20px;
+    --banner-heading: 32px;
+    --banner-subheading: 24px;
+    --section-headings: 30px;
+    --section-subheadings: 28px;
+    --section-main-content: 20px;
+    --section-content: 18px;
+    --section-normal: 16px;
+    --footer-elements: 16px;
+    --footer-social-icons: 18px;
+    --copyright-section: 16px;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background: var(--dark-bg);
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -83,7 +106,7 @@ body {
 
 .section-badge {
     display: inline-block;
-    background: var(--gradient-primary);
+    background: var(--primary-color-2);
     color: var(--text-light);
     padding: 8px 25px;
     border-radius: 25px;
@@ -231,13 +254,14 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 700;
     color: #64748b;
 }
 
 .tab-btn:hover,
 .tab-btn.active {
-    background: #2563eb;
+    background: var(--primary-color-2);
     color: white;
 }
 
@@ -272,7 +296,7 @@ body {
 }
 
 .service-item {
-    border-left: 4px solid #2563eb;
+    border-left: 4px solid var(--primary-color-2);
     padding-left: 1.5rem;
 }
 
@@ -284,7 +308,7 @@ body {
 }
 
 .service-item p {
-    color: #6b7280;
+    color: #0a0a0a;
     line-height: 1.6;
 }
 
@@ -297,7 +321,7 @@ body {
 }
 
 .therapeutic-item {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, var(--primary-color-2-hover), var(--primary-color-2));
     color: white;
     padding: 2rem;
     border-radius: 8px;
@@ -317,8 +341,8 @@ body {
 
 /* ===== HEXAGONAL EXPERTISE GRID ===== */
 .hexagonal-expertise {
-    padding: 8rem 0;
-    background: var(--dark-bg);
+    padding: 4rem 0;
+    background: #fff;
     position: relative;
     overflow: hidden;
 }
@@ -340,9 +364,8 @@ body {
     50% { transform: translateX(20px) translateY(-20px); }
 }
 
-.hexagonal-expertise .section-title-3d,
-.hexagonal-expertise .section-subtitle-3d {
-    color: var(--text-light);
+.hexagonal-expertise .section-title-3d{
+    color: var(--primary-color-2);
 }
 
 .hexagonal-grid {
@@ -356,9 +379,9 @@ body {
 .hex-item {
     position: relative;
     height: 180px;
-    background: var(--glass-bg);
+    /* background: var(--primary-color-2-hover); */
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--primary-color-2);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -372,7 +395,7 @@ body {
 .hex-item:hover {
     transform: translateY(-10px) rotateX(10deg);
     box-shadow: var(--shadow-glow);
-    border-color: var(--accent-gold);
+    border-color: var(--primary-color-1);
 }
 
 .hex-content {
@@ -384,7 +407,7 @@ body {
 
 .hex-content i {
     font-size: 2.5rem;
-    color: var(--accent-gold);
+    color: var(--primary-color-2);
     margin-bottom: 1rem;
     animation: hexIconFloat 3s ease-in-out infinite;
 }
@@ -399,6 +422,7 @@ body {
     font-weight: 600;
     display: block;
     line-height: 1.3;
+    color: #000;
 }
 
 .hex-glow {
@@ -408,6 +432,7 @@ body {
     width: 100%;
     height: 100%;
     background: var(--gradient-primary);
+    /* background: var(--accent-gold); */
     opacity: 0;
     transition: opacity var(--transition-fast);
     z-index: 1;
@@ -415,4 +440,10 @@ body {
 
 .hex-item:hover .hex-glow {
     opacity: 0.1;
+}
+
+/* Footer */
+.footer{
+    position: relative;
+    top: 0px;
 }

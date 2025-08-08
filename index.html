@@ -53,13 +53,13 @@
                 </a>
             </div>
             <ul class="nav-menu" id="navigation">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="../pages/about.html" class="nav-link">About Us</a></li>
-                <li><a href="../pages/services.html" class="nav-link">Services</a></li>
-                <li><a href="../pages/team.html" class="nav-link">Team</a></li>
-                <li><a href="../pages/careers.html" class="nav-link">Careers</a></li>
-                <li><a href="../pages/news.html" class="nav-link">News</a></li>
-                <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./pages/about.html" class="nav-link">About Us</a></li>
+                <li><a href="./pages/services.html" class="nav-link">Services</a></li>
+                <li><a href="./pages/teams.html" class="nav-link">Team</a></li>
+                <li><a href="./pages/careers.html" class="nav-link">Careers</a></li>
+                <li><a href="./pages/news.html" class="nav-link">News</a></li>
+                <li><a href="./pages/contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-toggle" id="mobileToggle">
                 <span></span>
@@ -110,7 +110,10 @@
 
     <!-- News Ticker (CALL TO ACTION) -->
     <section class="news-ticker">
-        <h5 class="ticker-title">Call to Action:</h5>
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Call To <span class="gradient-text">Action</span></h2>
+            <p class="section-subtitle">Comprehensive consulting solutions for life sciences excellence</p>
+        </div>
         <div class="ticker-content" id="news-ticker">
             <div class="ticker-item">
                 <a href="./pages/career.html">Partner with ABSincgroup today — Excellence. Compliance.
@@ -132,19 +135,19 @@
     </section>
 
     <!-- Vision-Mission -->
-    <div class="vision-mission">
+    <div class="vision-mission" id="vision">
         <section id="our-difference" class="fifty-fifty-section">
             <div class="container">
                 <div class="fifty-fifty-content">
                     <div class="content-left">
                         <div class="image-container">
                             <div class="image-placeholder">
-                                <img src="./assets/images/mission.jpg" alt="">
+                                <img data-src="./assets/images/mission.jpg" alt="" class="lazy-load" loading="lazy">
                             </div>
                         </div>
                     </div>
-                    <div class="content-right">
-                        <h3>Our Mission</h3>
+                    <div class="content-right" data-aos="fade-up">
+                        <h3 class="section-title">Our <span class="gradient-text">Mission</span></h3>
                         <p>To deliver world-class consulting solutions to life sciences companies by providing access to
                             elite regulatory strategists, quality systems experts, and hands-on technical
                             leaders—dedicated to ensuring global compliance and accelerating product success.</p>
@@ -156,8 +159,8 @@
             <div class="container">
                 <div class="fifty-fifty-content">
 
-                    <div class="content-right">
-                        <h3>Our Vision</h3>
+                    <div class="content-right" data-aos="fade-up">
+                        <h3 class="section-title">Our <span class="gradient-text">Vision</span></h3>
                         <p>At ABSincgroup, our vision is to become the most trusted partner in the biologics and
                             pharmaceutical, medical devices and combination drugs consulting industry by providing
                             cutting-edge, science & technology -driven, and regulatory-compliant solutions. We are
@@ -169,7 +172,7 @@
                     <div class="content-left">
                         <div class="image-container">
                             <div class="image-placeholder">
-                                <img src="./assets/images/vision.jpg" alt="">
+                                <img data-src="./assets/images/vision.jpg" alt="" class="lazy-load" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -204,7 +207,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Our Core Focus Areas Section -->
     <section class="services-section" id="services">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -232,8 +235,10 @@
                     <div class="tab-content active" id="regulatory">
                         <div class="service-grid">
                             <div class="service-visual" data-aos="fade-right" data-aos-delay="400">
-                                <img class="lazy-load"
+                                <!-- <img class="lazy-load"
                                     data-src="https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Regulatory Affairs"> -->
+                                <img class="lazy-load" data-src="./assets/images/focus-area-1.jpg"
                                     alt="Regulatory Affairs">
                             </div>
                             <div class="service-details" data-aos="fade-left" data-aos-delay="600">
@@ -257,9 +262,11 @@
                     <div class="tab-content" id="quality">
                         <div class="service-grid">
                             <div class="service-visual" data-aos="fade-right" data-aos-delay="400">
-                                <img class="lazy-load"
+                                <!-- <img class="lazy-load"
                                     data-src="https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                    alt="Quality & Compliance">
+                                    alt="Quality & Compliance"> -->
+                                <img class="lazy-load" data-src="./assets/images/focus-area-2.jpg"
+                                    alt="Regulatory Affairs">
                             </div>
                             <div class="service-details" data-aos="fade-left" data-aos-delay="600">
                                 <h3>Quality & Compliance</h3>
@@ -280,9 +287,11 @@
                     <div class="tab-content" id="analytical">
                         <div class="service-grid">
                             <div class="service-visual" data-aos="fade-right" data-aos-delay="400">
-                                <img class="lazy-load"
+                                <!-- <img class="lazy-load"
                                     data-src="https://images.pexels.com/photos/5726788/pexels-photo-5726788.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                    alt="Analytical Services">
+                                    alt="Analytical Services"> -->
+                                <img class="lazy-load" data-src="./assets/images/focus-area-3.jpg"
+                                    alt="Regulatory Affairs">
                             </div>
                             <div class="service-details" data-aos="fade-left" data-aos-delay="600">
                                 <h3>Analytical, Validation & Technical Services</h3>
@@ -353,7 +362,7 @@
             </div>
 
             <div class="cta-wrapper">
-                <a href="./pages/team.html#insights" class="cta-btn">
+                <a href="./pages/teams.html#team" class="cta-btn">
                     <span class="tile">Meet our Team</span>
                     <i class="fa-solid fa-angle-right"></i>
                 </a>
@@ -457,51 +466,55 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <h2 class="section-title">Get In <span class="gradient-text">contact</span></h2>
                 <p class="section-subtitle">Ready to accelerate your life sciences success?</p>
             </div>
 
             <div class="contact-grid">
-                <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
-                    <div class="contact-card">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Office Address 1</h3>
-                                <p>80 Main Street, 5th Floor<br>West Orange, NJ 07052, USA</p>
-                            </div>
+                <div class="contact-info">
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-building"></i>
                         </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Office Address 2</h3>
-                                <p>P.O. Box 534<br>Nazareth, PA 18064</p>
-                            </div>
+                        <div>
+                            <h4>Office Address 1</h4>
+                            <p>80 Main Street, 5th Floor, West Orange, NJ 07052, USA</p>
                         </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <p><a href="mailto:info@absincgroup.com">info@absincgroup.com</a></p>
-                            </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-building"></i>
                         </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Phone</h3>
-                                <p><a href="tel:+14845442673">+1 (484) 544-2673</a></p>
-                            </div>
+                        <div>
+                            <h4>Office Address 2</h4>
+                            <p>P.O. Box 534, Nazareth, PA 18064</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 484-544-2673</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>info@absconsultingusa.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="500">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h4>Website</h4>
+                            <p>www.absconsultingusa.com</p>
                         </div>
                     </div>
                 </div>
@@ -567,10 +580,8 @@
                 <div class="footer-content">
                     <div class="footer-brand" data-aos="fade-up">
                         <div class="footer-logo">
-                            <!-- <div class="logo-icon">
-                                <i class="fas fa-dna"></i>
-                            </div> -->
-                            <span class="logo-text" style="color: #fff;">ABSIncGroup</span>
+                            <!-- <span class="logo-text">ABSIncGroup</span> -->
+                            <h4>ABSIncGroup</h4>
                         </div>
                         <p class="footer-description">
                             Leading biopharmaceutical consulting firm dedicated to accelerating healthcare innovation
@@ -648,8 +659,14 @@
                 </div>
             </div>
         </div>
-    </footer>
 
+        <div class="final-copyright">
+            <a href="https://pravishree.com/" target="_blank" rel="noopener noreferrer">
+                <p>Developed by <b>Pravishree</b></p>
+            </a>
+        </div>
+    </footer>
+ 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
