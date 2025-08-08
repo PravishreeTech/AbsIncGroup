@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website Icon -->
+    <link rel="icon" href="./assets/icon.png" type="image/png">
+
+    <!-- Website Title -->
+    <title>Powering Healthcare with Connected Intelligence - ABSincGroup</title>
+    <meta name="description"
+        content="Solutions to help life sciences organizations drive healthcare forward and get the right treatments to patients, faster.">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;700;800;900&display=swap">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="dna-helix">
+                    <div class="helix-strand"></div>
+                    <div class="helix-strand"></div>
+                </div>
+            </div>
+            <div class="loading-text">Loading AbsIncGroup...</div>
+        </div>
+    </div>
+
+    <!-- NavBar section -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="./assets/logo.png" alt="">
+                </a>
+            </div>
+            <ul class="nav-menu" id="navigation">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../pages/about.html" class="nav-link">About Us</a></li>
+                <li><a href="../pages/services.html" class="nav-link">Services</a></li>
+                <li><a href="../pages/team.html" class="nav-link">Team</a></li>
+                <li><a href="../pages/careers.html" class="nav-link">Careers</a></li>
+                <li><a href="../pages/news.html" class="nav-link">News</a></li>
+                <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-slider" id="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-bg" style="background-image: url('./assets/images/banner-1.jpg')"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Strategic Consulting for Biologics, Advanced Therapies, cGMP
+                        manufacturing, Analytical Methods, Quality & Regulatory Excellence</h1>
+                    <p class="hero-description">AI-Powered cGMP manufacturing, Analytical Methods Regulatory &
+                        Quality Consulting for Life Sciences Innovators
+                        From IND to Approval-PAI readiness-Cost Effective Lean Six Sigma Black belt methodology
+                        driven — Smarter. Faster. Compliant.</p>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-bg" style="background-image: url('./assets/images/banner-2.jpg')"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Strategic Consulting for Biologics, Advanced Therapies, cGMP
+                        manufacturing, Analytical Methods, Quality & Regulatory Excellence</h1>
+                    <p class="hero-description">AI-Powered cGMP manufacturing, Analytical Methods Regulatory &
+                        Quality Consulting for Life Sciences Innovators
+                        From IND to Approval-PAI readiness-Cost Effective Lean Six Sigma Black belt methodology
+                        driven — Smarter. Faster. Compliant.</p>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-bg" style="background-image: url('./assets/images/banner-3.jpg')"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Strategic Consulting for Biologics, Advanced Therapies, cGMP
+                        manufacturing, Analytical Methods, Quality & Regulatory Excellence</h1>
+                    <p class="hero-description">AI-Powered cGMP manufacturing, Analytical Methods Regulatory &
+                        Quality Consulting for Life Sciences Innovators
+                        From IND to Approval-PAI readiness-Cost Effective Lean Six Sigma Black belt methodology
+                        driven — Smarter. Faster. Compliant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Ticker (CALL TO ACTION) -->
+    <section class="news-ticker">
+        <h5 class="ticker-title">Call to Action:</h5>
+        <div class="ticker-content" id="news-ticker">
+            <div class="ticker-item">
+                <a href="./pages/career.html">Partner with ABSincgroup today — Excellence. Compliance.
+                    Innovation.</a>
+            </div>
+            <div class="ticker-item">
+                <a href="./pages/career.html">Partner with ABSincgroup today — Excellence. Compliance.
+                    Innovation.</a>
+            </div>
+            <div class="ticker-item">
+                <a href="./pages/career.html">Partner with ABSincgroup today — Excellence. Compliance.
+                    Innovation.</a>
+            </div>
+        </div>
+        <div class="ticker-controls">
+            <button title="btn" class="ticker-prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button title="btn" class="ticker-next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Vision-Mission -->
+    <div class="vision-mission">
+        <section id="our-difference" class="fifty-fifty-section">
+            <div class="container">
+                <div class="fifty-fifty-content">
+                    <div class="content-left">
+                        <div class="image-container">
+                            <div class="image-placeholder">
+                                <img src="./assets/images/mission.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <h3>Our Mission</h3>
+                        <p>To deliver world-class consulting solutions to life sciences companies by providing access to
+                            elite regulatory strategists, quality systems experts, and hands-on technical
+                            leaders—dedicated to ensuring global compliance and accelerating product success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="our-difference" class="fifty-fifty-section">
+            <div class="container">
+                <div class="fifty-fifty-content">
+
+                    <div class="content-right">
+                        <h3>Our Vision</h3>
+                        <p>At ABSincgroup, our vision is to become the most trusted partner in the biologics and
+                            pharmaceutical, medical devices and combination drugs consulting industry by providing
+                            cutting-edge, science & technology -driven, and regulatory-compliant solutions. We are
+                            dedicated to accelerating innovation, ensuring global compliance, and transforming complex
+                            regulatory and manufacturing challenges into strategic advantages for our clients. From
+                            early development to commercialization,
+                            we bring integrity, precision, and agility to every project.</p>
+                    </div>
+                    <div class="content-left">
+                        <div class="image-container">
+                            <div class="image-placeholder">
+                                <img src="./assets/images/vision.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Video Section -->
+    <section class="video-section" data-aos="fade-up">
+        <div class="container">
+            <div class="video-content">
+                <div class="video-header">
+                    <span class="video-badge">ABSINCGROUP HEALTHCARE-GRADE AI®</span>
+                    <h2>Simply ask</h2>
+                </div>
+
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <div class="video-placeholder lazy-video"
+                            data-video="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4">
+                            <div class="video-thumbnail"
+                                style="background-image: url('https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                            </div>
+                            <button class="play-button">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Core <span class="gradient-text">Focus Areas</span></h2>
+                <p class="section-subtitle">Comprehensive consulting solutions for life sciences excellence</p>
+            </div>
+
+            <div class="services-tabs">
+                <div class="tab-navigation" data-aos="fade-up" data-aos-delay="200">
+                    <button class="tab-btn active" data-tab="regulatory">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Regulatory Affairs</span>
+                    </button>
+                    <button class="tab-btn" data-tab="quality">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Quality & Compliance</span>
+                    </button>
+                    <button class="tab-btn" data-tab="analytical">
+                        <i class="fas fa-flask"></i>
+                        <span>Analytical Services</span>
+                    </button>
+                </div>
+
+                <div class="tab-content-wrapper">
+                    <div class="tab-content active" id="regulatory">
+                        <div class="service-grid">
+                            <div class="service-visual" data-aos="fade-right" data-aos-delay="400">
+                                <img class="lazy-load"
+                                    data-src="https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Regulatory Affairs">
+                            </div>
+                            <div class="service-details" data-aos="fade-left" data-aos-delay="600">
+                                <h3>Regulatory Affairs Consulting</h3>
+                                <ul class="service-list">
+                                    <li><i class="fas fa-check"></i> INDs, NDAs, ANDAs, BLAs, eCTDs, and global
+                                        submission strategies</li>
+                                    <li><i class="fas fa-check"></i> FDA 505(b)(2) and biosimilar pathways</li>
+                                    <li><i class="fas fa-check"></i> Regulatory writing, data integrity audits, and
+                                        submission review</li>
+                                    <li><i class="fas fa-check"></i> Pre-IND & Type B/C Meeting prep and agency
+                                        interactions</li>
+                                    <li><i class="fas fa-check"></i> eCTD compilation and lifecycle management</li>
+                                    <li><i class="fas fa-check"></i> Third-party audits for FDA, EMA, WHO compliance
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="quality">
+                        <div class="service-grid">
+                            <div class="service-visual" data-aos="fade-right" data-aos-delay="400">
+                                <img class="lazy-load"
+                                    data-src="https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Quality & Compliance">
+                            </div>
+                            <div class="service-details" data-aos="fade-left" data-aos-delay="600">
+                                <h3>Quality & Compliance</h3>
+                                <ul class="service-list">
+                                    <li><i class="fas fa-check"></i> cGMP audits, remediation, and quality systems
+                                        implementation</li>
+                                    <li><i class="fas fa-check"></i> Aseptic manufacturing consulting and facility
+                                        readiness</li>
+                                    <li><i class="fas fa-check"></i> QA/QC oversight, SOP writing, and training</li>
+                                    <li><i class="fas fa-check"></i> Process & cleaning validations</li>
+                                    <li><i class="fas fa-check"></i> Mock inspections and 483/NOD response support</li>
+                                    <li><i class="fas fa-check"></i> Risk-based approach to QMS development</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="analytical">
+                        <div class="service-grid">
+                            <div class="service-visual" data-aos="fade-right" data-aos-delay="400">
+                                <img class="lazy-load"
+                                    data-src="https://images.pexels.com/photos/5726788/pexels-photo-5726788.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Analytical Services">
+                            </div>
+                            <div class="service-details" data-aos="fade-left" data-aos-delay="600">
+                                <h3>Analytical, Validation & Technical Services</h3>
+                                <ul class="service-list">
+                                    <li><i class="fas fa-check"></i> Analytical method validation and transfer</li>
+                                    <li><i class="fas fa-check"></i> Bioassay and potency testing for biologics and
+                                        biosimilars</li>
+                                    <li><i class="fas fa-check"></i> Technology transfer support (domestic and
+                                        international)</li>
+                                    <li><i class="fas fa-check"></i> Product comparability, stability, and impurity
+                                        strategy</li>
+                                    <li><i class="fas fa-check"></i> End-to-end CMC support across preclinical to
+                                        commercial phases</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Meet Our <span class="gradient-text">Expert Team</span></h2>
+                <p class="section-subtitle">Industry-leading professionals driving your success</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-info">
+                        <h3>Dr. Niranjan M. Kumar, PhD</h3>
+                        <p class="team-title">President & Founding Director</p>
+                        <p class="team-credentials">Masters in Management (Wharton Business School)</p>
+                        <p class="team-description">Global biopharma leader with decades of experience in regulatory
+                            strategy and quality leadership.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-info">
+                        <h3>Ms. Sheila Smith, MBA</h3>
+                        <p class="team-title">Vice President, Human Resources</p>
+                        <p class="team-description">A strategic client relationship leader driving partnership growth
+                            and project success.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="team-info">
+                        <h3>Mr. V. Nathan Roy, BS</h3>
+                        <p class="team-title">Vice President, Business Development & Marketing</p>
+                        <p class="team-description">Expert in international market expansion and building strategic
+                            industry partnerships.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="team-info">
+                        <h3>Senior Manufacturing & Quality Leader</h3>
+                        <p class="team-title">Operational Strategist</p>
+                        <p class="team-description">Operational strategist specializing in quality remediation,
+                            compliance, and manufacturing excellence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-wrapper">
+                <a href="./pages/team.html#insights" class="cta-btn">
+                    <span class="tile">Meet our Team</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Client <span class="gradient-text">Reviews</span></h2>
+                <p class="section-subtitle">Trusted by leading life sciences companies worldwide</p>
+            </div>
+
+            <div class="testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "ABSincgroup helped us remediate a critical FDA warning letter under tight timelines. Their
+                            team delivered exceptional insight and hands-on execution."
+                        </blockquote>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>VP Quality</h4>
+                                <p>Cell Therapy Biotech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "Their biologics manufacturing experts streamlined our tech transfer and reduced our batch
+                            failure rate significantly. Highly professional and knowledgeable."
+                        </blockquote>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Head of Operations</h4>
+                                <p>Vaccines Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "We relied on ABSincgroup for our monoclonal antibody facility qualification and regulatory
+                            support. Their validation and QA consultants were top-tier."
+                        </blockquote>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Director of CMC</h4>
+                                <p>Global Pharma</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-navigation">
+                    <button class="testimonial-prev" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonial-dots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
+                        <button class="dot" data-slide="2"></button>
+                    </div>
+                    <button class="testimonial-next" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="section-subtitle">Ready to accelerate your life sciences success?</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Office Address 1</h3>
+                                <p>80 Main Street, 5th Floor<br>West Orange, NJ 07052, USA</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Office Address 2</h3>
+                                <p>P.O. Box 534<br>Nazareth, PA 18064</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@absincgroup.com">info@absincgroup.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <p><a href="tel:+14845442673">+1 (484) 544-2673</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-aos="fade-left" data-aos-delay="400">
+                    <div class="contact-form-card">
+                        <h3>Send us a message</h3>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" name="firstName" placeholder="First Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="lastName" placeholder="Last Name" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email Address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="company" placeholder="Company" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subject (optional)">
+                            </div>
+
+                            <div class="form-group">
+                                <select name="contactMethod" required>
+                                    <option value="" disabled selected>Preferred Contact Method</option>
+                                    <option value="email">Email</option>
+                                    <option value="phone">Phone</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand" data-aos="fade-up">
+                        <div class="footer-logo">
+                            <!-- <div class="logo-icon">
+                                <i class="fas fa-dna"></i>
+                            </div> -->
+                            <span class="logo-text" style="color: #fff;">ABSIncGroup</span>
+                        </div>
+                        <p class="footer-description">
+                            Leading biopharmaceutical consulting firm dedicated to accelerating healthcare innovation
+                            through expert regulatory, quality, and technical services.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links" data-aos="fade-up" data-aos-delay="300">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Regulatory Affairs</a></li>
+                            <li><a href="#">Quality & Compliance</a></li>
+                            <li><a href="#">Analytical Services</a></li>
+                            <li><a href="#">Manufacturing</a></li>
+                            <li><a href="#">Validation</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact" data-aos="fade-up" data-aos-delay="400">
+                        <h4>Contact Info</h4>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>80 Main Street, 5th Floor<br>West Orange, NJ 07052</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@absincgroup.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (484) 544-2673</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2018-2025 ABSincGroup USA®. All rights reserved. HEALTHCARE-GRADE AI® is a registered
+                            trademark.</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script src="./js/lazy-loading.js"></script>
+    <script src="./js/animations.js"></script>
+</body>
+
+</html>

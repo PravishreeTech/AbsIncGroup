@@ -1,0 +1,573 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+:root{
+    /* colors */
+    --primary-color-1: #bd270d;
+    --primary-color-2: #123E7C;
+    --primary-color-2-hover: #135dc4;
+    --primary-color-3: #fda50b;
+    --primary-color-4: #ffdf0d;
+    --primary-color-5: #2A966F;
+
+    /* font-sizes */
+    --navbar-elements-size: 20px;
+    --navbar-social-icons: 20px;
+    --banner-heading: 32px;
+    --banner-subheading: 24px;
+    --section-headings: 30px;
+    --section-subheadings: 28px;
+    --section-main-content: 20px;
+    --section-content: 18px;
+    --section-normal: 16px;
+    --footer-elements: 16px;
+    --footer-social-icons: 18px;
+    --copyright-section: 16px;
+
+    /* Color Palette */
+    --primary-blue: #0066ff;
+    --secondary-blue: #004dd9;
+    --accent-gold: #ffd700;
+    --dark-bg: #0a0a0a;
+    --light-bg: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-light: #ffffff;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #0066ff, #004dd9);
+    --gradient-secondary: linear-gradient(135deg, #667eea, #764ba2);
+    --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+    --gradient-dark: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    
+    /* Shadows */
+    --shadow-light: 0 4px 20px rgba(0, 102, 255, 0.1);
+    --shadow-medium: 0 8px 40px rgba(0, 102, 255, 0.2);
+    --shadow-heavy: 0 20px 60px rgba(0, 102, 255, 0.3);
+    --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.5);
+    
+    /* Animations */
+    --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/***************** About Section Start *****************/
+.services-overview {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.overview-text {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+}
+
+.overview-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+/***************** About Section End *****************/
+
+/***************** Why Choose Us Section Start *****************/
+.why-choose-us {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+}
+
+.why-choose-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(30, 64, 175, 0.1);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(45deg, #1e40af, #3730a3);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(30, 64, 175, 0.15);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #1e40af, #3730a3);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: iconShine 3s ease-in-out infinite;
+}
+
+@keyframes iconShine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+}
+
+.feature-content {
+    position: relative;
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color-2);
+    line-height: 1.3;
+}
+
+.feature-card p {
+    color: #6b7280;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.feature-check {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #10b981, #059669);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+/***************** Why Choose Us Section End *****************/
+
+/***************** Specialized Expertise Section Start *****************/
+
+/* Rotating Circle Visual Start*/
+.rotating-circle {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    animation: rotate 15s linear infinite;
+}
+
+.circle-segment {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(139, 92, 246, 0.2));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: counterRotate 20s linear infinite;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.segment-1 { top: 0; left: 43%; transform: translateX(-50%); }
+.segment-2 { right: 0; top: 36%; transform: translateY(-50%); }
+.segment-3 { bottom: 0; left: 36%; transform: translateX(-50%); }
+.segment-4 { left: 0; top: 50%; transform: translateY(-50%); }
+.segment-5 { left: 0; top: 10%; transform: translateY(-50%); }
+
+.circle-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #f59e0b, #eab308);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes counterRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* Rotating Circle Visual End */
+.expertise {
+    padding: 120px 0;
+    background: white;
+    position: relative;
+}
+
+.expertise-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+
+.expertise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.expertise-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    position: relative;
+    border-left: 4px solid transparent;
+}
+
+.expertise-item:hover {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    transform: translateX(15px);
+    border-left-color: var(--primary-color-2);
+    box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1);
+}
+
+.expertise-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #1e40af, #3730a3);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.expertise-content-text h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color-2);
+}
+
+.expertise-content-text p {
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.expertise-bullet {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #1e40af;
+    opacity: 0.3;
+}
+/***************** Specialized Expertise Section End *****************/
+
+
+/***************** Who We Serve Section Start *****************/
+.clients {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: white;
+    position: relative;
+}
+
+.clients::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+}
+
+.clients .section-header h2,
+.clients .section-header p {
+    color: white;
+}
+
+.world-map {
+    margin: 0rem 0;
+    position: relative;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(30, 64, 175, 0.1) 0%, transparent 70%);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><path d="M150,200 Q300,150 450,180 Q600,140 750,170 Q850,130 950,160" stroke="%23ffffff20" stroke-width="3" fill="none"/><path d="M100,300 Q250,280 400,290 Q550,270 700,285 Q800,265 900,275" stroke="%23ffffff15" stroke-width="2" fill="none"/></svg>') center/80% no-repeat;
+}
+
+.region {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.region:hover {
+    transform: scale(1.2);
+}
+
+.region-dot {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+    animation: regionGlow 2s ease-in-out infinite;
+}
+
+.region-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #3b82f6;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 3s infinite;
+}
+
+@keyframes regionGlow {
+    0%, 100% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
+    50% { box-shadow: 0 0 35px rgba(59, 130, 246, 0.8); }
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+.usa {
+    top: 35%;
+    left: 20%;
+}
+
+.eu {
+    top: 25%;
+    left: 48%;
+}
+
+.mena {
+    top: 40%;
+    left: 58%;
+}
+
+.apac {
+    top: 45%;
+    left: 78%;
+}
+
+.client-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.category-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.category-card:hover::before {
+    left: 100%;
+}
+
+.category-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.category-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2.2rem;
+    position: relative;
+}
+
+.category-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.category-card p {
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.category-bullet {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #fbbf24;
+}
+/***************** Who We Serve Section End *****************/
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .expertise-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
