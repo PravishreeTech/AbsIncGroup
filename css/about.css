@@ -74,8 +74,8 @@ body {
     --transition-slow: 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/***************** About Section Start *****************/
-.services-overview {
+/***************** About Overview Section Start *****************/
+.about-overview {
     padding: 6rem 0;
     background: #f8fafc;
 }
@@ -101,7 +101,90 @@ body {
     color: #4b5563;
     margin-bottom: 1.5rem;
 }
-/***************** About Section End *****************/
+/***************** About Overview Section End *****************/
+
+/***************** AI Section Start *****************/
+.ai-section {
+    background: #ffffff;
+    padding: 5rem 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.ai-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ai-section .section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color-2);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.ai-section .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color-2);
+    border-radius: 2px;
+}
+
+.ai-section .ai-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.ai-section .ai-icon {
+    flex-shrink: 0;
+}
+
+.ai-section .icon-circle {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(43, 92, 184, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+.ai-section .ai-svg {
+    width: 60px;
+    height: 60px;
+    color: white;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.ai-section .ai-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+}
+/***************** AI Section Ends *****************/
 
 /***************** Why Choose Us Section Start *****************/
 .why-choose-us {
@@ -380,8 +463,29 @@ body {
     color: #1e40af;
     opacity: 0.3;
 }
-/***************** Specialized Expertise Section End *****************/
 
+@media screen and (max-width: 790px) {
+    .expertise-item{
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px){
+    .expertise-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .expertise .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/***************** Specialized Expertise Section End *****************/
 
 /***************** Who We Serve Section Start *****************/
 .clients {
@@ -598,23 +702,18 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero-title {
+    /* .hero-title {
         font-size: 3rem;
-    }
+    } */
 
-    .hero-stats {
+    /* .hero-stats {
         flex-direction: column;
         gap: 2rem;
-    }
+    } */
 
-    .hero-buttons {
+    /* .hero-buttons {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-    }
-
-    .expertise-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
+    } */
 }

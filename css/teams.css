@@ -10,7 +10,7 @@
     --primary-blue: #0066ff;
     --secondary-blue: #004dd9;
     --accent-gold: #ffd700;
-    --dark-bg: #0a0a0a;
+    --dark-bg: #fafafa;
     --light-bg: #ffffff;
     --glass-bg: rgba(255, 255, 255, 0.1);
     --text-primary: #333333;
@@ -126,7 +126,7 @@ body {
 
 .leadership-overview .leadership-highlights {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:repeat(2, 1fr);
     gap: 3rem;
 }
 
@@ -154,6 +154,12 @@ body {
     font-size: 1rem;
     line-height: 1.7;
     opacity: 0.95;
+}
+
+@media screen and (max-width: 720px) {
+    .leadership-overview .leadership-highlights{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 /***************** Leadership Section End *****************/
 
@@ -260,6 +266,15 @@ body {
     left: 0;
     color: var(--primary-color-2);
     font-size: 1.2rem;
+}
+
+@media screen and (max-width: 650px) {
+    .team-members .team-member{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 /***************** Team Members Section End *****************/
 
