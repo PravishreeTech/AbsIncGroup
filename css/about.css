@@ -626,8 +626,8 @@ body {
 
 .client-categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+    gap: 0.30px;
     position: relative;
     z-index: 1;
 }
