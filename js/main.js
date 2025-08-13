@@ -511,6 +511,50 @@ class ABSincGroupWebsite {
     }
 }
 
+// Add dynamic interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step');
+            
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            steps.forEach(step => {
+                observer.observe(step);
+            });
+
+            // Add click interactions
+            steps.forEach((step, index) => {
+                step.addEventListener('click', function() {
+                    // Add a pulse effect
+                    const stepContent = step.querySelector('.step-content');
+                    stepContent.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        stepContent.style.transform = '';
+                    }, 200);
+                });
+            });
+
+            // Add smooth scrolling between steps
+            let currentStep = 0;
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowDown' && currentStep < steps.length - 1) {
+                    currentStep++;
+                    steps[currentStep].scrollIntoView({ behavior: 'smooth' });
+                } else if (e.key === 'ArrowUp' && currentStep > 0) {
+                    currentStep--;
+                    steps[currentStep].scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
 // Initialize the website
 const website = new ABSincGroupWebsite();
 

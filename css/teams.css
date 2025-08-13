@@ -100,6 +100,233 @@ body {
 }
 /***************** Teams Section End *****************/
 
+.connecting-line .section-header{
+    position: relative;
+    top: 80px;
+}
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        .step:nth-child(even) {
+            flex-direction: row-reverse;
+            transform: translateX(50px);
+        }
+
+        .step:nth-child(1) { animation-delay: 0.2s; }
+        .step:nth-child(2) { animation-delay: 0.4s; }
+        .step:nth-child(3) { animation-delay: 0.6s; }
+        .step:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .step-content {
+            flex: 1;
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .step-1 .step-content {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 100%);
+        }
+
+        .step-2 .step-content {
+            background: linear-gradient(135deg, #ffd3e1 0%, #fd9bb3 100%);
+        }
+
+        .step-3 .step-content {
+            background: linear-gradient(135deg, #ffd4a3 0%, #ffb347 100%);
+        }
+
+        .step-4 .step-content {
+            background: linear-gradient(135deg, #d4a5ff 0%, #b19cd9 100%);
+        }
+
+        .step-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .step-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .expert-info {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #2c3e50;
+        }
+
+        .expert-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .expert-designation {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            margin: 0 30px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .step-1 .step-number {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+        }
+
+        .step-2 .step-number {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .step-3 .step-number {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .step-4 .step-number {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .connecting-line {
+            position: absolute;
+            left: 50%;
+            top: 80px;
+            width: 4px;
+            height: calc(100% - 160px);
+            background: linear-gradient(to bottom, #4ecdc4, #f093fb, #fcb69f, #a8edea);
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .step {
+                flex-direction: column !important;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .step:nth-child(even) {
+                flex-direction: column !important;
+            }
+
+            .step-content {
+                margin: 20px 0;
+                padding: 20px;
+            }
+
+            .step-number {
+                margin: 0 0 20px 0;
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .step-title {
+                font-size: 20px;
+            }
+
+            .step-description {
+                font-size: 14px;
+            }
+
+            .connecting-line {
+                display: none;
+            }
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .step-content {
+                padding: 25px;
+            }
+
+            .step-number {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+                margin: 0 20px;
+            }
+        }
+
+        /* Interactive elements */
+        .step-content::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            border-radius: 25px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .step-content:hover::before {
+            opacity: 1;
+        }
+
+        /* Floating animation for step numbers */
+        .step-number {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .step:nth-child(2) .step-number {
+            animation-delay: 0.5s;
+        }
+
+        .step:nth-child(3) .step-number {
+            animation-delay: 1s;
+        }
+
+        .step:nth-child(4) .step-number {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
 /***************** Leadership Section Starts *****************/
 .leadership-overview {
     padding: 5rem 0;
@@ -281,7 +508,7 @@ body {
 /* Footer */
 .footer{
     position: relative;
-    top: 0px;
+    top: 78px;
 }
 
 /* Animation utilities */
