@@ -98,7 +98,7 @@ body {
 .overview-text p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #4b5563;
+    color: #222222;
     margin-bottom: 1.5rem;
 }
 /***************** About Overview Section End *****************/
@@ -181,7 +181,7 @@ body {
 .ai-section .ai-text p {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #555;
+    color: #222222;
     margin: 0;
 }
 /***************** AI Section Ends *****************/
@@ -202,6 +202,10 @@ body {
     height: 100%;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     opacity: 0.3;
+}
+
+.why-choose-us .section-header p{
+    color: #222222;
 }
 
 .features-grid {
@@ -288,12 +292,15 @@ body {
     margin-bottom: 1rem;
     color: var(--primary-color-2);
     line-height: 1.3;
+    /* border: 1px solid red; */
+    height: 90px;
 }
 
 .feature-card p {
-    color: #6b7280;
+    color: #121212;
     line-height: 1.6;
     font-weight: 400;
+    /* border: 1px solid blue; */
 }
 
 .feature-check {
@@ -391,9 +398,13 @@ body {
 
 /* Rotating Circle Visual End */
 .expertise {
-    padding: 120px 0;
+    padding: 90px 0;
     background: white;
     position: relative;
+}
+
+.expertise p{
+    color: #222222;
 }
 
 .expertise-content {
@@ -450,7 +461,7 @@ body {
 }
 
 .expertise-content-text p {
-    color: #6b7280;
+    color: #3a3838;
     font-weight: 400;
 }
 
@@ -502,7 +513,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+    /* background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>'); */
 }
 
 .clients .section-header h2,

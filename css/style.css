@@ -292,6 +292,7 @@ body {
     z-index: 1000;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* border: 1px solid red; */
 }
 
 .navbar.scrolled {
@@ -388,7 +389,7 @@ body {
     .nav-menu.active {
         /* display: flex; */
         opacity: 1;
-        pointer-events: none;
+        pointer-events: auto;
     }
 
     .nav-toggle {
@@ -433,12 +434,13 @@ body {
 /*********** Hero Section Starts *************/
 .hero-section {
     position: relative;
-    top: 110px;
+    top: 80px;
     min-height: 450px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: 1px solid blue; */
 }
 
 .hero-section .hero-slider {
@@ -643,11 +645,11 @@ body {
 
 .news-ticker .section-subtitle {
     font-size: 1.125rem;
-    color: var(--gray-600);
+    color: #000;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
-}
+} 
 
 .news-ticker .ticker-content {
     display: flex;
@@ -834,7 +836,7 @@ body {
 
 .what-sets-apart-section .intro-subtext {
     font-size: 1.1rem;
-    color: #666;
+    color: #121212;
     font-style: italic;
 }
 
@@ -900,12 +902,15 @@ body {
     font-weight: 600;
     color: var(--primary-color-2);
     line-height: 1.3;
+    /* border: 1px solid red; */
+    height: 95px;
 }
 
 .what-sets-apart-section .differentiator-card p {
-    color: #666;
+    color: #121212;
     line-height: 1.7;
     font-size: 1rem;
+    /* border: 1px solid blue; */
 }
 /*********** What Sets ABSincgroup Apart Section Ends *************/
 
@@ -1470,7 +1475,7 @@ body {
 
 .contact-section .section-subtitle {
     font-size: 1.125rem;
-    color: var(--gray-600);
+    color: #000;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -1537,7 +1542,7 @@ body {
 }
 
 .contact-section .contact-item p {
-    color: #6b7280;
+    color: #3a3838;
     font-weight: 400;
 }
 

@@ -1,12 +1,21 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
 /********** CAREERS SECTION STARTS **********/
 .careers-overview{
     padding: 6rem 0;
     background: #f8fafc;
+    padding-bottom: 3rem;
 }
 
 .careers-overview .section-header{
     text-align: center;
     margin-bottom: 4rem;
+}
+
+.careers-overview .section-header p{
+    color: #222222;
 }
 
 .careers-overview .overview-text {
@@ -20,7 +29,7 @@
 .careers-overview .overview-text p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #4b5563;
+    color: #222222;
     margin-bottom: 1.5rem;
 }
 /********** CAREERS SECTION ENDS **********/
@@ -45,7 +54,7 @@
 
 .section-header p {
     font-size: 1.2rem;
-    color: #64748b;
+    color: #3b434e;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -104,7 +113,7 @@
 }
 
 .career-card p {
-    color: #64748b;
+    color: #3b434e;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -173,7 +182,7 @@
 
 .resume-info p {
     font-size: 1.2rem;
-    color: #64748b;
+    color: #3b434e;
     margin-bottom: 0.5rem;
 }
 
@@ -190,7 +199,7 @@
 }
 
 .resume-info small {
-    color: #9ca3af;
+    color: #3b434e;
     font-size: 0.9rem;
 }
 /********** NOW HIRING SECTION ENDS **********/
