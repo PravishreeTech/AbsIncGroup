@@ -558,7 +558,207 @@ class ABSincGroupWebsite {
 // Initialize the website
 const website = new ABSincGroupWebsite();
 
+// ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+// Create intersection observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            
+            // Animate feature items with stagger effect
+            if (entry.target.id === 'featuresSection') {
+                const featureItems = document.querySelectorAll('.feature-item');
+                featureItems.forEach((item, index) => {
+                    const delay = parseInt(item.dataset.delay) || 0;
+                    setTimeout(() => {
+                        item.classList.add('animate-in');
+                    }, delay);
+                });
+            }
+        }
+    });
+}, observerOptions);
+
+// Observe all sections
+const sections = [
+    'titleSection',
+    'introContent', 
+    'imageSection',
+    'subheadingSection',
+    'featuresSection',
+    'ctaSection'
+];
+
+sections.forEach(sectionId => {
+    const section = document.getElementById(sectionId);
+    if (section) observer.observe(section);
+});
+
+// ===== PARALLAX SCROLLING EFFECT =====
+let ticking = false;
+
+function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.3;
+    const imageContainers = document.querySelectorAll('.images');
+    
+    imageContainers.forEach((container, index) => {
+        const speed = (index + 1) * 0.05;
+        const yPos = rate * speed;
+        
+        // Only apply parallax on desktop
+        if (window.innerWidth > 768) {
+            const currentTransform = container.style.transform || '';
+            const baseTransform = getBaseTransform(index);
+            container.style.transform = `${baseTransform} translateY(${yPos}px)`;
+        }
+    });
+    
+    ticking = false;
+}
+
+function getBaseTransform(index) {
+    const transforms = [
+        'translateY(0)',
+        'translateY(20px)',
+        'translateY(-20px)',
+        'translateY(0)'
+    ];
+    return transforms[index] || 'translateY(0)';
+}
+
+function requestParallaxTick() {
+    if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+    }
+}
+
+// ===== SMOOTH SCROLL FOR CTA BUTTON =====
+document.querySelector('.cta-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Add a gentle shake animation to button
+    this.style.transform = 'translateY(-3px) scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = 'translateY(-3px) scale(1)';
+    }, 150);
+
+    // Smooth scroll to bottom (or wherever you want to link)
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+});
+
+// ===== ENHANCED IMAGE HOVER EFFECTS =====
+const imageContainers = document.querySelectorAll('.images');
+
+imageContainers.forEach((container, index) => {
+    container.addEventListener('mouseenter', function() {
+        // Add subtle rotation and glow effect
+        this.style.filter = 'brightness(1.1)';
+        
+        // Create ripple effect
+        const ripple = document.createElement('div');
+        ripple.style.cssText = `
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+            z-index: 1000;
+        `;
+        
+        this.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+            if (ripple.parentNode) {
+                ripple.parentNode.removeChild(ripple);
+            }
+        }, 600);
+    });
+
+    container.addEventListener('mouseleave', function() {
+        this.style.filter = 'brightness(1)';
+    });
+});
+
+// ===== CSS ANIMATION FOR RIPPLE EFFECT =====
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes ripple {
+        to {
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// ===== PERFORMANCE OPTIMIZED SCROLL LISTENER =====
+let isScrolling = false;
+
+window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+        isScrolling = true;
+        requestParallaxTick();
+        
+        setTimeout(() => {
+            isScrolling = false;
+        }, 16); // ~60fps
+    }
+}, { passive: true });
+
+// ===== LOADING ANIMATION =====
+window.addEventListener('load', () => {
+    // Add entrance animations after page load
+    setTimeout(() => {
+        const hero = document.getElementById('hero');
+        hero.style.opacity = '1';
+    }, 100);
+});
+
+// ===== RESIZE HANDLER FOR RESPONSIVE PARALLAX =====
+window.addEventListener('resize', () => {
+    // Reset transforms on mobile to avoid issues
+    if (window.innerWidth <= 768) {
+        imageContainers.forEach((container, index) => {
+            const baseTransform = getBaseTransform(index);
+            container.style.transform = baseTransform;
+        });
+    }
+});
+
+// ===== INITIAL SETUP =====
+document.addEventListener('DOMContentLoaded', () => {
+    // Set initial opacity for hero section
+    const hero = document.getElementById('hero');
+    hero.style.transition = 'opacity 0.5s ease-in-out';
+    hero.style.opacity = '0';
+    
+    // Initialize parallax positions
+    imageContainers.forEach((container, index) => {
+        const baseTransform = getBaseTransform(index);
+        container.style.transform = baseTransform;
+    });
+});
+
+
 // Export for potential use in other modules
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = ABSincGroupWebsite;
 }
+
