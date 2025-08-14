@@ -22,7 +22,7 @@ body {
     padding: 0 20px;
 }
 
-:root{
+:root {
     /* colors */
     --primary-color-1: #bd270d;
     --primary-color-2: #123E7C;
@@ -55,19 +55,19 @@ body {
     --text-primary: #333333;
     --text-secondary: #666666;
     --text-light: #ffffff;
-    
+
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, #0066ff, #004dd9);
     --gradient-secondary: linear-gradient(135deg, #667eea, #764ba2);
     --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
     --gradient-dark: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    
+
     /* Shadows */
     --shadow-light: 0 4px 20px rgba(0, 102, 255, 0.1);
     --shadow-medium: 0 8px 40px rgba(0, 102, 255, 0.2);
     --shadow-heavy: 0 20px 60px rgba(0, 102, 255, 0.3);
     --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.5);
-    
+
     /* Animations */
     --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-medium: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -76,13 +76,36 @@ body {
 
 /***************** About Overview Section Start *****************/
 .about-overview {
-    padding: 6rem 0;
-    background: #f8fafc;
+    position: relative;
+    top: 83px;
+    padding: 4rem 0;
+    /* background: #f8fafc; */
 }
 
-.section-description {
-    font-size: 1.1rem;
-    color: #6b7280;
+.about-overview .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-overview .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
+}
+
+.about-overview .section-header h2 {
+    font-size: 48px;
+    color: #fff;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -101,13 +124,15 @@ body {
     color: #222222;
     margin-bottom: 1.5rem;
 }
+
 /***************** About Overview Section End *****************/
 
 /***************** AI Section Start *****************/
 .ai-section {
+    position: relative;
+    top: 83px;
     background: #ffffff;
     padding: 5rem 0;
-    position: relative;
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease-out;
@@ -170,9 +195,12 @@ body {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -184,6 +212,7 @@ body {
     color: #222222;
     margin: 0;
 }
+
 /***************** AI Section Ends *****************/
 
 /***************** Why Choose Us Section Start *****************/
@@ -191,6 +220,7 @@ body {
     padding: 120px 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     position: relative;
+    top: 83px;
 }
 
 .why-choose-us::before {
@@ -204,7 +234,7 @@ body {
     opacity: 0.3;
 }
 
-.why-choose-us .section-header p{
+.why-choose-us .section-header p {
     color: #222222;
 }
 
@@ -277,9 +307,17 @@ body {
 }
 
 @keyframes iconShine {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-    100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    50% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
 }
 
 .feature-content {
@@ -319,6 +357,7 @@ body {
     font-weight: bold;
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
+
 /***************** Why Choose Us Section End *****************/
 
 /***************** Specialized Expertise Section Start *****************/
@@ -348,11 +387,35 @@ body {
     text-align: center;
 }
 
-.segment-1 { top: 0; left: 43%; transform: translateX(-50%); }
-.segment-2 { right: 0; top: 36%; transform: translateY(-50%); }
-.segment-3 { bottom: 0; left: 36%; transform: translateX(-50%); }
-.segment-4 { left: 0; top: 50%; transform: translateY(-50%); }
-.segment-5 { left: 0; top: 10%; transform: translateY(-50%); }
+.segment-1 {
+    top: 0;
+    left: 43%;
+    transform: translateX(-50%);
+}
+
+.segment-2 {
+    right: 0;
+    top: 36%;
+    transform: translateY(-50%);
+}
+
+.segment-3 {
+    bottom: 0;
+    left: 36%;
+    transform: translateX(-50%);
+}
+
+.segment-4 {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.segment-5 {
+    left: 0;
+    top: 10%;
+    transform: translateY(-50%);
+}
 
 .circle-center {
     position: absolute;
@@ -361,7 +424,8 @@ body {
     transform: translate(-50%, -50%);
     width: 120px;
     height: 120px;
-    background: linear-gradient(135deg, #f59e0b, #eab308);
+    /* background: linear-gradient(135deg, #f59e0b, #eab308); */
+    background: linear-gradient(135deg, var(--primary-color-2-hover), var(--primary-color-2));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -371,13 +435,23 @@ body {
 }
 
 @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes counterRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .segment-text {
@@ -392,8 +466,15 @@ body {
 }
 
 @keyframes stayUpright {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); } /* counter of +360deg from parent */
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+
+    /* counter of +360deg from parent */
 }
 
 /* Rotating Circle Visual End */
@@ -401,9 +482,10 @@ body {
     padding: 90px 0;
     background: white;
     position: relative;
+    top: 83px;
 }
 
-.expertise p{
+.expertise p {
     color: #222222;
 }
 
@@ -476,12 +558,12 @@ body {
 }
 
 @media screen and (max-width: 790px) {
-    .expertise-item{
+    .expertise-item {
         padding: 12px;
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .expertise-content {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -489,13 +571,14 @@ body {
 }
 
 @media (max-width: 750px) {
-    .expertise .container{
+    .expertise .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 }
+
 /***************** Specialized Expertise Section End *****************/
 
 /***************** Who We Serve Section Start *****************/
@@ -504,6 +587,7 @@ body {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: white;
     position: relative;
+    top: 83px;
 }
 
 .clients::before {
@@ -571,28 +655,28 @@ body {
     animation: pulse 3s infinite;
 }
 
-.region.usa::before{
+.region.usa::before {
     content: "USA";
     position: relative;
     bottom: 10px;
     font-size: 18px;
 }
 
-.region.eu::before{
+.region.eu::before {
     content: "Europe";
     position: relative;
     bottom: 10px;
     font-size: 18px;
 }
 
-.region.mena::before{
+.region.mena::before {
     content: "MENA";
     position: relative;
     bottom: 10px;
     font-size: 18px;
 }
 
-.region.apac::before{
+.region.apac::before {
     content: "Asia";
     position: relative;
     bottom: 10px;
@@ -600,8 +684,15 @@ body {
 }
 
 @keyframes regionGlow {
-    0%, 100% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
-    50% { box-shadow: 0 0 35px rgba(59, 130, 246, 0.8); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(59, 130, 246, 0.8);
+    }
 }
 
 @keyframes pulse {
@@ -609,6 +700,7 @@ body {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
+
     100% {
         transform: translate(-50%, -50%) scale(2.5);
         opacity: 0;
@@ -709,22 +801,13 @@ body {
     font-size: 1.5rem;
     color: #fbbf24;
 }
+
 /***************** Who We Serve Section End *****************/
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    /* .hero-title {
-        font-size: 3rem;
-    } */
-
-    /* .hero-stats {
-        flex-direction: column;
-        gap: 2rem;
-    } */
-
-    /* .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    } */
+/***************** Footer Start *****************/
+.footer {
+    position: relative;
+    top: 200px;
 }
+
+/***************** Footer End *****************/

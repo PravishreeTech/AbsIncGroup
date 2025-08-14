@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Sciences ctas Section</title>
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            overflow-x: hidden;
+        }
+
+        /* ===== ctas SECTION CONTAINER ===== */
+        .call-section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .call-header {
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .call-header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .call-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #60a5fa, #34d399, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .call-subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== cards GRID ===== */
+        .call-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        /* ===== INDIVIDUAL cards STYLES ===== */
+        .call-cards {
+            position: relative;
+            height: 250px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .call-cards.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .call-cards.slide-left {
+            transform: translateX(-50px) translateY(50px);
+        }
+
+        .call-cards.slide-left.visible {
+            transform: translateX(0) translateY(0);
+        }
+
+        .call-cards.slide-right {
+            transform: translateX(50px) translateY(50px);
+        }
+
+        .call-cards.slide-right.visible {
+            transform: translateX(0) translateY(0);
+        }
+
+        /* ===== ANIMATED GRADIENT BORDER ===== */
+        .call-cards::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg,
+                    #1B365D,
+                    #0ea5e9,
+                    #06b6d4,
+                    #1B365D);
+            background-size: 300% 300%;
+            animation: gradientShift 4s ease infinite;
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .call-cards:hover::before {
+            opacity: 1;
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* ===== BACKGROUND IMAGE ===== */
+        .call-backgrounds {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 0.6s ease;
+            z-index: 1;
+        }
+
+        .call-cards:hover .call-backgrounds {
+            transform: scale(1.08);
+        }
+
+        /* ===== DIAGONAL GRADIENT OVERLAY ===== */
+        .call-overlays {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg,
+                    rgba(27, 54, 93, 0.85) 0%,
+                    rgba(27, 54, 93, 0.4) 60%,
+                    transparent 100%);
+            z-index: 2;
+            transition: background 0.3s ease;
+        }
+
+        .call-cards:hover .call-overlays {
+            background: linear-gradient(135deg,
+                    rgba(27, 54, 93, 0.9) 0%,
+                    rgba(27, 54, 93, 0.6) 60%,
+                    rgba(27, 54, 93, 0.1) 100%);
+        }
+
+        /* ===== cards CONTENT ===== */
+        .call-contents {
+            position: relative;
+            height: 100%;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 3;
+        }
+
+        .call-headline {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.3;
+        }
+
+        .call-description {
+            font-size: 1rem;
+            color: #e2e8f0;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 1.5;
+            margin-bottom: auto;
+        }
+
+        /* ===== GLASSMORPHISM BUTTON ===== */
+        .call-button {
+            justify-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            width: 150px;
+            height: auto;
+            padding: 10px 20px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            align-self: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .call-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .call-button:hover::before {
+            left: 100%;
+        }
+
+        .call-button:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(6, 182, 212, 0.3);
+        }
+
+        .call-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .call-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .call-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .call-grid {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 10px;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        @media (prefers-reduced-motion: reduce) {
+
+            .call-cards,
+            .call-backgrounds,
+            .call-button,
+            .call-header {
+                transition: none;
+            }
+
+            .call-cards::before {
+                animation: none;
+            }
+        }
+
+        /* ===== FOCUS STYLES ===== */
+        .call-button:focus,
+        .call-cards:focus {
+            outline: 2px solid #06b6d4;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== MAIN ctas SECTION ===== -->
+    <section class="call-section">
+        <!-- ===== SECTION HEADER ===== -->
+        <div class="call-header">
+            <h2 class="call-title">Transform Your Life Sciences Vision</h2>
+            <p class="call-subtitle">Partner with industry leaders to accelerate innovation, ensure compliance, and
+                achieve breakthrough results in biopharmaceutical development.</p>
+        </div>
+
+        <!-- ===== ctas cardsS GRID ===== -->
+        <div class="call-grid">
+
+            <!-- cards 1 -->
+            <div class="call-cards" data-delay="0">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">Partner with us — Innovate, Comply, and Succeed.</h3>
+                    </div>
+                    <a href="#" class="call-button">Start My Project</a>
+                </div>
+            </div>
+
+            <!-- cards 2 -->
+            <div class="call-cards" data-delay="200">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">Your Pathway to Faster Approvals Starts Here.</h3>
+                    </div>
+                    <a href="#" class="call-button">Get Regulatory Support</a>
+                </div>
+            </div>
+
+            <!-- cards 3 -->
+            <div class="call-cards" data-delay="400">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">Turn Compliance into Competitive Advantage.</h3>
+                    </div>
+                    <a href="#" class="call-button">Book a Consultation</a>
+                </div>
+            </div>
+
+            <!-- cards 4 -->
+            <div class="call-cards" data-delay="0">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">From Lab to Launch — Let's Get You There.</h3>
+                    </div>
+                    <a href="#" class="call-button">Schedule a Strategy Call</a>
+                </div>
+            </div>
+
+            <!-- cards 5 -->
+            <div class="call-cards" data-delay="200">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">Accelerate Success. Minimize Risk. Maximize Value.</h3>
+                    </div>
+                    <a href="#" class="call-button">See How We Deliver</a>
+                </div>
+            </div>
+
+            <!-- cards 6 -->
+            <div class="call-cards" data-delay="400">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">Where Life Science Vision Meets Regulatory Precision.</h3>
+                    </div>
+                    <a href="#" class="call-button">Work With Our Experts</a>
+                </div>
+            </div>
+
+            <!-- cards 7 -->
+            <div class="call-cards" data-delay="0">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">Smarter Solutions. Stronger Compliance. Faster Results.</h3>
+                    </div>
+                    <a href="#" class="call-button">Request a Free Assessment</a>
+                </div>
+            </div>
+
+            <!-- cards 8 -->
+            <div class="call-cards" data-delay="200">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">Transform Challenges into Milestones.</h3>
+                    </div>
+                    <a href="#" class="call-button">Start Your Compliance Journey</a>
+                </div>
+            </div>
+
+            <!-- cards 9 -->
+            <div class="call-cards" data-delay="400">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">Your Innovation, Our Expertise — Let's Make it Happen.</h3>
+                    </div>
+                    <a href="#" class="call-button">Talk to a Consultant</a>
+                </div>
+            </div>
+
+            <!-- cards 10 -->
+            <div class="call-cards" data-delay="600">
+                <div class="call-backgrounds"
+                    style="background-image: url('https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                </div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
+                    <div>
+                        <h3 class="call-headline">The Fast Track to Life Science Excellence.</h3>
+                    </div>
+                    <a href="#" class="call-button">Get Started Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== JAVASCRIPT FOR ANIMATIONS ===== -->
+    <script>
+        // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const delay = parseInt(element.dataset.delay) || 0;
+
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, delay);
+
+                    observer.unobserve(element);
+                }
+            });
+        }, observerOptions);
+
+        // ===== INITIALIZE ANIMATIONS =====
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observe section header
+            const sectionHeader = document.querySelector('.call-header');
+            if (sectionHeader) {
+                observer.observe(sectionHeader);
+            }
+
+            // Observe all cardss and add alternating slide directions
+            const cardss = document.querySelectorAll('.call-cards');
+            cardss.forEach((cards, index) => {
+                // Add alternating slide directions
+                if (index % 3 === 0) {
+                    cards.classList.add('slide-left');
+                } else if (index % 3 === 2) {
+                    cards.classList.add('slide-right');
+                }
+
+                observer.observe(cards);
+            });
+
+            // ===== ENHANCED HOVER EFFECTS =====
+            cardss.forEach(cards => {
+                cards.addEventListener('mouseenter', () => {
+                    cards.style.transform += ' translateY(-10px)';
+                    cards.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(6, 182, 212, 0.3)';
+                });
+
+                cards.addEventListener('mouseleave', () => {
+                    cards.style.transform = cards.style.transform.replace(' translateY(-10px)', '');
+                    cards.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)';
+                });
+            });
+
+            // ===== BUTTON CLICK ANALYTICS (Optional) =====
+            const buttons = document.querySelectorAll('.call-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Add click animation
+                    button.style.transform = 'translateY(-1px) scale(0.98)';
+
+                    setTimeout(() => {
+                        button.style.transform = '';
+                    }, 150);
+
+                    // Here you would typically track the click
+                    console.log(ctas clicked: ${ button.textContent });
+                });
+            });
+
+            // ===== KEYBOARD ACCESSIBILITY =====
+            cardss.forEach(cards => {
+                cards.setAttribute('tabindex', '0');
+                cards.setAttribute('role', 'button');
+
+                cards.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const button = cards.querySelector('.call-button');
+                        if (button) button.click();
+                    }
+                });
+            });
+
+            // ===== PERFORMANCE OPTIMIZATION =====
+            // Throttle scroll events for better performance
+            let ticking = false;
+
+            function updateAnimations() {
+                // Any scroll-based animations would go here
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateAnimations);
+                    ticking = true;
+                }
+            });
+
+            // ===== PRELOAD IMAGES =====
+            const imageUrls = [
+                'https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=800'
+            ];
+
+            imageUrls.forEach(url => {
+                const img = new Image();
+                img.src = url;
+            });
+        });
+
+    </script>
+</body>
+
+</html>

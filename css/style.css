@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Reset and Base Styles */
 *,
 *::before,
@@ -32,7 +33,7 @@ body {
     --success: #10B981;
     --warning: #F59E0B;
     --error: #EF4444;
-    
+
     /* Neutrals */
     --gray-50: #F8FAFC;
     --gray-100: #F1F5F9;
@@ -44,19 +45,19 @@ body {
     --gray-700: #334155;
     --gray-800: #1E293B;
     --gray-900: #0F172A;
-    
+
     /* Typography */
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.25rem;
-    
+
     --font-size-2xl: 1.5rem;
     --font-size-3xl: 1.875rem;
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
-    
+
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -65,18 +66,18 @@ body {
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    
+
     /* Transitions */
     --transition-fast: 0.15s ease-in-out;
     --transition-base: 0.3s ease-in-out;
     --transition-slow: 0.5s ease-in-out;
-    
+
     /* Z-index */
     --z-dropdown: 1000;
     --z-sticky: 1020;
@@ -189,14 +190,20 @@ body {
 }
 
 @keyframes dnaRotate {
-    0% { transform: rotateY(0deg) rotateX(30deg); }
-    100% { transform: rotateY(360deg) rotateX(30deg); }
+    0% {
+        transform: rotateY(0deg) rotateX(30deg);
+    }
+
+    100% {
+        transform: rotateY(360deg) rotateX(30deg);
+    }
 }
 
 .loading-text {
     font-size: var(--font-size-lg);
     font-weight: 500;
 }
+
 /************ Loading Screen Ends *************/
 
 /************ Section Headers of all sections Start ************/
@@ -232,6 +239,7 @@ body {
     margin: 0 auto;
     font-weight: 400;
 }
+
 /************ Section Headers of all End ************/
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -293,7 +301,6 @@ body {
     z-index: 1000;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    /* border: 1px solid red; */
 }
 
 .navbar.scrolled {
@@ -327,7 +334,7 @@ body {
     border-radius: 8px;
 }
 
-.nav-link.active{
+.nav-link.active {
     color: var(--primary-color-2-hover);
     background: rgba(15, 38, 114, 0.1);
     padding: 10px;
@@ -388,7 +395,7 @@ body {
         transition: opacity 0.3s ease;
     }
 
-    .nav-link{
+    .nav-link {
         color: #fff;
         padding: 0.5rem 1rem;
     }
@@ -470,10 +477,11 @@ body {
     color: white;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 2rem;
+    /* border: 1px solid red; */
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
@@ -482,10 +490,9 @@ body {
     font-size: var(--banner-heading);
     font-weight: 800;
     line-height: 1.2;
-    padding: 20px;
+    padding: 10px;
     margin: 2rem;
     width: 100%;
-    max-width: 1300px;
 }
 
 .hero-section .hero-description {
@@ -495,7 +502,6 @@ body {
     margin: 0 auto;
     opacity: 0.9;
     width: 100%;
-    max-width: 1200px;
 }
 
 .hero-section .cta-btn {
@@ -573,27 +579,30 @@ body {
 }
 
 @media screen and (max-width: 980px) {
-    .hero-section .hero-content h1{
+    .hero-section .hero-content h1 {
         width: 90%;
         margin-top: 0px;
     }
-    .hero-section .hero-content p{
+
+    .hero-section .hero-content p {
         font-size: 18px;
         width: 85%;
     }
 }
 
 @media screen and (max-width: 450px) {
-    .hero-section .hero-content h1{
+    .hero-section .hero-content h1 {
         width: 90%;
         font-size: 18px;
         margin-top: 0px;
     }
-    .hero-section .hero-content p{
+
+    .hero-section .hero-content p {
         font-size: 12px;
         width: 85%;
     }
 }
+
 /*********** Hero Section Ends *************/
 
 /*********** News Ticker (CALL TO ACTION) Starts *************/
@@ -661,41 +670,41 @@ body {
 /*********** News Ticker (CALL TO ACTION) Ends *************/
 
 /*********** Vision-Mission Starts *************/
-.vision-mission{
+.vision-mission {
     position: relative;
     top: 85px;
     background: #fff;
     padding: 2rem 1.5rem;
 }
 
-.fifty-fifty-section .container {
+.vision-mission .fifty-fifty-section .container {
     margin: 0 auto;
     padding: 0 15px;
     width: 100%;
     max-width: 1200px;
 }
 
-.fifty-fifty-content {
+.vision-mission .fifty-fifty-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
 }
 
-.fifty-fifty-content.reverse {
+.vision-mission .fifty-fifty-content.reverse {
     direction: rtl;
 }
 
-.fifty-fifty-content.reverse>* {
+.vision-mission .fifty-fifty-content.reverse>* {
     direction: ltr;
 }
 
-.fifty-fifty-section .content-left,
-.fifty-fifty-section .content-right {
+.vision-mission .fifty-fifty-section .content-left,
+.vision-mission .fifty-fifty-section .content-right {
     padding: 1rem 0;
 }
 
-.fifty-fifty-section .content-right .section-title {
+.vision-mission .fifty-fifty-section .content-right .section-title {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
     font-weight: 700;
     color: var(--gray-900);
@@ -703,7 +712,7 @@ body {
     line-height: 1.2;
 }
 
-.fifty-fifty-section .content-right p {
+.vision-mission .fifty-fifty-section .content-right p {
     font-size: var(--section-content);
     font-weight: 450;
     line-height: 1.6;
@@ -712,14 +721,14 @@ body {
     text-align: justify;
 }
 
-.fifty-fifty-section .images {
+.vision-mission .fifty-fifty-section .images {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
-.fifty-fifty-section .image-placeholder {
+.vision-mission .fifty-fifty-section .image-placeholder {
     position: relative;
     width: 100%;
     aspect-ratio: 16/9;
@@ -730,10 +739,57 @@ body {
     cursor: pointer;
 }
 
-.fifty-fifty-section .image-placeholder img {
+.vision-mission .fifty-fifty-section .image-placeholder img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.vision-mission .button-section {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.25, 0.25, 1);
+}
+
+.vision-mission .button-section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.vision-mission .button-section .cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #1B365D 0%, #4A90E2 100%);
+    color: white;
+    padding: 20px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(27, 54, 93, 0.3);
+}
+
+.vision-mission .button-section .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.vision-mission .button-section .cta-button:hover::before {
+    left: 100%;
+}
+
+.vision-mission .button-section .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(27, 54, 93, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -757,8 +813,10 @@ body {
         order: 2;
     }
 }
+
 /*********** Vision-Mission Ends *************/
 
+/*********** NEW What Sets ABSincgroup Apart Starts *************/
 /* ===== MAIN SECTION STYLES ===== */
 .main {
     min-height: 100vh;
@@ -1044,7 +1102,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -1093,8 +1151,15 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -1102,11 +1167,11 @@ body {
     .container {
         padding: 0 30px;
     }
-    
+
     .titles {
         font-size: 3rem;
     }
-    
+
     .intro-images-grid {
         gap: 60px;
     }
@@ -1217,6 +1282,9 @@ body {
         font-size: 1.1rem;
     }
 }
+
+/*********** NEW What Sets ABSincgroup Apart Ends *************/
+
 /*********** What Sets ABSincgroup Apart Section Starts *************/
 .what-sets-apart-section {
     position: relative;
@@ -1233,7 +1301,7 @@ body {
     transform: translateY(0);
 }
 
-.what-sets-apart-section .section-header{
+.what-sets-apart-section .section-header {
     text-align: center;
     margin-bottom: 1.875rem;
 }
@@ -1285,7 +1353,7 @@ body {
     background: white;
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -1303,7 +1371,7 @@ body {
 
 .what-sets-apart-section .differentiator-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .what-sets-apart-section .card-header {
@@ -1346,12 +1414,13 @@ body {
     font-size: 1rem;
     /* border: 1px solid blue; */
 }
+
 /*********** What Sets ABSincgroup Apart Section Ends *************/
 
 /*********** Video Section Starts *************/
 .video-section {
     position: relative;
-    top: 0px;
+    top: 85px;
     background: var(--primary-dark);
     padding: 4rem 0;
     text-align: center;
@@ -1376,7 +1445,7 @@ body {
     border-radius: 50px;
     font-size: var(--section-headings);
     font-weight: 600;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 0.5px;
     margin-bottom: 1.125rem;
 }
@@ -1435,12 +1504,13 @@ body {
     background: var(--primary);
     transform: translate(-50%, -50%) scale(1.1);
 }
+
 /*********** Video Section Ends *************/
 
 /*********** Our Core Focus Areas Section Starts *************/
 .services-section {
     position: relative;
-    top:0px;
+    top: 85px;
     padding: 20px 0;
     background: white;
 }
@@ -1452,7 +1522,7 @@ body {
     max-width: 1200px;
 }
 
-.services-section .section-header{
+.services-section .section-header {
     text-align: center;
     margin-bottom: 1.875rem;
 }
@@ -1560,7 +1630,7 @@ body {
     flex-shrink: 0;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .service-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
@@ -1594,7 +1664,7 @@ body {
     align-items: center;
 }
 
-.team-section .section-header{
+.team-section .section-header {
     text-align: center;
     margin-bottom: 1.875rem;
 }
@@ -1626,7 +1696,7 @@ body {
     border-radius: 16px;
     padding: 1.25rem;
     text-align: center;
-    height: 400px;
+    height: 350px;
     box-shadow: 1.5rem;
     transition: all var(--transition-base);
     border: 1px solid var(--primary-color-2);
@@ -1701,7 +1771,7 @@ body {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .team-section .team-card{
+    .team-section .team-card {
         height: 350px;
     }
 }
@@ -1711,20 +1781,20 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .team-section .team-card{
+    .team-section .team-card {
         height: 310px;
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .team-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
 }
 
-@media (max-width: 640px){
-    .team-section .team-card{
+@media (max-width: 640px) {
+    .team-section .team-card {
         height: 400px;
     }
 }
@@ -1734,7 +1804,7 @@ body {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .team-section .team-card{
+    .team-section .team-card {
         height: 270px;
     }
 }
@@ -1762,7 +1832,7 @@ body {
     align-items: center;
 }
 
-.testimonials-section .section-header{
+.testimonials-section .section-header {
     text-align: center;
     padding: 20px;
 }
@@ -1877,6 +1947,7 @@ body {
     background: white;
     transform: scale(1.2);
 }
+
 /*********** Testimonials Section Ends *************/
 
 /*********** Contact Section Starts *************/
@@ -1894,7 +1965,7 @@ body {
     max-width: 1200px;
 }
 
-.contact-section .section-header{
+.contact-section .section-header {
     text-align: center;
     margin-bottom: 1.875rem;
 }
@@ -1964,7 +2035,7 @@ body {
     flex-shrink: 0;
 }
 
-.contact-section .contact-icon i{
+.contact-section .contact-icon i {
     color: white !important;
 }
 
@@ -2048,7 +2119,7 @@ body {
     transform: translateY(-1px);
     box-shadow: var(--shadow-lg);
 }
- 
+
 .contact-form .btn-loading {
     display: none;
 }
@@ -2074,6 +2145,7 @@ body {
 } */
 
 @media screen and (max-width: 1024px) {
+
     /* For tablet view - stack vertically but keep some spacing */
     .contact-section .contact-grid {
         grid-template-columns: 1fr;
@@ -2087,6 +2159,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+
     /* Already stacks, but let's make the form inputs more mobile-friendly */
     .contact-section .contact-grid {
         grid-template-columns: 1fr;
@@ -2113,6 +2186,7 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+
     /* Extra small mobile view adjustments */
     .contact-section {
         padding: 2rem 0;
@@ -2335,7 +2409,7 @@ body {
         padding: 0px;
     }
 
-    .footer-brand{
+    .footer-brand {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -2389,6 +2463,7 @@ body {
     transform: translateY(-2px);
     box-shadow: var(--shadow-xl);
 }
+
 /************ Back to Top Button Ends ************/
 
 /* Lazy Loading */
@@ -2412,6 +2487,7 @@ body {
     0% {
         background-position: 200% 0;
     }
+
     100% {
         background-position: -200% 0;
     }
@@ -2443,6 +2519,7 @@ body {
 
 /* Print Styles */
 @media print {
+
     .header,
     .hero-indicators,
     .scroll-indicator,
@@ -2479,6 +2556,7 @@ body {
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -2503,6 +2581,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2514,6 +2593,7 @@ body {
         opacity: 0;
         transform: translateX(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -2525,6 +2605,7 @@ body {
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -2537,8 +2618,15 @@ body {
 }
 
 @keyframes microBounce {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 /* Enhanced Typography */
@@ -2557,6 +2645,11 @@ body {
 }
 
 @keyframes loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
 }

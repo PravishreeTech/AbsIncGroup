@@ -39,7 +39,7 @@ class ABSincGroupWebsite {
 
     handleLoading() {
         const loadingScreen = document.getElementById('loadingScreen');
-        
+
         window.addEventListener('load', () => {
             setTimeout(() => {
                 loadingScreen.classList.add('hidden');
@@ -89,11 +89,11 @@ class ABSincGroupWebsite {
             slides.forEach((slide, i) => {
                 slide.classList.toggle('active', i === index);
             });
-            
+
             indicators.forEach((indicator, i) => {
                 indicator.classList.toggle('active', i === index);
             });
-            
+
             currentSlide = index;
         };
 
@@ -108,7 +108,7 @@ class ABSincGroupWebsite {
         };
 
         const startAutoSlide = () => {
-            slideInterval = setInterval(nextSlide, 5000);
+            slideInterval = setInterval(nextSlide, 3000);
         };
 
         const stopAutoSlide = () => {
@@ -186,11 +186,11 @@ class ABSincGroupWebsite {
             slides.forEach((slide, i) => {
                 slide.classList.toggle('active', i === index);
             });
-            
+
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
             });
-            
+
             currentSlide = index;
         };
 
@@ -249,7 +249,7 @@ class ABSincGroupWebsite {
         if (form && submitBtn) {
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                
+
                 // Add loading state
                 submitBtn.classList.add('loading');
                 submitBtn.disabled = true;
@@ -257,7 +257,7 @@ class ABSincGroupWebsite {
                 // Simulate form submission
                 try {
                     await new Promise(resolve => setTimeout(resolve, 2000));
-                    
+
                     // Show success message
                     this.showNotification('Message sent successfully!', 'success');
                     form.reset();
@@ -317,7 +317,7 @@ class ABSincGroupWebsite {
 
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
-            
+
             if (header) {
                 if (currentScrollY > 100) {
                     header.classList.add('scrolled');
@@ -368,7 +368,7 @@ class ABSincGroupWebsite {
             particle.style.left = Math.random() * window.innerWidth + 'px';
             particle.style.animationDelay = Math.random() * 3 + 's';
             particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            
+
             const heroSection = document.querySelector('.hero-section');
             if (heroSection) {
                 const particlesContainer = heroSection.querySelector('.particles') || (() => {
@@ -377,9 +377,25 @@ class ABSincGroupWebsite {
                     heroSection.appendChild(container);
                     return container;
                 })();
-                
+
                 particlesContainer.appendChild(particle);
-                
+
+                setTimeout(() => {
+                    particle.remove();
+                }, 6000);
+            }
+
+            const aboutOverview = document.querySelector('.about-overview');
+            if (heroSection) {
+                const particlesContainer = heroSection.querySelector('.particles') || (() => {
+                    const container = document.createElement('div');
+                    container.className = 'particles';
+                    heroSection.appendChild(container);
+                    return container;
+                })();
+
+                particlesContainer.appendChild(particle);
+
                 setTimeout(() => {
                     particle.remove();
                 }, 6000);
@@ -409,7 +425,7 @@ class ABSincGroupWebsite {
         // Handle any resize-specific logic
         const navigation = document.getElementById('navigation');
         const mobileToggle = document.getElementById('mobileToggle');
-        
+
         if (window.innerWidth > 768) {
             if (navigation) navigation.classList.remove('active');
             if (mobileToggle) mobileToggle.classList.remove('active');
@@ -420,14 +436,14 @@ class ABSincGroupWebsite {
     updateActiveSection() {
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link[data-section]');
-        
+
         let currentSection = '';
         const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop - headerHeight - 100;
             const sectionHeight = section.offsetHeight;
-            
+
             if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                 currentSection = section.id;
             }
@@ -512,48 +528,48 @@ class ABSincGroupWebsite {
 }
 
 // Add dynamic interactions
-        document.addEventListener('DOMContentLoaded', function() {
-            const steps = document.querySelectorAll('.step');
-            
-            // Intersection Observer for scroll animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
+document.addEventListener('DOMContentLoaded', function () {
+    const steps = document.querySelectorAll('.step');
 
-            steps.forEach(step => {
-                observer.observe(step);
-            });
-
-            // Add click interactions
-            steps.forEach((step, index) => {
-                step.addEventListener('click', function() {
-                    // Add a pulse effect
-                    const stepContent = step.querySelector('.step-content');
-                    stepContent.style.transform = 'scale(1.02)';
-                    setTimeout(() => {
-                        stepContent.style.transform = '';
-                    }, 200);
-                });
-            });
-
-            // Add smooth scrolling between steps
-            let currentStep = 0;
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowDown' && currentStep < steps.length - 1) {
-                    currentStep++;
-                    steps[currentStep].scrollIntoView({ behavior: 'smooth' });
-                } else if (e.key === 'ArrowUp' && currentStep > 0) {
-                    currentStep--;
-                    steps[currentStep].scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
         });
+    }, {
+        threshold: 0.1
+    });
+
+    steps.forEach(step => {
+        observer.observe(step);
+    });
+
+    // Add click interactions
+    steps.forEach((step, index) => {
+        step.addEventListener('click', function () {
+            // Add a pulse effect
+            const stepContent = step.querySelector('.step-content');
+            stepContent.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                stepContent.style.transform = '';
+            }, 200);
+        });
+    });
+
+    // Add smooth scrolling between steps
+    let currentStep = 0;
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown' && currentStep < steps.length - 1) {
+            currentStep++;
+            steps[currentStep].scrollIntoView({ behavior: 'smooth' });
+        } else if (e.key === 'ArrowUp' && currentStep > 0) {
+            currentStep--;
+            steps[currentStep].scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
 
 // Initialize the website
 const website = new ABSincGroupWebsite();
@@ -569,7 +585,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate-in');
-            
+
             // Animate feature items with stagger effect
             if (entry.target.id === 'featuresSection') {
                 const featureItems = document.querySelectorAll('.feature-item');
@@ -587,7 +603,7 @@ const observer = new IntersectionObserver((entries) => {
 // Observe all sections
 const sections = [
     'titleSection',
-    'introContent', 
+    'introContent',
     'imageSection',
     'subheadingSection',
     'featuresSection',
@@ -606,11 +622,11 @@ function updateParallax() {
     const scrolled = window.pageYOffset;
     const rate = scrolled * -0.3;
     const imageContainers = document.querySelectorAll('.images');
-    
+
     imageContainers.forEach((container, index) => {
         const speed = (index + 1) * 0.05;
         const yPos = rate * speed;
-        
+
         // Only apply parallax on desktop
         if (window.innerWidth > 768) {
             const currentTransform = container.style.transform || '';
@@ -618,7 +634,7 @@ function updateParallax() {
             container.style.transform = `${baseTransform} translateY(${yPos}px)`;
         }
     });
-    
+
     ticking = false;
 }
 
@@ -640,9 +656,9 @@ function requestParallaxTick() {
 }
 
 // ===== SMOOTH SCROLL FOR CTA BUTTON =====
-document.querySelector('.cta-button').addEventListener('click', function(e) {
+document.querySelector('.cta-button').addEventListener('click', function (e) {
     e.preventDefault();
-    
+
     // Add a gentle shake animation to button
     this.style.transform = 'translateY(-3px) scale(0.95)';
     setTimeout(() => {
@@ -660,10 +676,10 @@ document.querySelector('.cta-button').addEventListener('click', function(e) {
 const imageContainers = document.querySelectorAll('.images');
 
 imageContainers.forEach((container, index) => {
-    container.addEventListener('mouseenter', function() {
+    container.addEventListener('mouseenter', function () {
         // Add subtle rotation and glow effect
         this.style.filter = 'brightness(1.1)';
-        
+
         // Create ripple effect
         const ripple = document.createElement('div');
         ripple.style.cssText = `
@@ -679,9 +695,9 @@ imageContainers.forEach((container, index) => {
             pointer-events: none;
             z-index: 1000;
         `;
-        
+
         this.appendChild(ripple);
-        
+
         // Remove ripple after animation
         setTimeout(() => {
             if (ripple.parentNode) {
@@ -690,7 +706,7 @@ imageContainers.forEach((container, index) => {
         }, 600);
     });
 
-    container.addEventListener('mouseleave', function() {
+    container.addEventListener('mouseleave', function () {
         this.style.filter = 'brightness(1)';
     });
 });
@@ -715,7 +731,7 @@ window.addEventListener('scroll', () => {
     if (!isScrolling) {
         isScrolling = true;
         requestParallaxTick();
-        
+
         setTimeout(() => {
             isScrolling = false;
         }, 16); // ~60fps
@@ -748,7 +764,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hero = document.getElementById('hero');
     hero.style.transition = 'opacity 0.5s ease-in-out';
     hero.style.opacity = '0';
-    
+
     // Initialize parallax positions
     imageContainers.forEach((container, index) => {
         const baseTransform = getBaseTransform(index);
