@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Sciences CTA Section</title>
+    <title>Life Sciences ctas Section</title>
     <style>
         /* ===== GLOBAL STYLES ===== */
         * {
@@ -14,20 +14,19 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            min-height: 100vh;
+            background: white;
             overflow-x: hidden;
         }
 
-        /* ===== CTA SECTION CONTAINER ===== */
-        .cta-section {
+        /* ===== ctas SECTION CONTAINER ===== */
+        .call-section {
             padding: 80px 20px;
             max-width: 1400px;
             margin: 0 auto;
             position: relative;
         }
 
-        .section-header {
+        .call-header {
             text-align: center;
             margin-bottom: 60px;
             opacity: 0;
@@ -35,12 +34,12 @@
             transition: all 0.8s ease;
         }
 
-        .section-header.visible {
+        .call-header.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .section-title {
+        .call-title {
             font-size: 3rem;
             font-weight: 700;
             color: #ffffff;
@@ -51,7 +50,7 @@
             background-clip: text;
         }
 
-        .section-subtitle {
+        .call-subtitle {
             font-size: 1.25rem;
             color: #94a3b8;
             max-width: 600px;
@@ -59,18 +58,18 @@
             line-height: 1.6;
         }
 
-        /* ===== CARDS GRID ===== */
-        .cta-grid {
+        /* ===== cards GRID ===== */
+        .call-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 30px;
+            gap: 15px;
             margin-top: 50px;
         }
 
-        /* ===== INDIVIDUAL CARD STYLES ===== */
-        .cta-card {
+        /* ===== INDIVIDUAL cards STYLES ===== */
+        .call-cards {
             position: relative;
-            height: 300px;
+            height: 250px;
             border-radius: 20px;
             overflow: hidden;
             cursor: pointer;
@@ -82,29 +81,29 @@
                 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
-        .cta-card.visible {
+        .call-cards.visible {
             transform: translateY(0);
             opacity: 1;
         }
 
-        .cta-card.slide-left {
+        .call-cards.slide-left {
             transform: translateX(-50px) translateY(50px);
         }
 
-        .cta-card.slide-left.visible {
+        .call-cards.slide-left.visible {
             transform: translateX(0) translateY(0);
         }
 
-        .cta-card.slide-right {
+        .call-cards.slide-right {
             transform: translateX(50px) translateY(50px);
         }
 
-        .cta-card.slide-right.visible {
+        .call-cards.slide-right.visible {
             transform: translateX(0) translateY(0);
         }
 
         /* ===== ANIMATED GRADIENT BORDER ===== */
-        .cta-card::before {
+        .call-cards::before {
             content: '';
             position: absolute;
             top: -2px;
@@ -126,7 +125,7 @@
             transition: opacity 0.3s ease;
         }
 
-        .cta-card:hover::before {
+        .call-cards:hover::before {
             opacity: 1;
             box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
         }
@@ -137,7 +136,7 @@
         }
 
         /* ===== BACKGROUND IMAGE ===== */
-        .card-background {
+        .call-backgrounds {
             position: absolute;
             top: 0;
             left: 0;
@@ -150,12 +149,12 @@
             z-index: 1;
         }
 
-        .cta-card:hover .card-background {
+        .call-cards:hover .call-backgrounds {
             transform: scale(1.08);
         }
 
         /* ===== DIAGONAL GRADIENT OVERLAY ===== */
-        .card-overlay {
+        .call-overlays {
             position: absolute;
             top: 0;
             left: 0;
@@ -171,7 +170,7 @@
             transition: background 0.3s ease;
         }
 
-        .cta-card:hover .card-overlay {
+        .call-cards:hover .call-overlays {
             background: linear-gradient(
                 135deg,
                 rgba(27, 54, 93, 0.9) 0%,
@@ -180,18 +179,18 @@
             );
         }
 
-        /* ===== CARD CONTENT ===== */
-        .card-content {
+        /* ===== cards CONTENT ===== */
+        .call-contents {
             position: relative;
             height: 100%;
-            padding: 30px 20px;
+            padding: 20px 10px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             z-index: 3;
         }
 
-        .card-headline {
+        .call-headline {
             font-size: 24px;
             font-weight: 600;
             color: #ffffff;
@@ -199,7 +198,7 @@
             line-height: 1.3;
         }
 
-        .card-description {
+        .call-description {
             font-size: 1rem;
             color: #e2e8f0;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -208,13 +207,15 @@
         }
 
         /* ===== GLASSMORPHISM BUTTON ===== */
-        .cta-button {
-            justify-content: center;
+        .call-button {
+            justify-items: center;
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 12px;
-            padding: 10px 10px;
+            width: 150px;
+            height: auto;
+            padding: 10px 20px;
             color: #ffffff;
             font-weight: 600;
             font-size: 1rem;
@@ -227,7 +228,7 @@
             overflow: hidden;
         }
 
-        .cta-button::before {
+        .call-button::before {
             content: '';
             position: absolute;
             top: 0;
@@ -238,11 +239,11 @@
             transition: left 0.5s;
         }
 
-        .cta-button:hover::before {
+        .call-button:hover::before {
             left: 100%;
         }
 
-        .cta-button:hover {
+        .call-button:hover {
             background: rgba(255, 255, 255, 0.25);
             border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-3px);
@@ -251,222 +252,183 @@
                 0 0 20px rgba(6, 182, 212, 0.3);
         }
 
-        .cta-button:active {
+        .call-button:active {
             transform: translateY(-1px);
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 1200px) {
-            .cta-grid {
+            .call-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 25px;
+                gap: 10px;
             }
         }
 
         @media (max-width: 768px) {
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .cta-section {
-                padding: 60px 15px;
-            }
-
-            .cta-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .cta-card {
-                height: 350px;
-            }
-
-            .card-content {
-                padding: 30px 25px;
-            }
-
-            .card-headline {
-                font-size: 1.3rem;
+            .call-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
         }
 
-        @media (max-width: 480px) {
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .cta-card {
-                height: 320px;
-            }
-
-            .card-content {
-                padding: 25px 20px;
-            }
-
-            .card-headline {
-                font-size: 1.2rem;
-            }
-
-            .card-description {
-                font-size: 0.95rem;
+        @media (max-width: 500px) {
+            .call-grid {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 10px;
             }
         }
 
         /* ===== ACCESSIBILITY ===== */
         @media (prefers-reduced-motion: reduce) {
-            .cta-card,
-            .card-background,
-            .cta-button,
-            .section-header {
+            .call-cards,
+            .call-backgrounds,
+            .call-button,
+            .call-header {
                 transition: none;
             }
             
-            .cta-card::before {
+            .call-cards::before {
                 animation: none;
             }
         }
 
         /* ===== FOCUS STYLES ===== */
-        .cta-button:focus,
-        .cta-card:focus {
+        .call-button:focus,
+        .call-cards:focus {
             outline: 2px solid #06b6d4;
             outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-    <!-- ===== MAIN CTA SECTION ===== -->
-    <section class="cta-section">
+    <!-- ===== MAIN ctas SECTION ===== -->
+    <section class="call-section">
         <!-- ===== SECTION HEADER ===== -->
-        <div class="section-header">
-            <h2 class="section-title">Transform Your Life Sciences Vision</h2>
-            <p class="section-subtitle">Partner with industry leaders to accelerate innovation, ensure compliance, and achieve breakthrough results in biopharmaceutical development.</p>
+        <div class="call-header">
+            <h2 class="call-title">Transform Your Life Sciences Vision</h2>
+            <p class="call-subtitle">Partner with industry leaders to accelerate innovation, ensure compliance, and achieve breakthrough results in biopharmaceutical development.</p>
         </div>
 
-        <!-- ===== CTA CARDS GRID ===== -->
-        <div class="cta-grid">
+        <!-- ===== ctas cardsS GRID ===== -->
+        <div class="call-grid">
             
-            <!-- Card 1 -->
-            <div class="cta-card" data-delay="0">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 1 -->
+            <div class="call-cards" data-delay="0">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">Partner with us — Innovate, Comply, and Succeed.</h3>
+                        <h3 class="call-headline">Partner with us — Innovate, Comply, and Succeed.</h3>
                     </div>
-                    <a href="#" class="cta-button">Start My Project</a>
+                    <a href="#" class="call-button">Start My Project</a>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="cta-card" data-delay="200">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 2 -->
+            <div class="call-cards" data-delay="200">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">Your Pathway to Faster Approvals Starts Here.</h3>
+                        <h3 class="call-headline">Your Pathway to Faster Approvals Starts Here.</h3>
                     </div>
-                    <a href="#" class="cta-button">Get Regulatory Support</a>
+                    <a href="#" class="call-button">Get Regulatory Support</a>
                 </div>
             </div>
 
-            <!-- Card 3 -->
-            <div class="cta-card" data-delay="400">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 3 -->
+            <div class="call-cards" data-delay="400">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">Turn Compliance into Competitive Advantage.</h3>
+                        <h3 class="call-headline">Turn Compliance into Competitive Advantage.</h3>
                     </div>
-                    <a href="#" class="cta-button">Book a Consultation</a>
+                    <a href="#" class="call-button">Book a Consultation</a>
                 </div>
             </div>
 
-            <!-- Card 4 -->
-            <div class="cta-card" data-delay="0">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 4 -->
+            <div class="call-cards" data-delay="0">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">From Lab to Launch — Let's Get You There.</h3>
+                        <h3 class="call-headline">From Lab to Launch — Let's Get You There.</h3>
                     </div>
-                    <a href="#" class="cta-button">Schedule a Strategy Call</a>
+                    <a href="#" class="call-button">Schedule a Strategy Call</a>
                 </div>
             </div>
 
-            <!-- Card 5 -->
-            <div class="cta-card" data-delay="200">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 5 -->
+            <div class="call-cards" data-delay="200">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">Accelerate Success. Minimize Risk. Maximize Value.</h3>
+                        <h3 class="call-headline">Accelerate Success. Minimize Risk. Maximize Value.</h3>
                     </div>
-                    <a href="#" class="cta-button">See How We Deliver</a>
+                    <a href="#" class="call-button">See How We Deliver</a>
                 </div>
             </div>
 
-            <!-- Card 6 -->
-            <div class="cta-card" data-delay="400">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 6 -->
+            <div class="call-cards" data-delay="400">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">Where Life Science Vision Meets Regulatory Precision.</h3>
+                        <h3 class="call-headline">Where Life Science Vision Meets Regulatory Precision.</h3>
                     </div>
-                    <a href="#" class="cta-button">Work With Our Experts</a>
+                    <a href="#" class="call-button">Work With Our Experts</a>
                 </div>
             </div>
 
-            <!-- Card 7 -->
-            <div class="cta-card" data-delay="0">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 7 -->
+            <div class="call-cards" data-delay="0">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">Smarter Solutions. Stronger Compliance. Faster Results.</h3>
+                        <h3 class="call-headline">Smarter Solutions. Stronger Compliance. Faster Results.</h3>
                     </div>
-                    <a href="#" class="cta-button">Request a Free Assessment</a>
+                    <a href="#" class="call-button">Request a Free Assessment</a>
                 </div>
             </div>
 
-            <!-- Card 8 -->
-            <div class="cta-card" data-delay="200">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 8 -->
+            <div class="call-cards" data-delay="200">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">Transform Challenges into Milestones.</h3>
+                        <h3 class="call-headline">Transform Challenges into Milestones.</h3>
                     </div>
-                    <a href="#" class="cta-button">Start Your Compliance Journey</a>
+                    <a href="#" class="call-button">Start Your Compliance Journey</a>
                 </div>
             </div>
 
-            <!-- Card 9 -->
-            <div class="cta-card" data-delay="400">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 9 -->
+            <div class="call-cards" data-delay="400">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">Your Innovation, Our Expertise — Let's Make it Happen.</h3>
+                        <h3 class="call-headline">Your Innovation, Our Expertise — Let's Make it Happen.</h3>
                     </div>
-                    <a href="#" class="cta-button">Talk to a Consultant</a>
+                    <a href="#" class="call-button">Talk to a Consultant</a>
                 </div>
             </div>
 
-            <!-- Card 10 -->
-            <div class="cta-card" data-delay="600">
-                <div class="card-background" style="background-image: url('https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
-                <div class="card-overlay"></div>
-                <div class="card-content">
+            <!-- cards 10 -->
+            <div class="call-cards" data-delay="600">
+                <div class="call-backgrounds" style="background-image: url('https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=800')"></div>
+                <div class="call-overlays"></div>
+                <div class="call-contents">
                     <div>
-                        <h3 class="card-headline">The Fast Track to Life Science Excellence.</h3>
+                        <h3 class="call-headline">The Fast Track to Life Science Excellence.</h3>
                     </div>
-                    <a href="#" class="cta-button">Get Started Now</a>
+                    <a href="#" class="call-button">Get Started Now</a>
                 </div>
             </div>
 
@@ -499,39 +461,39 @@
         // ===== INITIALIZE ANIMATIONS =====
         document.addEventListener('DOMContentLoaded', () => {
             // Observe section header
-            const sectionHeader = document.querySelector('.section-header');
+            const sectionHeader = document.querySelector('.call-header');
             if (sectionHeader) {
                 observer.observe(sectionHeader);
             }
 
-            // Observe all cards and add alternating slide directions
-            const cards = document.querySelectorAll('.cta-card');
-            cards.forEach((card, index) => {
+            // Observe all cardss and add alternating slide directions
+            const cardss = document.querySelectorAll('.call-cards');
+            cardss.forEach((cards, index) => {
                 // Add alternating slide directions
                 if (index % 3 === 0) {
-                    card.classList.add('slide-left');
+                    cards.classList.add('slide-left');
                 } else if (index % 3 === 2) {
-                    card.classList.add('slide-right');
+                    cards.classList.add('slide-right');
                 }
                 
-                observer.observe(card);
+                observer.observe(cards);
             });
 
             // ===== ENHANCED HOVER EFFECTS =====
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform += ' translateY(-10px)';
-                    card.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(6, 182, 212, 0.3)';
+            cardss.forEach(cards => {
+                cards.addEventListener('mouseenter', () => {
+                    cards.style.transform += ' translateY(-10px)';
+                    cards.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(6, 182, 212, 0.3)';
                 });
 
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = card.style.transform.replace(' translateY(-10px)', '');
-                    card.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)';
+                cards.addEventListener('mouseleave', () => {
+                    cards.style.transform = cards.style.transform.replace(' translateY(-10px)', '');
+                    cards.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)';
                 });
             });
 
             // ===== BUTTON CLICK ANALYTICS (Optional) =====
-            const buttons = document.querySelectorAll('.cta-button');
+            const buttons = document.querySelectorAll('.call-button');
             buttons.forEach(button => {
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -544,19 +506,19 @@
                     }, 150);
                     
                     // Here you would typically track the click
-                    console.log(`CTA clicked: ${button.textContent}`);
+                    console.log(`ctas clicked: ${button.textContent}`);
                 });
             });
 
             // ===== KEYBOARD ACCESSIBILITY =====
-            cards.forEach(card => {
-                card.setAttribute('tabindex', '0');
-                card.setAttribute('role', 'button');
+            cardss.forEach(cards => {
+                cards.setAttribute('tabindex', '0');
+                cards.setAttribute('role', 'button');
                 
-                card.addEventListener('keydown', (e) => {
+                cards.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
-                        const button = card.querySelector('.cta-button');
+                        const button = cards.querySelector('.call-button');
                         if (button) button.click();
                     }
                 });

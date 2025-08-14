@@ -51,6 +51,7 @@ body {
     --font-size-base: 1rem;
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.25rem;
+    
     --font-size-2xl: 1.5rem;
     --font-size-3xl: 1.875rem;
     --font-size-4xl: 2.25rem;
@@ -201,11 +202,11 @@ body {
 /************ Section Headers of all sections Start ************/
 .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .section-header h2 {
-    font-size: 2.8rem;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
     font-weight: 700;
     color: var(--primary-color-2);
     margin-bottom: 1rem;
@@ -226,7 +227,7 @@ body {
 
 .section-header p {
     font-size: 1.2rem;
-    color: #6b7280;
+    color: #121212;
     max-width: 800px;
     margin: 0 auto;
     font-weight: 400;
@@ -402,38 +403,6 @@ body {
         display: flex;
     }
 }
-
-/* Not Sure Code */
-/* .nav-logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1e40af;
-    text-decoration: none;
-} */
-
-/* .logo-icon {
-    margin-right: 12px;
-    font-size: 2rem;
-    background: linear-gradient(45deg, #1e40af, #3730a3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: logoGlow 3s ease-in-out infinite;
-} */
-
-/* .logo-text {
-    background: linear-gradient(45deg, #1e40af, #3730a3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-} */
-
-/* @keyframes logoGlow {
-    0%, 100% { filter: brightness(1); }
-    50% { filter: brightness(1.2); }
-} */
 
 /************ NavBar section Ends *************/
 
@@ -821,7 +790,7 @@ body {
 }
 
 .titles {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
     line-height: 1.1;
     color: #1B365D;
@@ -847,7 +816,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 /* ===== INTRO CONTENT ===== */
@@ -864,15 +833,16 @@ body {
 }
 
 .intro-text {
-    font-size: 1.25rem;
-    color: #4a5568;
+    font-size: var(--section-content);
+    color: #121212;
     line-height: 1.7;
 }
 
 /* ===== IMAGE SECTION ===== */
 .image-section {
     position: relative;
-    height: 500px;
+    top: 43px;
+    height: 400px;
     opacity: 0;
     transform: translateX(30px);
     transition: all 1s cubic-bezier(0.25, 0.25, 0.25, 1);
@@ -894,7 +864,7 @@ body {
 
 .images {
     position: relative;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.25, 0.25, 0.25, 1);
@@ -969,9 +939,9 @@ body {
 }
 
 .subheading {
-    font-size: 1.8rem;
+    font-size: 25px;
     font-weight: 600;
-    color: #1B365D;
+    color: var(--copyright-background);
     font-style: italic;
 }
 
@@ -999,7 +969,7 @@ body {
 .feature-item {
     display: flex;
     align-items: flex-start;
-    padding: 2rem;
+    padding: 1rem;
     background: #F5F7FA;
     border-radius: 16px;
     border-left: 4px solid #1B365D;
@@ -1381,7 +1351,7 @@ body {
 /*********** Video Section Starts *************/
 .video-section {
     position: relative;
-    top: 85px;
+    top: 0px;
     background: var(--primary-dark);
     padding: 4rem 0;
     text-align: center;
@@ -1470,8 +1440,8 @@ body {
 /*********** Our Core Focus Areas Section Starts *************/
 .services-section {
     position: relative;
-    top: 85px;
-    padding: 1.875rem 0;
+    top:0px;
+    padding: 20px 0;
     background: white;
 }
 
@@ -2033,7 +2003,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
 }
 
 .contact-form .form-group {
