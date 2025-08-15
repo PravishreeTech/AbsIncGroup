@@ -102,13 +102,6 @@ body {
     background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
-.about-overview .section-header h2 {
-    font-size: 48px;
-    color: #fff;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 .overview-text {
     background: white;
     padding: 3rem;
@@ -248,10 +241,6 @@ body {
     height: 100%;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     opacity: 0.3;
-}
-
-.why-choose-us .section-header p {
-    color: #222222;
 }
 
 .features-grid {
@@ -617,18 +606,6 @@ body {
     /* background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>'); */
 }
 
-.clients .section-header h2,
-.clients .section-header p {
-    color: white;
-}
-.clients .section-header h2{
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-}
 .world-map {
     margin: 0rem 0;
     position: relative;

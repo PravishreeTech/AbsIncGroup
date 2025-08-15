@@ -31,13 +31,6 @@ body {
     background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
-.careers-overview .section-header h2 {
-    font-size: 48px;
-    color: #fff;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 .overview-text {
     background: white;
     padding: 3rem;
@@ -93,13 +86,6 @@ body {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
-.section-header p {
-    font-size: 1.2rem;
-    color: #3b434e;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 .careers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
@@ -147,6 +133,7 @@ body {
 }
 
 .career-card h3 {
+    height: 50px;
     font-size: 1.5rem;
     font-weight: 700;
     color: #1e293b;
@@ -214,13 +201,6 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.resume-info h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-color-2);
-    margin-bottom: 1rem;
-}
-
 .resume-info p {
     font-size: 1.2rem;
     color: #3b434e;
@@ -240,7 +220,12 @@ body {
 }
 
 .resume-info small {
-    color: #3b434e;
-    font-size: 0.9rem;
+    color: #121212;
+    font-size: 1rem;
 }
 /********** NOW HIRING SECTION ENDS **********/
+
+.footer{
+    position: relative;
+    top: 0px;
+}

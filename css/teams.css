@@ -101,13 +101,6 @@ body {
     background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
-.team-overview .section-header h2 {
-    font-size: 48px;
-    color: #fff;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 .overview-text {
     background: white;
     padding: 3rem;
@@ -164,15 +157,6 @@ body {
   padding-bottom: 3rem;
 }
 
-.teams-overview .section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.teams-overview .section-header p{
-    color: #222222;
-}
-
 .teams-overview .overview-text {
   background: white;
   padding: 3rem;
@@ -189,10 +173,6 @@ body {
 }
 /***************** Teams Section End *****************/
 
-.connecting-line .section-header {
-  position: relative;
-  top: 80px;
-}
 .step {
   display: flex;
   align-items: center;

@@ -215,7 +215,7 @@ body {
     line-height: 1.2;
 }
 
-.section-heading {
+.section-heading{
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--error);
@@ -240,37 +240,27 @@ body {
     text-align: center;
     margin-bottom: 2rem;
 }
-
-/*
-
-.section-header h2 {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 700;
-    color: var(--primary-color-2);
-    margin-bottom: 1rem;
-    position: relative;
+.section-header h1{
+    font-size: 48px;
+    color: #fff;
+    max-width: 600px;
+    margin: 10px auto;
 }
 
-.section-header h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(45deg, #1e40af, #3730a3);
-    transform: translateX(-50%);
-    border-radius: 2px;
-} */
+.section-header h2 {
+    font-size: 48px;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-.section-header p {
+.section-subtitle{
     font-size: 1.2rem;
     color: #121212;
     max-width: 800px;
     margin: 0 auto;
     font-weight: 400;
 }
-
 /************ Section Headers of all End ************/
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -645,11 +635,6 @@ body {
     overflow: hidden;
 }
 
-.news-ticker .section-header{
-    text-align: center;
-    margin-bottom: 1.875rem;
-}
-
 .news-ticker .section-title {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
     font-weight: 700;
@@ -944,12 +929,6 @@ body {
     max-width: 1200px;
 }
 
-.services-section .section-header {
-    text-align: center;
-    margin-bottom: 1.875rem;
-}
-
-
 .services-section .section-subtitle {
     font-size: 1.125rem;
     color: #000;
@@ -1078,12 +1057,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.team-section .section-header {
-    text-align: center;
-    margin-bottom: 1.875rem;
-}
-
 
 .team-section .section-subtitle {
     font-size: 1.125rem;
@@ -1240,15 +1213,10 @@ body {
     align-items: center;
 }
 
-.testimonials-section .section-header {
-    text-align: center;
-    padding: 20px;
-}
-
 .testimonials-section .section-title {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
     font-weight: 700;
-    color: white;
+    color: rgb(209, 17, 17);
     line-height: 1.2;
 }
 
@@ -1371,11 +1339,6 @@ body {
     padding: 0 15px;
     width: 100%;
     max-width: 1200px;
-}
-
-.contact-section .section-header {
-    text-align: center;
-    margin-bottom: 1.875rem;
 }
 
 .contact-section .section-subtitle {
