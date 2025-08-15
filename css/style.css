@@ -207,10 +207,41 @@ body {
 /************ Loading Screen Ends *************/
 
 /************ Section Headers of all sections Start ************/
+.section-title {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--error);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--error);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    height: 3px;
+    background: var(--primary-color-2);
+    border-radius: 2px;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 2rem;
 }
+
+/*
 
 .section-header h2 {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
@@ -230,7 +261,7 @@ body {
     background: linear-gradient(45deg, #1e40af, #3730a3);
     transform: translateX(-50%);
     border-radius: 2px;
-}
+} */
 
 .section-header p {
     font-size: 1.2rem;
@@ -704,14 +735,6 @@ body {
     padding: 1rem 0;
 }
 
-.vision-mission .fifty-fifty-section .content-right .section-title {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 700;
-    color: var(--error);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
 .vision-mission .fifty-fifty-section .content-right p {
     font-size: var(--section-content);
     font-weight: 450;
@@ -815,138 +838,6 @@ body {
 }
 
 /*********** Vision-Mission Ends *************/
-
-/*********** What Sets ABSincgroup Apart Section Starts *************/
-.what-sets-apart-section {
-    position: relative;
-    top: 85px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 5rem 0;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
-
-.what-sets-apart-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.what-sets-apart-section .section-header {
-    text-align: center;
-    margin-bottom: 1.875rem;
-}
-
-.what-sets-apart-section .section-title {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.what-sets-apart-section .section-subtitle {
-    font-size: 1.125rem;
-    color: #000;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.what-sets-apart-section .intro-content {
-    max-width: 900px;
-    margin: 0 auto 4rem;
-    text-align: center;
-}
-
-.what-sets-apart-section .intro-text {
-    font-size: 1.3rem;
-    line-height: 1.7;
-    color: #333;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-}
-
-.what-sets-apart-section .intro-subtext {
-    font-size: 1.1rem;
-    color: #121212;
-    font-style: italic;
-}
-
-.what-sets-apart-section .differentiators-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.what-sets-apart-section .differentiator-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.what-sets-apart-section .differentiator-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color-2-hover), var(--primary-color-2));
-}
-
-.what-sets-apart-section .differentiator-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.what-sets-apart-section .card-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.what-sets-apart-section .check-icon {
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-}
-
-.what-sets-apart-section .check-icon svg {
-    width: 18px;
-    height: 18px;
-}
-
-.what-sets-apart-section .differentiator-card h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--primary-color-2);
-    line-height: 1.3;
-    /* border: 1px solid red; */
-    height: 95px;
-}
-
-.what-sets-apart-section .differentiator-card p {
-    color: #121212;
-    line-height: 1.7;
-    font-size: 1rem;
-    /* border: 1px solid blue; */
-}
-
-/*********** What Sets ABSincgroup Apart Section Ends *************/
 
 /*********** Video Section Starts *************/
 .video-section {
@@ -1058,13 +949,6 @@ body {
     margin-bottom: 1.875rem;
 }
 
-.services-section .section-title {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 700;
-    color: var(--error);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
 
 .services-section .section-subtitle {
     font-size: 1.125rem;
@@ -1200,13 +1084,6 @@ body {
     margin-bottom: 1.875rem;
 }
 
-.team-section .section-title {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 700;
-    color: var(--error);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
 
 .team-section .section-subtitle {
     font-size: 1.125rem;
@@ -1499,14 +1376,6 @@ body {
 .contact-section .section-header {
     text-align: center;
     margin-bottom: 1.875rem;
-}
-
-.contact-section .section-title {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 700;
-    color: var(--error);
-    margin-bottom: 1rem;
-    line-height: 1.2;
 }
 
 .contact-section .section-subtitle {

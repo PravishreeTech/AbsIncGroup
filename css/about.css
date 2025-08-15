@@ -36,7 +36,6 @@ body {
     --navbar-social-icons: 20px;
     --banner-heading: 32px;
     --banner-subheading: 24px;
-    --section-headings: 30px;
     --section-subheadings: 28px;
     --section-main-content: 20px;
     --section-content: 18px;
@@ -179,27 +178,6 @@ body {
 .ai-section.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.ai-section .section-heading {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color-2);
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.ai-section .section-heading::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--primary-color-2);
-    border-radius: 2px;
 }
 
 .ai-section .ai-content {
@@ -643,7 +621,14 @@ body {
 .clients .section-header p {
     color: white;
 }
-
+.clients .section-header h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
 .world-map {
     margin: 0rem 0;
     position: relative;
