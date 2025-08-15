@@ -21,9 +21,7 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/careers.css">
-    <!-- <link rel="stylesheet" href="../css/about.css"> -->
-    <!-- <link rel="stylesheet" href="../css/teams.css"> -->
+    <link rel="stylesheet" href="../css/about.css">
 
     <!-- Google Fonts -->
     <link rel="stylesheet"
@@ -48,7 +46,7 @@
         </div>
     </div>
 
-    <!-- NavBar section -->
+    <!-- NavBar section Start -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -58,11 +56,11 @@
             </div>
             <ul class="nav-menu" id="navigation">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="../pages/about.html" class="nav-link">About Us</a></li>
+                <li><a href="../pages/about.html" class="nav-link active">About Us</a></li>
                 <li><a href="../pages/services.html" class="nav-link">Services</a></li>
                 <li><a href="../pages/expertise.html" class="nav-link">Expertise</a></li>
                 <li><a href="../pages/teams.html" class="nav-link">Team</a></li>
-                <li><a href="../pages/careers.html" class="nav-link active">Careers</a></li>
+                <li><a href="../pages/careers.html" class="nav-link">Careers</a></li>
                 <li><a href="../pages/news.html" class="nav-link">News & Podcasts</a></li>
                 <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
             </ul>
@@ -73,114 +71,156 @@
             </div>
         </div>
     </nav>
+    <!-- NavBar section End -->
 
-    <!-- Careers Section Start-->
-    <section class="careers-overview" id="careers">
+    <!-- Expertise Overview Section Start-->
+    <section class="about-overview" id="about">
+        <div class="hero-bg" style="background-image: url('../assets/images/banner-1.jpg')"></div>
         <div class="container">
             <div class="section-header">
-                <h2>Careers at ABSINCGROUP USA</h2>
-                <p>Join a Global Network of Biopharma Experts</p>
+                <h2>Our Expertise</h2>
             </div>
 
+            <!-- The below content will be provided by the client -->
             <div class="overview-content">
                 <div class="overview-text">
-                    <p>At ABSINCGROUP USA, we believe our consultants are the foundation of our success. As a strategic
-                        consulting consortium serving the global biopharmaceutical, pharmaceutical, biotechnology, and
-                        medical device industries, we foster a people-first culture rooted in professional growth,
-                        work-life balance, and mission-driven impact.</p>
-                    <p>Our projects support some of the world’s most innovative life sciences companies, from emerging
-                        biotechs to Fortune 500 giants. We offer flexible work arrangements, competitive compensation,
-                        and meaningful opportunities to shape the future of global health.</p>
+                    <p>
+                        ABSINCGROUP USA is a premier strategic consulting providing top-tier regulatory, quality, and
+                        technical expertise to the biopharmaceutical, pharmaceutical, biotechnology, medical device, and
+                        diagnostics industries.
+                    </p>
+                    <p>
+                        With a global team of senior professionals and former regulatory authorities, we specialize in
+                        end-to-end product lifecycle consulting, from R&D to regulatory approval and post-market
+                        compliance. Our clients trust us to deliver FDA- and EMA-compliant results, on time and on
+                        budget.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Careers Section End-->
+    <!-- Expertise Overview Section End-->
 
-    <!-- Now Hiring Section Start -->
-    <section id="careers" class="careers">
+    <!-- What sets AbsIncGroup Apart (NEW) Start -->
+    <section class="main" id="hero">
+        <!-- Background decorative elements -->
+        <div class="bg-elements">
+            <div class="bg-circle bg-circle-1"></div>
+            <div class="bg-circle bg-circle-2"></div>
+        </div>
+
         <div class="container">
-            <div class="section-header">
-                <h2>Now Hiring</h2>
-                <p>Join our team of industry experts and make an impact in biopharmaceuticals consulting</p>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">What Sets <span class="gradient-text">ABSIncGroup Apart</span></h2>
+                <p class="section-subtitle">Comprehensive consulting solutions for life sciences excellence</p>
             </div>
-            <div class="careers-grid">
-                <div class="career-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="career-icon">
-                        <i class="fas fa-industry"></i>
+            <!-- ===== INTRO AND IMAGES SECTION ===== -->
+            <div class="intro-images-grid" id="introImagesGrid">
+
+                <!-- ===== INTRO TEXT ===== -->
+                <div class="intro-content" id="introContent">
+                    <!-- ===== TITLE SECTION ===== -->
+                    <div class="title-section" id="titleSection">
+                        <h1 class="titles">Comprehensive, End-to-End Solutions for Life Science Excellence</h1>
                     </div>
-                    <h3>Quality & Manufacturing</h3>
-                    <p>Lead quality initiatives and manufacturing excellence in pharmaceutical operations</p>
-                    <div class="career-overlay">
-                        <h4>Key Responsibilities:</h4>
-                        <ul>
-                            <li>Quality system development</li>
-                            <li>Manufacturing operations oversight</li>
-                            <li>Regulatory compliance</li>
-                            <li>Process optimization</li>
-                        </ul>
-                    </div>
+                    <p class="intro-text">
+                        At ABSIncGroup, we go beyond the limitations of traditional consulting. While others focus only
+                        on regulatory paperwork or quality checklists, we combine strategic compliance expertise with
+                        hands-on operational execution — ensuring your project isn't just audit-ready, but market-ready.
+                    </p>
                 </div>
-                <div class="career-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="career-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3>Analytical & QC</h3>
-                    <p>Drive analytical excellence and quality control in pharmaceutical development</p>
-                    <div class="career-overlay">
-                        <h4>Key Responsibilities:</h4>
-                        <ul>
-                            <li>Method development & validation</li>
-                            <li>Quality control operations</li>
-                            <li>Data integrity oversight</li>
-                            <li>Analytical troubleshooting</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="career-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="career-icon">
-                        <i class="fa-solid fa-lock"></i>
-                    </div>
-                    <h3>Regulatory & Compliance</h3>
-                    <p>Navigate complex regulatory landscapes and ensure compliance excellence</p>
-                    <div class="career-overlay">
-                        <h4>Key Responsibilities:</h4>
-                        <ul>
-                            <li>FDA/EMA submissions</li>
-                            <li>Regulatory strategy development</li>
-                            <li>Compliance monitoring</li>
-                            <li>Risk assessment</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="career-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="career-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Project Leadership</h3>
-                    <p>Lead cross-functional teams and drive successful project outcomes</p>
-                    <div class="career-overlay">
-                        <h4>Key Responsibilities:</h4>
-                        <ul>
-                            <li>Project management</li>
-                            <li>Team leadership</li>
-                            <li>Strategic planning</li>
-                            <li>Stakeholder management</li>
-                        </ul>
+
+                <!-- ===== IMAGE SECTION ===== -->
+                <div class="image-section" id="imageSection">
+                    <div class="image-grid">
+                        <div class="images">
+                            <img src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                alt="Modern Laboratory Equipment" loading="lazy">
+                            <div class="image-overlay">Advanced Lab Technology</div>
+                        </div>
+
+                        <div class="images">
+                            <img src="https://images.pexels.com/photos/3825539/pexels-photo-3825539.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                alt="Scientific Research" loading="lazy">
+                            <div class="image-overlay">Scientific Excellence</div>
+                        </div>
+
+                        <div class="images">
+                            <img src="https://images.pexels.com/photos/3735780/pexels-photo-3735780.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                alt="Manufacturing Facility" loading="lazy">
+                            <div class="image-overlay">Manufacturing Solutions</div>
+                        </div>
+
+                        <div class="images">
+                            <img src="https://images.pexels.com/photos/1366944/pexels-photo-1366944.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                alt="Quality Control" loading="lazy">
+                            <div class="image-overlay">Quality Assurance</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="careers-footer">
-                <div class="resume-info">
-                    <h3>Ready to Join Us?</h3>
-                    <p>Send your resumes to <a href="mailto:info@absincgroup.com">info@absincgroup.com</a></p>
-                    <small>All submissions are treated confidentially and in compliance with data protection
-                        laws</small>
+
+            <!-- ===== SUBHEADING SECTION ===== -->
+            <div class="subheading-section" id="subheadingSection">
+                <h2 class="subheading">We're not just advisors. We're your execution partners.</h2>
+            </div>
+
+            <!-- ===== FEATURES SECTION ===== -->
+            <div class="features-section" id="featuresSection">
+                <div class="feature-list">
+                    <div class="feature-item" data-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="feature-text">
+                            AI-Powered cGMP Manufacturing Expertise — Integrating technology to optimize speed,
+                            compliance, and cost-efficiency.
+                        </div>
+                    </div>
+
+                    <div class="feature-item" data-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            Seamless IND-to-Approval Support — Guiding you through every milestone, including PAI
+                            readiness.
+                        </div>
+                    </div>
+
+                    <div class="feature-item" data-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-text">
+                            Lean Six Sigma Black Belt Precision — Reducing waste, boosting quality, and accelerating
+                            timelines.
+                        </div>
+                    </div>
+
+                    <div class="feature-item" data-delay="400">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="feature-text">
+                            On-the-Ground Execution — From lab bench to commercial production, we make strategies work
+                            in the real world.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Now Hiring Section End -->
+    <!-- What sets AbsIncGroup Apart (NEW) End -->
+
+    <!-- Call To Action Start -->
+    <section class="news-ticker">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Call To <span class="gradient-text">Action</span></h2>
+            <p class="section-subtitle">Comprehensive consulting solutions for life sciences excellence</p>
+        </div>
+    </section>
+    <!-- Call To Action End -->
 
     <!-- Footer Section Start -->
     <footer class="footer">
@@ -284,4 +324,6 @@
     <script src="../js/main.js"></script>
     <script src="../js/lazy-loading.js"></script>
     <script src="../js/animations.js"></script>
+    <script src="../js/about.js"></script>
+
 </body>
