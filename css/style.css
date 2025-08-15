@@ -707,7 +707,7 @@ body {
 .vision-mission .fifty-fifty-section .content-right .section-title {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
     font-weight: 700;
-    color: var(--gray-900);
+    color: var(--error);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
@@ -1061,7 +1061,7 @@ body {
 .services-section .section-title {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
     font-weight: 700;
-    color: var(--gray-900);
+    color: var(--error);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
@@ -1203,7 +1203,7 @@ body {
 .team-section .section-title {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
     font-weight: 700;
-    color: var(--gray-900);
+    color: var(--error);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
@@ -1504,7 +1504,7 @@ body {
 .contact-section .section-title {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
     font-weight: 700;
-    color: var(--gray-900);
+    color: var(--error);
     margin-bottom: 1rem;
     line-height: 1.2;
 }

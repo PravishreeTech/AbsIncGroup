@@ -127,6 +127,44 @@ body {
 
 /***************** About Overview Section End *****************/
 
+/*********** NEW What Sets ABSincgroup Apart Starts *************/
+/* ===== MAIN SECTION STYLES ===== */
+.main {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+    padding: 80px 0 0 0;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .titles {
+        font-size: 3rem;
+    }
+
+    .intro-images-grid {
+        gap: 60px;
+    }
+}
+
+
+
+/*********** NEW What Sets ABSincgroup Apart Ends *************/
+
+
 /***************** AI Section Start *****************/
 .ai-section {
     position: relative;
@@ -389,34 +427,36 @@ body {
 
 .segment-1 {
     top: 0;
-    left: 43%;
+    left: 50%;
     transform: translateX(-50%);
 }
-
-.segment-2 {
-    right: 0;
-    top: 36%;
+.segment-4 {
+    bottom: 0;
+    right: 50%;
     transform: translateY(-50%);
+}
+.segment-2 {
+    bottom: 31%;
+    right: -4%;
+    transform: translateX(-50%);
 }
 
 .segment-3 {
-    bottom: 0;
-    left: 36%;
+    top: 35%;
+    left: 0%;
     transform: translateX(-50%);
 }
 
-.segment-4 {
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 .segment-5 {
-    left: 0;
-    top: 10%;
+    top: 2%;
+    left:14%;
+    transform: translateX(-50%);
+}
+.segment-6 {
+    bottom: 1%;
+    left: 51%;
     transform: translateY(-50%);
 }
-
 .circle-center {
     position: absolute;
     top: 50%;
@@ -450,12 +490,12 @@ body {
     }
 
     100% {
-        transform: rotate(360deg);
+        transform: rotate(-360deg);
     }
 }
 
 .segment-text {
-    animation: stayUpright 20s linear infinite;
+    /* animation: stayUpright 20s linear infinite; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -473,7 +513,6 @@ body {
     to {
         transform: rotate(-360deg);
     }
-
     /* counter of +360deg from parent */
 }
 
@@ -785,6 +824,7 @@ body {
 .category-card h3 {
     font-size: 1.4rem;
     font-weight: 600;
+    height: 100px;
     margin-bottom: 0.8rem;
     color: white;
 }

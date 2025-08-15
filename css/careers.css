@@ -2,23 +2,43 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/********** CAREERS SECTION STARTS **********/
-.careers-overview{
-    padding: 6rem 0;
-    background: #f8fafc;
-    padding-bottom: 3rem;
+/***************** Careers Overview Section Start *****************/
+.careers-overview {
+    position: relative;
+    top: 83px;
+    padding: 4rem 0;
+    /* background: #f8fafc; */
 }
 
-.careers-overview .section-header{
-    text-align: center;
-    margin-bottom: 4rem;
+.careers-overview .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.careers-overview .section-header p{
-    color: #222222;
+.careers-overview .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
-.careers-overview .overview-text {
+.careers-overview .section-header h2 {
+    font-size: 48px;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.overview-text {
     background: white;
     padding: 3rem;
     border-radius: 12px;
@@ -26,17 +46,50 @@ body {
     margin-bottom: 3rem;
 }
 
-.careers-overview .overview-text p {
+.overview-text p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #222222;
     margin-bottom: 1.5rem;
 }
-/********** CAREERS SECTION ENDS **********/
+
+/* ===== MAIN SECTION STYLES ===== */
+.main {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+    padding: 80px 0 0 0;
+    overflow: hidden;
+}
+
+.careers-overview .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .titles {
+        font-size: 3rem;
+    }
+
+    .intro-images-grid {
+        gap: 60px;
+    }
+}
+
+/*********** Careers Overview Section Ends *************/
 
 /********** NOW HIRING SECTION STARTS **********/
 .careers {
-    padding: 5rem 0;
+    padding: 10rem 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 

@@ -73,6 +73,91 @@ body {
   padding: 0 20px;
 }
 
+/***************** Team Overview Section Start *****************/
+.team-overview {
+    position: relative;
+    top: 83px;
+    padding: 4rem 0;
+    /* background: #f8fafc; */
+}
+
+.team-overview .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.team-overview .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
+}
+
+.team-overview .section-header h2 {
+    font-size: 48px;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.overview-text {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+}
+
+.overview-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #222222;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== MAIN SECTION STYLES ===== */
+.main {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+    padding: 80px 0 0 0;
+    overflow: hidden;
+}
+
+.team-overview .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .titles {
+        font-size: 3rem;
+    }
+
+    .intro-images-grid {
+        gap: 60px;
+    }
+}
+
+/*********** team Overview Section Ends *************/
+
 /***************** Teams Section Starts *****************/
 .teams-overview {
   padding: 6rem 0;
@@ -368,13 +453,16 @@ body {
 
 /***************** Leadership Section Starts *****************/
 .leadership-overview {
+  position: relative;
+  top: 83px;
   padding: 5rem 0;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     var(--primary-color-2-hover) 0%,
     var(--primary-color-2)
-  );
-  color: white;
+  ); */
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: #000;
 }
 
 .leadership-overview .leadership-content h2 {
@@ -382,6 +470,7 @@ body {
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
+  color: var(--primary-color-2);
 }
 
 .leadership-overview .leadership-description > p {
@@ -401,11 +490,10 @@ body {
 }
 
 .leadership-overview .highlight-item {
-  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   padding: 2rem;
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--primary-color-2);
   transition: all 0.3s ease;
 
   display: flex;
@@ -414,21 +502,26 @@ body {
   align-items: center;
 }
 
-.leadership-overview .highlight-item:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
-}
-
 .leadership-overview .highlight-item i {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #60a5fa;
+  color: var(--primary-color-2);
 }
 
 .leadership-overview .highlight-item p {
   font-size: 1rem;
   line-height: 1.7;
   opacity: 0.95;
+}
+
+.leadership-overview .highlight-item:hover {
+  transform: translateY(-5px);
+  background: var(--primary-color-2);
+}
+
+.leadership-overview .highlight-item:hover p,
+.leadership-overview .highlight-item:hover i {
+  color: white;
 }
 
 @media screen and (max-width: 720px) {
@@ -440,7 +533,9 @@ body {
 
 /***************** Team Members Section Starts *****************/
 .team-members {
-  padding: 5rem 0;
+  position: relative;
+  top: 83px;
+  padding: 3rem 0;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
 }
 

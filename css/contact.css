@@ -46,6 +46,96 @@ body {
     --copyright-section: 16px;
 }
 
+/***************** Contact Overview Section Start *****************/
+.contact-overview {
+    position: relative;
+    top: 83px;
+    padding: 4rem 0;
+    height: 380px;
+    /* background: #f8fafc; */
+}
+
+.contact-overview .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contact-overview .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
+}
+
+.contact-overview .section-header .heading{
+    font-size: 52px;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+
+.contact-overview .section-header .sub-heading  {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-decoration: none;
+}
+
+.contact-overview .section-header .sub-heading::after{
+    background: none;
+}
+
+.contact-overview .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+.overview-text {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+}
+
+.overview-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #222222;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .titles {
+        font-size: 3rem;
+    }
+
+    .intro-images-grid {
+        gap: 60px;
+    }
+}
+
+/*********** Contact Overview Section Ends *************/
+
+
 .contact {
     padding: 5rem 0;
     /* background: linear-gradient(135deg, #1e293b 0%, #334155 100%); */

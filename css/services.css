@@ -70,8 +70,97 @@ body {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 0px;
 }
+
+/***************** Services Overview Section Start *****************/
+.services-overview {
+    position: relative;
+    top: 83px;
+    padding: 4rem 0;
+    /* background: #f8fafc; */
+}
+
+.services-overview .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-overview .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
+}
+
+.services-overview .section-header h2 {
+    font-size: 48px;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.overview-text {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+}
+
+.overview-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #222222;
+    margin-bottom: 1.5rem;
+}
+
+/***************** About Overview Section End *****************/
+/* ===== MAIN SECTION STYLES ===== */
+.main {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+    padding: 80px 0 0 0;
+    overflow: hidden;
+}
+
+.services-overview .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .titles {
+        font-size: 3rem;
+    }
+
+    .intro-images-grid {
+        gap: 60px;
+    }
+}
+
+
+
+/*********** Section Overview Section Ends *************/
+
 
 /***************** Services Section Start *****************/
 .morphing-services {
@@ -212,7 +301,9 @@ body {
 
 /***************** Services Section End *****************/
 .services-overview {
-    padding: 6rem 0;
+    position: relative;
+    top: 79px;
+    /* padding: 6rem 0; */
     background: #f8fafc;
 }
 
