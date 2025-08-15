@@ -437,128 +437,31 @@
 
     <!-- ===== JAVASCRIPT FOR ANIMATIONS ===== -->
     <script>
-        // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const element = entry.target;
-                    const delay = parseInt(element.dataset.delay) || 0;
-                    
-                    setTimeout(() => {
-                        element.classList.add('visible');
-                    }, delay);
-                    
-                    observer.unobserve(element);
-                }
-            });
-        }, observerOptions);
-
-        // ===== INITIALIZE ANIMATIONS =====
-        document.addEventListener('DOMContentLoaded', () => {
-            // Observe section header
-            const sectionHeader = document.querySelector('.call-header');
-            if (sectionHeader) {
-                observer.observe(sectionHeader);
+    document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                const delay = parseInt(element.dataset.delay) || 0;
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, delay);
+                observer.unobserve(element);
             }
-
-            // Observe all cardss and add alternating slide directions
-            const cardss = document.querySelectorAll('.call-cards');
-            cardss.forEach((cards, index) => {
-                // Add alternating slide directions
-                if (index % 3 === 0) {
-                    cards.classList.add('slide-left');
-                } else if (index % 3 === 2) {
-                    cards.classList.add('slide-right');
-                }
-                
-                observer.observe(cards);
-            });
-
-            // ===== ENHANCED HOVER EFFECTS =====
-            cardss.forEach(cards => {
-                cards.addEventListener('mouseenter', () => {
-                    cards.style.transform += ' translateY(-10px)';
-                    cards.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(6, 182, 212, 0.3)';
-                });
-
-                cards.addEventListener('mouseleave', () => {
-                    cards.style.transform = cards.style.transform.replace(' translateY(-10px)', '');
-                    cards.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)';
-                });
-            });
-
-            // ===== BUTTON CLICK ANALYTICS (Optional) =====
-            const buttons = document.querySelectorAll('.call-button');
-            buttons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    
-                    // Add click animation
-                    button.style.transform = 'translateY(-1px) scale(0.98)';
-                    
-                    setTimeout(() => {
-                        button.style.transform = '';
-                    }, 150);
-                    
-                    // Here you would typically track the click
-                    console.log(`ctas clicked: ${button.textContent}`);
-                });
-            });
-
-            // ===== KEYBOARD ACCESSIBILITY =====
-            cardss.forEach(cards => {
-                cards.setAttribute('tabindex', '0');
-                cards.setAttribute('role', 'button');
-                
-                cards.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        const button = cards.querySelector('.call-button');
-                        if (button) button.click();
-                    }
-                });
-            });
-
-            // ===== PERFORMANCE OPTIMIZATION =====
-            // Throttle scroll events for better performance
-            let ticking = false;
-            
-            function updateAnimations() {
-                // Any scroll-based animations would go here
-                ticking = false;
-            }
-            
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    requestAnimationFrame(updateAnimations);
-                    ticking = true;
-                }
-            });
-
-            // ===== PRELOAD IMAGES =====
-            const imageUrls = [
-                'https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=800'
-            ];
-
-            imageUrls.forEach(url => {
-                const img = new Image();
-                img.src = url;
-            });
         });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    // Observe header
+    const header = document.querySelector('.call-header');
+    if (header) observer.observe(header);
+
+    // Observe cards
+    document.querySelectorAll('.call-cards').forEach((card, index) => {
+        if (index % 3 === 0) card.classList.add('slide-left');
+        else if (index % 3 === 2) card.classList.add('slide-right');
+        observer.observe(card);
+    });
+});
 
     </script>
 </body>
