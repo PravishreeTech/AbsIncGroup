@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Reset and Base Styles */
 *,
 *::before,
@@ -21,7 +22,7 @@ body {
     overflow-x: hidden;
 }
 
-:root{
+:root {
     /* Our code */
     /* colors */
     --primary-color-1: #bd270d;
@@ -48,9 +49,9 @@ body {
 /***************** Contact Overview Section Start *****************/
 .contact-overview {
     position: relative;
-    top: 83px;
+    top: 80px;
     padding: 4rem 0;
-    height: 380px;
+    min-height: 450px;
     /* background: #f8fafc; */
 }
 
@@ -75,7 +76,25 @@ body {
     background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
-.contact-overview .section-header .heading{
+.contact-overview .container {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 1300px;
+    min-height: 450px;
+}
+
+.contact-overview .section-header {
+    min-height: 450px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-overview .section-header .heading {
     font-size: 52px;
     color: #fff;
     max-width: 600px;
@@ -84,24 +103,18 @@ body {
 }
 
 
-.contact-overview .section-header .sub-heading  {
+.contact-overview .section-header .sub-heading {
     font-size: 32px;
     color: #fff;
     margin-bottom: 2rem;
     text-decoration: none;
+    max-width: 100%;
 }
 
-.contact-overview .section-header .sub-heading::after{
+.contact-overview .section-header .sub-heading::after {
     background: none;
 }
 
-.contact-overview .container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
-}
 .overview-text {
     background: white;
     padding: 3rem;
@@ -142,11 +155,11 @@ body {
     color: white;
 }
 
-.contact .section-header{
+.contact .section-header {
     margin-top: 2rem;
 }
 
-.contact .section-header p{
+.contact .section-header p {
     color: #222222;
 }
 

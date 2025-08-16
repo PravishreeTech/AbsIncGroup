@@ -76,9 +76,10 @@ body {
 /***************** About Overview Section Start *****************/
 .about-overview {
     position: relative;
-    top: 83px;
+    top: 80px;
     padding: 4rem 0;
-    /* background: #f8fafc; */
+    min-height: 450px;
+    /* border: 2px solid red; */
 }
 
 .about-overview .hero-bg {
@@ -160,12 +161,13 @@ body {
 /***************** AI Section Start *****************/
 .ai-section {
     position: relative;
-    top: 83px;
+    top: 80px;
     background: #ffffff;
     padding: 5rem 0;
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease-out;
+    /* border: 2px solid blue; */
 }
 
 .ai-section.visible {
@@ -226,10 +228,11 @@ body {
 
 /***************** Why Choose Us Section Start *****************/
 .why-choose-us {
-    padding: 120px 0;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     position: relative;
-    top: 83px;
+    top: 80px;
+    padding: 75px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    /* border: 2px solid green; */
 }
 
 .why-choose-us::before {
@@ -397,11 +400,13 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
+
 .segment-4 {
     bottom: 0;
     right: 50%;
     transform: translateY(-50%);
 }
+
 .segment-2 {
     bottom: 31%;
     right: -4%;
@@ -416,14 +421,16 @@ body {
 
 .segment-5 {
     top: 2%;
-    left:14%;
+    left: 14%;
     transform: translateX(-50%);
 }
+
 .segment-6 {
     bottom: 1%;
     left: 51%;
     transform: translateY(-50%);
 }
+
 .circle-center {
     position: absolute;
     top: 50%;
@@ -480,15 +487,17 @@ body {
     to {
         transform: rotate(-360deg);
     }
+
     /* counter of +360deg from parent */
 }
 
 /* Rotating Circle Visual End */
 .expertise {
-    padding: 90px 0;
-    background: white;
     position: relative;
-    top: 83px;
+    top: 80px;
+    padding: 75px 0;
+    background: white;
+    /* border: 2px solid red; */
 }
 
 .expertise p {
@@ -589,11 +598,12 @@ body {
 
 /***************** Who We Serve Section Start *****************/
 .clients {
+    position: relative;
+    top: 80px;
     padding: 50px 0;
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: white;
-    position: relative;
-    top: 83px;
+    /* border: 2px solid blue; */
 }
 
 .clients::before {

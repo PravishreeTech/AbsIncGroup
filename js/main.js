@@ -13,7 +13,7 @@ class ABSincGroupWebsite {
     setupEventListeners() {
         document.addEventListener('DOMContentLoaded', () => {
             this.initMobileNavigation();
-            this.initHeroSlider();
+            this.initSliders();
             this.initServicesTab();
             this.initTestimonials();
             this.initContactForm();
@@ -73,82 +73,35 @@ class ABSincGroupWebsite {
         }
     }
 
-    initHeroSlider() {
-        const slider = document.getElementById('heroSlider');
-        const slides = slider?.querySelectorAll('.hero-slide');
-        const indicators = document.querySelectorAll('.hero-indicators .indicator');
-        const prevBtn = document.querySelector('.hero-prev');
-        const nextBtn = document.querySelector('.hero-next');
+    initSliders() {
+        const sliders = document.querySelectorAll('.auto-slider');
 
-        if (!slides || slides.length === 0) return;
+        sliders.forEach(slider => {
+            const slides = slider.querySelectorAll('.hero-slide');
+            if (!slides.length) return;
 
-        let currentSlide = 0;
-        let slideInterval;
+            let currentSlide = 0;
 
-        const showSlide = (index) => {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
+            const showSlide = (index) => {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+            };
 
-            indicators.forEach((indicator, i) => {
-                indicator.classList.toggle('active', i === index);
-            });
+            const nextSlide = () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            };
 
-            currentSlide = index;
-        };
+            // Initialize first slide
+            showSlide(0);
 
-        const nextSlide = () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        };
-
-        const prevSlideFunc = () => {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        };
-
-        const startAutoSlide = () => {
-            slideInterval = setInterval(nextSlide, 3000);
-        };
-
-        const stopAutoSlide = () => {
-            clearInterval(slideInterval);
-        };
-
-        // Event listeners
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                nextSlide();
-                startAutoSlide();
-            });
-        }
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                prevSlideFunc();
-                startAutoSlide();
-            });
-        }
-
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                stopAutoSlide();
-                showSlide(index);
-                startAutoSlide();
-            });
+            // Auto change every 3s
+            setInterval(nextSlide, 3000);
         });
-
-        // Initialize
-        showSlide(0);
-        startAutoSlide();
-
-        // Pause on hover
-        slider.addEventListener('mouseenter', stopAutoSlide);
-        slider.addEventListener('mouseleave', startAutoSlide);
     }
 
+    // Our Core Focus Area in Home Page to change the content based on the topic selected
     initServicesTab() {
         const tabButtons = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
@@ -242,6 +195,7 @@ class ABSincGroupWebsite {
         startAutoSlide();
     }
 
+    // Contact Form in Home Page but need to check once if it is working or not
     initContactForm() {
         const form = document.getElementById('contactForm');
         const submitBtn = form?.querySelector('.submit-btn');
@@ -337,6 +291,7 @@ class ABSincGroupWebsite {
         });
     }
 
+    // For the video in Home Page, to customize the controls of the video but need to check once after the video is ready
     initVideoPlayer() {
         const videoContainers = document.querySelectorAll('.video-placeholder');
 
@@ -361,49 +316,35 @@ class ABSincGroupWebsite {
         });
     }
 
+    // For the bubble effect on the banners
     initParticles() {
-        const createParticle = () => {
+        const createParticle = (section) => {
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * window.innerWidth + 'px';
             particle.style.animationDelay = Math.random() * 3 + 's';
             particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
 
-            const heroSection = document.querySelector('.hero-section');
-            if (heroSection) {
-                const particlesContainer = heroSection.querySelector('.particles') || (() => {
-                    const container = document.createElement('div');
-                    container.className = 'particles';
-                    heroSection.appendChild(container);
-                    return container;
-                })();
+            const particlesContainer = section.querySelector('.particles') || (() => {
+                const container = document.createElement('div');
+                container.className = 'particles';
+                section.appendChild(container);
+                return container;
+            })();
 
-                particlesContainer.appendChild(particle);
+            particlesContainer.appendChild(particle);
 
-                setTimeout(() => {
-                    particle.remove();
-                }, 6000);
-            }
-
-            const aboutOverview = document.querySelector('.about-overview');
-            if (heroSection) {
-                const particlesContainer = heroSection.querySelector('.particles') || (() => {
-                    const container = document.createElement('div');
-                    container.className = 'particles';
-                    heroSection.appendChild(container);
-                    return container;
-                })();
-
-                particlesContainer.appendChild(particle);
-
-                setTimeout(() => {
-                    particle.remove();
-                }, 6000);
-            }
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
         };
 
-        // Create particles periodically
-        setInterval(createParticle, 500);
+        // Attach particles to every section that has "with-bubbles" class
+        const bubbleSections = document.querySelectorAll('.with-bubbles');
+        bubbleSections.forEach(section => {
+            setInterval(() => createParticle(section), 500);
+        });
+
     }
 
     handleScroll() {
@@ -657,7 +598,7 @@ function requestParallaxTick() {
 
 // ===== SMOOTH SCROLL FOR CTA BUTTON =====
 document.querySelector('.cta-button').addEventListener('click', function (e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     // Add a gentle shake animation to button
     this.style.transform = 'translateY(-3px) scale(0.95)';

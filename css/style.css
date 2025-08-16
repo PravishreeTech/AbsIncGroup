@@ -139,6 +139,23 @@ body {
     border: 0 !important;
 }
 
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 /************ Loading Screen Starts *************/
 .loading-screen {
     position: fixed;
@@ -215,7 +232,7 @@ body {
     line-height: 1.2;
 }
 
-.section-heading{
+.section-heading {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--error);
@@ -240,7 +257,8 @@ body {
     text-align: center;
     margin-bottom: 2rem;
 }
-.section-header h1{
+
+.section-header h1 {
     font-size: 48px;
     color: #fff;
     max-width: 600px;
@@ -254,13 +272,14 @@ body {
     margin: 0 auto;
 }
 
-.section-subtitle{
+.section-subtitle {
     font-size: 1.2rem;
     color: #121212;
     max-width: 800px;
     margin: 0 auto;
     font-weight: 400;
 }
+
 /************ Section Headers of all End ************/
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -440,10 +459,6 @@ body {
     top: 80px;
     min-height: 450px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 1px solid blue; */
 }
 
 .hero-section .hero-slider {
