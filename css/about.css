@@ -169,39 +169,6 @@ body {
 
 /***************** About Overview Section End *****************/
 
-/*********** NEW What Sets ABSincgroup Apart Starts *************/
-/* .main {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    position: relative;
-    padding: 80px 0 0 0;
-    overflow: hidden;
-}
-
-.container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
-}
-
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 30px;
-    }
-
-    .titles {
-        font-size: 3rem;
-    }
-
-    .intro-images-grid {
-        gap: 60px;
-    }
-} */
-
-/*********** NEW What Sets ABSincgroup Apart Ends *************/
-
 /***************** AI Section Start *****************/
 .ai-section {
     position: relative;
@@ -725,7 +692,7 @@ body {
     .circle-segment {
         width: 70px;
         height: 70px;
-        font-size: 0.7rem;
+        font-size: 10px;
         padding: 5px;
     }
 
