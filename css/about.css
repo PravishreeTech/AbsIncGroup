@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Reset and Base Styles */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,27 +14,27 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    font-family: "Oswald", sans-serif;
+    font-family: "Playfair Display", serif;
+    font-family: "Roboto", sans-serif;
     color: #333;
+    background-color: #fff;
     overflow-x: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
+/* Root Variables */
 :root {
     /* colors */
-    --primary-color-1: #bd270d;
-    --primary-color-2: #123E7C;
-    --primary-color-2-hover: #135dc4;
-    --primary-color-3: #fda50b;
-    --primary-color-4: #ffdf0d;
-    --primary-color-5: #2A966F;
-    --copyright-background: #123E7C;
+    --primary-color-1: #B22234;
+    --primary-color-1-hover: #ea2c42;
+    --primary-color-2: #3C3B6E;
+    --primary-color-2-hover: #4543c6;
+    --primary-color-3: #0C7BC0;
+    --footer-color: #0F172A;
+    --footer-heading-color: #fff;
+    --footer-content-color: #b3bac4;
+    --footer-bottom-color: #1E293B;
+    --copyright-background: #123E70;
 
     /* font-sizes */
     --navbar-elements-size: 20px;
@@ -45,12 +49,29 @@ body {
     --footer-elements: 16px;
     --footer-social-icons: 18px;
     --copyright-section: 16px;
+
+    /* relative-top */
+    --relative-top: 120px;
+}
+
+/* Utilities (the padding is different from home-page)*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /***************** About Overview Section Start *****************/
 .about-overview {
     position: relative;
-    top: 78px;
+    top: var(--relative-top);
     min-height: 450px;
     display: flex;
     align-items: center;
@@ -172,7 +193,7 @@ body {
 /***************** AI Section Start *****************/
 .ai-section {
     position: relative;
-    top: 78px;
+    top: var(--relative-top);
     background: #ffffff;
     padding: 5rem 0;
     opacity: 0;
@@ -304,7 +325,7 @@ body {
 /***************** Why Choose Us Section Start *****************/
 .why-choose-us {
     position: relative;
-    top: 78px;
+    top: var(--relative-top);
     padding: 75px 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
@@ -426,7 +447,7 @@ body {
 /***************** Specialized Expertise Section Start *****************/
 .expertise {
     position: relative;
-    top: 78px;
+    top: var(--relative-top);
     padding: 75px 0;
     background: white;
 }
@@ -522,6 +543,7 @@ body {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     animation: counterRotate 20s linear infinite;
+    /* animation: rotate 20s linear infinite; */
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
@@ -577,6 +599,12 @@ body {
     justify-content: center;
     font-size: 2rem;
     box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+}
+
+.circle-center .center-image img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
 }
 
 @keyframes rotate {
@@ -681,6 +709,12 @@ body {
         display: none;
     }
 
+    .circle-center .center-image img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -721,6 +755,12 @@ body {
     .expertise-content-text p {
         font-size: 0.95rem;
     }
+
+    .circle-center .center-image img {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+    }
 }
 
 /***************** Specialized Expertise Section End *****************/
@@ -728,7 +768,7 @@ body {
 /***************** Who We Serve Section Start *****************/
 .clients {
     position: relative;
-    top: 78px;
+    top: var(--relative-top);
     padding: 50px 0;
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: white;

@@ -22,78 +22,19 @@ body {
     overflow-x: hidden;
 }
 
-/* CSS Variables */
+/* Root Variables */
 :root {
-    /* Colors */
-    --primary: #0C7BC0;
-    --primary-dark: #1B365D;
-    --primary-light: #3A9BDB;
-    --secondary: #0EA5E9;
-    --accent: #F97316;
-    --success: #10B981;
-    --warning: #F59E0B;
-    --error: #EF4444;
-
-    /* Neutrals */
-    --gray-50: #F8FAFC;
-    --gray-100: #F1F5F9;
-    --gray-200: #E2E8F0;
-    --gray-300: #CBD5E1;
-    --gray-400: #94A3B8;
-    --gray-500: #64748B;
-    --gray-600: #475569;
-    --gray-700: #334155;
-    --gray-800: #1E293B;
-    --gray-900: #0F172A;
-
-    /* Typography */
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
-    --font-size-5xl: 3rem;
-
-    /* Spacing */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 0.5rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-2xl: 3rem;
-    --spacing-3xl: 4rem;
-
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-
-    /* Transitions */
-    --transition-fast: 0.15s ease-in-out;
-    --transition-base: 0.3s ease-in-out;
-    --transition-slow: 0.5s ease-in-out;
-
-    /* Z-index */
-    --z-dropdown: 1000;
-    --z-sticky: 1020;
-    --z-fixed: 1030;
-    --z-modal: 1050;
-    --z-loading: 9999;
-
-    /* Our code */
     /* colors */
-    --primary-color-1: #bd270d;
-    --primary-color-2: #123E7C;
-    --primary-color-2-hover: #135dc4;
-    --primary-color-3: #fda50b;
-    --primary-color-4: #ffdf0d;
-    --primary-color-5: #2A966F;
-    --copyright-background: #123E7C;
+    --primary-color-1: #B22234;
+    --primary-color-1-hover: #ea2c42;
+    --primary-color-2: #3C3B6E;
+    --primary-color-2-hover: #4543c6;
+    --primary-color-3: #0C7BC0;
+    --footer-color: #0F172A;
+    --footer-heading-color: #fff;
+    --footer-content-color: #b3bac4;
+    --footer-bottom-color: #1E293B;
+    --copyright-background: #123E70;
 
     /* font-sizes */
     --navbar-elements-size: 20px;
@@ -108,21 +49,24 @@ body {
     --footer-elements: 16px;
     --footer-social-icons: 18px;
     --copyright-section: 16px;
+
+    /* relative-top */
+    --relative-top: 120px;
 }
 
 /* Utilities */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 0.5rem;
 }
 
 .section-padding {
-    padding: var(--spacing-3xl) 0;
+    padding: 4rem 0;
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -163,11 +107,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    background: linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: var(--z-loading);
+    z-index: 9999;
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
@@ -182,7 +126,7 @@ body {
 }
 
 .loading-screen .loading-logo {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 1.5rem;
 }
 
 .loading-screen .dna-helix {
@@ -196,14 +140,14 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 3px solid var(--primary-light);
+    border: 3px solid #3A9BDB;
     border-radius: 50%;
     animation: dnaRotate 2s linear infinite;
 }
 
 .loading-screen .helix-strand:nth-child(2) {
     animation-delay: 0.5s;
-    border-color: var(--secondary);
+    border-color: #0EA5E9;
 }
 
 @keyframes dnaRotate {
@@ -227,7 +171,7 @@ body {
 .section-title {
     font-size: clamp(1.5rem, 4vw, 2.25rem);
     font-weight: 700;
-    color: var(--error);
+    color: var(--primary-color-1);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
@@ -235,7 +179,7 @@ body {
 .section-heading {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--error);
+    color: var(--primary-color-1);
     text-align: center;
     margin-bottom: 3rem;
     position: relative;
@@ -337,6 +281,7 @@ body {
     z-index: 1000;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* border: 2px solid red; */
 }
 
 .navbar .nav-container {
@@ -346,12 +291,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 75px;
+    height: 120px;
 }
 
 .navbar .logo img {
     height: 80px;
     width: auto;
+}
+
+.navbar .logo .tagline {
+    color: var(--primary-color-2);
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .nav-container .nav-menu {
@@ -437,7 +388,7 @@ body {
 @media (max-width: 840px) {
     .nav-menu {
         position: absolute;
-        top: 77px;
+        top: 120px;
         left: 0;
         right: 0;
         background: var(--primary-color-2);
@@ -489,9 +440,10 @@ body {
 /*********** Hero Section Starts *************/
 .hero-section {
     position: relative;
-    top: 75px;
+    top: var(--relative-top);
     min-height: 450px;
     overflow: hidden;
+    /* border: 4px solid rgb(2, 44, 5); */
 }
 
 .hero-section .hero-slider {
@@ -648,9 +600,10 @@ body {
 /*********** Vision-Mission Starts *************/
 .vision-mission {
     position: relative;
-    top: 75px;
+    top: var(--relative-top);
     background: #fff;
     padding: 3rem 1.5rem;
+    /* border: 4px solid red; */
 }
 
 .vision-mission .fifty-fifty-section .container {
@@ -827,10 +780,11 @@ body {
 /*********** Video Section Starts *************/
 .video-section {
     position: relative;
-    top: 75px;
-    background: var(--primary-dark);
+    top: var(--relative-top);
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
     padding: 4rem 0;
     text-align: center;
+    /* border: 4px solid rgb(2, 44, 5); */
 }
 
 .video-section .container {
@@ -846,7 +800,7 @@ body {
 
 .video-badge {
     display: inline-block;
-    background: var(--primary);
+    background: var(--primary-color-3);
     color: white;
     padding: 1rem 1.5rem;
     border-radius: 50px;
@@ -865,14 +819,14 @@ body {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow-xl);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .video-placeholder {
     position: relative;
     width: 100%;
     aspect-ratio: 16/9;
-    background: var(--gray-900);
+    background: #0F172A;
     cursor: pointer;
 }
 
@@ -896,12 +850,12 @@ body {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: all 0.3s ease-in-out;
     backdrop-filter: blur(10px);
 }
 
 .play-button:hover {
-    background: var(--primary);
+    background: #0C7BC0;
     transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -928,9 +882,10 @@ body {
 /*********** Our Core Focus Areas Section Starts *************/
 .services-section {
     position: relative;
-    top: 75px;
+    top: var(--relative-top);
     padding: 20px 0;
     background: white;
+    /* border: 4px solid red; */
 }
 
 .services-section .container {
@@ -958,7 +913,7 @@ body {
     justify-content: center;
     gap: 1rem;
     margin-bottom: 3rem;
-    background: var(--gray-100);
+    background: #F1F5F9;
     padding: 0.5rem;
     border-radius: 12px;
 }
@@ -974,15 +929,15 @@ body {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all var(--transition-base);
-    color: var(--gray-600);
+    transition: all 0.3s ease-in-out;
+    color: #475569;
 }
 
 .services-section .tab-btn:hover,
 .services-section .tab-btn.active {
     background: white;
-    color: var(--primary);
-    box-shadow: var(--shadow-sm);
+    color: var(--primary-color-3);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .services-section .tab-content {
@@ -1005,13 +960,13 @@ body {
     height: 300px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .service-details h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--gray-900);
+    color: var(--primary-color-2-hover);
     margin-bottom: 1.5rem;
 }
 
@@ -1025,12 +980,13 @@ body {
     align-items: flex-start;
     gap: 1rem;
     margin-bottom: 1rem;
-    color: var(--gray-700);
+    color: #334155;
     line-height: 1.6;
+    font-weight: 600;
 }
 
 .service-list i {
-    color: var(--primary);
+    color: var(--primary-color-3);
     margin-top: 2px;
     flex-shrink: 0;
 }
@@ -1038,12 +994,12 @@ body {
 @media (max-width: 768px) {
     .service-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
+        gap: 2rem;
     }
 
     .tab-navigation {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: 0.5rem;
     }
 }
 
@@ -1052,9 +1008,10 @@ body {
 /*********** Team Section Starts *************/
 .team-section {
     position: relative;
-    top: 75px;
+    top: var(--relative-top);
     padding: 1.875rem 0;
-    background: var(--gray-50);
+    background: #F8FAFC;
+    /* border: 4px solid rgb(2, 44, 5); */
 }
 
 .team-section .container {
@@ -1088,9 +1045,9 @@ body {
     border-radius: 16px;
     padding: 1.25rem;
     text-align: center;
-    height: 350px;
+    height: 530px;
     box-shadow: 1.5rem;
-    transition: all var(--transition-base);
+    transition: all 0.3s ease-in-out;
     border: 1px solid var(--primary-color-2);
 }
 
@@ -1102,19 +1059,20 @@ body {
 .team-info h3 {
     font-size: var(--section-subheadings);
     font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: 2.5rem;
+    color: #0F172A;
+    margin-bottom: 0.7rem;
 }
 
 .team-title {
     font-size: var(--section-content);
     font-weight: 600;
-    color: var(--primary);
+    color: var(--primary-color-3);
     margin-bottom: 1.5rem;
 }
 
 .team-credentials {
     font-size: var(--section-content);
+    font-weight: 500;
     color: #131212;
     margin-bottom: 0.5rem;
 }
@@ -1136,7 +1094,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, #0C7BC0 0%, #1B365D 100%);
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -1164,7 +1122,13 @@ body {
     }
 
     .team-section .team-card {
-        height: 350px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .team-section .team-card {
+        height: 500px;
     }
 }
 
@@ -1174,20 +1138,24 @@ body {
     }
 
     .team-section .team-card {
-        height: 310px;
+        height: 400px;
     }
 }
 
 @media (max-width: 768px) {
     .team-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-section .team-card {
+        height: 420px;
     }
 }
 
 @media (max-width: 640px) {
     .team-section .team-card {
-        height: 400px;
+        height: 500px;
     }
 }
 
@@ -1197,19 +1165,25 @@ body {
     }
 
     .team-section .team-card {
-        height: 270px;
+        height: 300px;
     }
 }
 
 @media screen and (max-width: 460px) {
     .team-section .team-card {
-        height: 300px;
+        height: 360px;
     }
 }
 
 @media screen and (max-width: 420px) {
     .team-section .team-card {
-        height: 350px;
+        height: 420px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .team-section .team-card {
+        height: 450px;
     }
 }
 
@@ -1218,10 +1192,11 @@ body {
 /*********** Testimonials Section Starts *************/
 .testimonials-section {
     position: relative;
-    top: 75px;
-    background: var(--primary-dark);
+    top: var(--relative-top);
+    background: var(--primary-color-2);
     color: white;
     padding: 2rem 4rem;
+    /* border: 4px solid red; */
 }
 
 .testimonials-section .container {
@@ -1281,7 +1256,7 @@ body {
 
 .testimonial-rating {
     margin-bottom: 1.5rem;
-    color: var(--warning);
+    color: #F59E0B;
 }
 
 .testimonial-author h4 {
@@ -1313,7 +1288,7 @@ body {
     border-radius: 50%;
     color: white;
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: all 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1337,7 +1312,7 @@ body {
     background: rgba(255, 255, 255, 0.4);
     border: none;
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: all 0.3s ease-in-out;
 }
 
 .testimonial-dots .dot.active {
@@ -1350,9 +1325,10 @@ body {
 /*********** Contact Section Starts *************/
 .contact-section {
     position: relative;
-    top: 75px;
+    top: var(--relative-top);
     padding: 4rem 0;
     background: white;
+    /* border: 4px solid rgb(2, 44, 5); */
 }
 
 .contact-section .container {
@@ -1402,7 +1378,7 @@ body {
 .contact-section .contact-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(45deg, #1e40af, #3730a3);
+    background: linear-gradient(45deg, var(--primary-color-2-hover), var(--primary-color-2));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1420,11 +1396,11 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #1f2937;
+    color: #121212;
 }
 
 .contact-section .contact-item p {
-    color: #3a3838;
+    color: #1b1b1b;
     font-weight: 400;
 }
 
@@ -1568,9 +1544,10 @@ body {
 /*********** Footer Section Starts *************/
 .footer {
     position: relative;
-    top: 75px;
-    background: #0F172A;
+    top: var(--relative-top);
+    background: var(--primary-color-2);
     color: white;
+    /* border: 4px solid white; */
 }
 
 .footer-main {
@@ -1605,11 +1582,12 @@ body {
     font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: white !important;
+    color: var(--footer-heading-color) !important;
 }
 
 .footer-description {
-    color: #94A3B8;
+    color: var(--footer-content-color);
+    font-weight: 600;
     line-height: 1.6;
     margin-bottom: 1.125rem;
 }
@@ -1622,7 +1600,7 @@ body {
 .footer .social-link {
     width: 36px;
     height: 36px;
-    background: #1E293B;
+    background: var(--primary-color-2-hover);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1642,7 +1620,7 @@ body {
     font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: white;
+    color: var(--footer-heading-color);
 }
 
 .footer-links ul {
@@ -1654,7 +1632,7 @@ body {
 }
 
 .footer-links a {
-    color: #94A3B8;
+    color: var(--footer-content-color);
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
@@ -1667,7 +1645,7 @@ body {
     font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: white;
+    color: var(--footer-heading-color);
 }
 
 .footer-contact .contact-item {
@@ -1675,7 +1653,7 @@ body {
     align-items: flex-start;
     gap: 0.5rem;
     margin-bottom: 1rem;
-    color: #94A3B8;
+    color: var(--footer-content-color);
 }
 
 .footer-contact .contact-item i {
@@ -1684,7 +1662,7 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid #1E293B;
+    border-top: 1px solid var(--footer-bottom-color);
     padding: 2rem 0;
 }
 
@@ -1703,7 +1681,7 @@ body {
 }
 
 .copyright {
-    color: #94A3B8;
+    color: var(--footer-content-color);
     font-size: 0.875rem;
 }
 
@@ -1713,7 +1691,7 @@ body {
 }
 
 .footer-bottom-links a {
-    color: #94A3B8;
+    color: var(--footer-content-color);
     text-decoration: none;
     font-size: 0.875rem;
     transition: color 0.3s ease-in-out;
@@ -1860,14 +1838,14 @@ body {
     }
 
     .container {
-        padding: 0 var(--spacing-md);
+        padding: 0 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
 
     .section-padding {
-        padding: var(--spacing-2xl) 0;
+        padding: 3rem 0;
     }
 }
 
@@ -1888,7 +1866,7 @@ body {
     }
 
     .section-padding {
-        padding: var(--spacing-lg) 0;
+        padding: 1.5rem 0;
     }
 }
 

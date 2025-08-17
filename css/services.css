@@ -1,15 +1,25 @@
-/* ===== ADVANCED CSS RESET AND BASE STYLES ===== */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+html {
     scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    font-family: "Playfair Display", serif;
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
 }
 
 .container {
@@ -24,22 +34,33 @@ body {
     }
 }
 
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Root Variables */
 :root {
     /* colors */
-    --primary-color-1: #bd270d;
-    --primary-color-1-hover: #e03f1b;
-    --primary-color-2: #123E7C;
-    --primary-color-2-hover: #135dc4;
-    --primary-color-3: #fda50b;
-    --primary-color-4: #ffdf0d;
-    --primary-color-5: #2A966F;
+    --primary-color-1: #B22234;
+    --primary-color-1-hover: #ea2c42;
+    --primary-color-2: #3C3B6E;
+    --primary-color-2-hover: #4543c6;
+    --primary-color-3: #0C7BC0;
+    --footer-color: #0F172A;
+    --footer-heading-color: #fff;
+    --footer-content-color: #b3bac4;
+    --footer-bottom-color: #1E293B;
+    --copyright-background: #123E70;
 
     /* font-sizes */
     --navbar-elements-size: 20px;
     --navbar-social-icons: 20px;
     --banner-heading: 32px;
     --banner-subheading: 24px;
-    --section-headings: 30px;
+    --section-headings: 40px;
     --section-subheadings: 28px;
     --section-main-content: 20px;
     --section-content: 18px;
@@ -47,18 +68,22 @@ body {
     --footer-elements: 16px;
     --footer-social-icons: 18px;
     --copyright-section: 16px;
+
+    /* relative-top */
+    --relative-top: 120px;
 }
 
 /***************** Services Overview Section Start *****************/
 .services-overview {
     position: relative;
-    top: 78px;
+    top: var(--relative-top);
     padding: 4rem 0;
     min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    /* border: 4px solid rgb(0, 255, 0); */
 }
 
 .services-overview .hero-slide {
@@ -218,9 +243,10 @@ body {
 /***************** Interactive-Service-Categories Section Start *****************/
 .service-categories {
     position: relative;
-    top: 78px;
+    top: var(--relative-top);
     padding: 3rem 0;
     background: #f8fafc;
+    /* border: 4px solid red; */
 }
 
 .service-categories .container {
@@ -359,11 +385,12 @@ body {
 /***************** HEXAGONAL EXPERTISE Section Start *****************/
 .hexagonal-expertise {
     position: relative;
-    top: 78px;
+    top: var(--relative-top);
     padding: 4rem 0;
     background: #fff;
     position: relative;
     overflow: hidden;
+    /* border: 4px solid rgb(0, 255, 0); */
 }
 
 .hexagonal-expertise .hex-bg-pattern {
@@ -396,21 +423,21 @@ body {
     position: relative;
 }
 
-.hexagonal-expertise .section-title-3d {
+.hexagonal-expertise .section-heading {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    color: var(--primary-color-2);
-}
-
-.hexagonal-expertise .title-word {
-    display: inline-block;
-    margin-right: 1rem;
     animation: titleWordFloat 4s ease-in-out infinite;
 }
 
-.hexagonal-expertise .title-word:nth-child(1) {
+/* .hexagonal-expertise .title-word {
+    display: inline-block;
+    margin-right: 1rem;
+    animation: titleWordFloat 4s ease-in-out infinite;
+} */
+
+/* .hexagonal-expertise .title-word:nth-child(1) {
     animation-delay: 0s;
 }
 
@@ -420,7 +447,7 @@ body {
 
 .hexagonal-expertise .title-word:nth-child(3) {
     animation-delay: 1s;
-}
+} */
 
 @keyframes titleWordFloat {
 
@@ -514,8 +541,8 @@ body {
 }
 
 @media screen and (max-width: 540px) {
-    .hexagonal-expertise .section-title-3d {
-        font-size: 2rem;
+    .hexagonal-expertise .section-heading {
+        font-size: 2.3rem;
     }
 }
 
@@ -532,5 +559,6 @@ body {
 
 .footer {
     position: relative;
-    top: 78px;
+    top: var(--relative-top);
+    /* border: 4px solid white; */
 }

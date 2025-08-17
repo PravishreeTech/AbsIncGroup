@@ -1,5 +1,5 @@
 // Main JavaScript functionality
-class ABSincGroupWebsite {
+class ABSINCGROUPWebsite {
     constructor() {
         this.init();
     }
@@ -305,12 +305,15 @@ class ABSincGroupWebsite {
                     video.src = videoSrc;
                     video.controls = true;
                     video.autoplay = true;
+                    video.playsInline = true;
                     video.style.width = '100%';
                     video.style.height = '100%';
                     video.style.objectFit = 'cover';
 
                     container.innerHTML = '';
                     container.appendChild(video);
+
+                    video.play().catch(err => console.log("Autoplay blocked:", err));
                 });
             }
         });
@@ -513,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Initialize the website
-const website = new ABSincGroupWebsite();
+const website = new ABSINCGROUPWebsite();
 
 // ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
 const observerOptions = {
@@ -713,9 +716,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 // Export for potential use in other modules
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = ABSincGroupWebsite;
+    module.exports = ABSINCGROUPWebsite;
 }
 
