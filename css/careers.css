@@ -1,14 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+:root {
+    /* colors */
+    --primary-color-1: #bd270d;
+    --primary-color-2: #123E7C;
+    --primary-color-2-hover: #135dc4;
+    --primary-color-3: #fda50b;
+    --primary-color-4: #ffdf0d;
+    --primary-color-5: #2A966F;
+    --copyright-background: #123E7C;
+
+    /* font-sizes */
+    --navbar-elements-size: 20px;
+    --navbar-social-icons: 20px;
+    --banner-heading: 32px;
+    --banner-subheading: 24px;
+    --section-headings: 40px;
+    --section-subheadings: 28px;
+    --section-main-content: 20px;
+    --section-content: 18px;
+    --section-normal: 16px;
+    --footer-elements: 16px;
+    --footer-social-icons: 18px;
+    --copyright-section: 16px;
 }
 
 /***************** Careers Overview Section Start *****************/
 .careers-overview {
     position: relative;
-    top: 83px;
-    padding: 4rem 0;
+    top: 78px;
     min-height: 450px;
-    /* background: #f8fafc; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.careers-overview .hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.careers-overview .hero-slide.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .careers-overview .hero-bg {
@@ -20,6 +91,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 0;
 }
 
 .careers-overview .hero-bg::before {
@@ -32,74 +104,118 @@ body {
     background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
-.careers-overview .section-header h1 {
-    max-width: 100%;
-    margin-top: 25px;
+.careers-overview .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+
 }
 
-.overview-text {
+.careers-overview .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.careers-overview .section-header h1 {
+    max-width: 100%;
+}
+
+.careers-overview .overview-content {
+    position: relative;
+    z-index: 2;
+}
+
+.careers-overview .overview-text {
     background: white;
     padding: 3rem;
     border-radius: 12px;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-    /* margin-bottom: 3rem; */
+    margin-bottom: 3rem;
 }
 
-.overview-text p {
+.careers-overview .overview-text p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #222222;
     margin-bottom: 10px;
 }
 
-/* ===== MAIN SECTION STYLES ===== */
-.main {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    position: relative;
-    padding: 80px 0 0 0;
-    overflow: hidden;
-}
-
-.careers-overview .container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 30px;
-    }
-
-    .titles {
-        font-size: 3rem;
-    }
-
-    .intro-images-grid {
-        gap: 60px;
+@media screen and (max-width: 1200px) {
+    .careers-overview {
+        min-height: 550px;
     }
 }
 
-/*********** Careers Overview Section Ends *************/
+@media screen and (max-width: 920px) {
+    .careers-overview {
+        min-height: 600px;
+    }
+
+    .careers-overview .overview-text {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .careers-overview {
+        min-height: 650px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .careers-overview {
+        min-height: 700px;
+    }
+
+    .careers-overview .overview-text {
+        padding: 1.5rem;
+    }
+
+    .careers-overview .overview-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .careers-overview {
+        min-height: 750px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .careers-overview {
+        width: 100%;
+        min-height: 800px;
+    }
+
+    .careers-overview .overview-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+/***************** Careers Overview Section Ends *****************/
 
 /********** NOW HIRING SECTION STARTS **********/
-.careers {
-    padding: 10rem 0;
+.now-hiring {
+    position: relative;
+    top: 78px;
+    padding: 4rem 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
-.careers-grid {
+.now-hiring .careers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
     gap: 1rem;
     margin-bottom: 4rem;
 }
 
-.career-card {
+.now-hiring .career-card {
     background: white;
     padding: 2.5rem;
     border-radius: 20px;
@@ -111,7 +227,7 @@ body {
     cursor: pointer;
 }
 
-.career-card::before {
+.now-hiring .career-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -123,22 +239,22 @@ body {
     transition: transform 0.3s ease;
 }
 
-.career-card:hover::before {
+.now-hiring .career-card:hover::before {
     transform: scaleX(1);
 }
 
-.career-card:hover {
+.now-hiring .career-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.career-icon {
+.now-hiring .career-icon {
     font-size: 3rem;
     color: var(--primary-color-2);
     margin-bottom: 1.5rem;
 }
 
-.career-card h3 {
+.now-hiring .career-card h3 {
     height: 50px;
     font-size: 1.5rem;
     font-weight: 700;
@@ -146,13 +262,13 @@ body {
     margin-bottom: 1rem;
 }
 
-.career-card p {
+.now-hiring .career-card p {
     color: #3b434e;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
-.career-overlay {
+.now-hiring .career-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -169,29 +285,29 @@ body {
     transition: all 0.3s ease;
 }
 
-.career-card:hover .career-overlay {
+.now-hiring .career-card:hover .career-overlay {
     opacity: 1;
     transform: translateY(0);
 }
 
-.career-overlay h4 {
+.now-hiring .career-overlay h4 {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
-.career-overlay ul {
+.now-hiring .career-overlay ul {
     list-style: none;
     text-align: left;
 }
 
-.career-overlay li {
+.now-hiring .career-overlay li {
     padding: 0.3rem 0;
     position: relative;
     padding-left: 1.5rem;
 }
 
-.career-overlay li::before {
+.now-hiring .career-overlay li::before {
     content: '✓';
     position: absolute;
     left: 0;
@@ -199,7 +315,7 @@ body {
     font-weight: bold;
 }
 
-.careers-footer {
+.now-hiring .careers-footer {
     text-align: center;
     background: white;
     padding: 3rem;
@@ -207,25 +323,25 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.resume-info p {
+.now-hiring .resume-info p {
     font-size: 1.2rem;
     color: #3b434e;
     margin-bottom: 0.5rem;
 }
 
-.resume-info a {
+.now-hiring .resume-info a {
     color: var(--primary-color-2-hover);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
-.resume-info a:hover {
+.now-hiring .resume-info a:hover {
     color: #1d4ed8;
     text-decoration: underline;
 }
 
-.resume-info small {
+.now-hiring .resume-info small {
     color: #121212;
     font-size: 1rem;
 }
@@ -234,5 +350,5 @@ body {
 
 .footer {
     position: relative;
-    top: 0px;
+    top: 78px;
 }

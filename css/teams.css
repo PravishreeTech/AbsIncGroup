@@ -1,4 +1,3 @@
-/* ===== ADVANCED CSS RESET AND BASE STYLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,35 +5,6 @@
 }
 
 :root {
-  /* Color Palette */
-  --primary-blue: #0066ff;
-  --secondary-blue: #004dd9;
-  --accent-gold: #ffd700;
-  --dark-bg: #fafafa;
-  --light-bg: #ffffff;
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --text-light: #ffffff;
-
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #0066ff, #004dd9);
-  --gradient-secondary: linear-gradient(135deg, #667eea, #764ba2);
-  --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
-  --gradient-dark: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-
-  /* Shadows */
-  --shadow-light: 0 4px 20px rgba(0, 102, 255, 0.1);
-  --shadow-medium: 0 8px 40px rgba(0, 102, 255, 0.2);
-  --shadow-heavy: 0 20px 60px rgba(0, 102, 255, 0.3);
-  --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.5);
-
-  /* Animations */
-  --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-medium: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 1s cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Our code */
   /* colors */
   --primary-color-1: #bd270d;
   --primary-color-2: #123e7c;
@@ -60,8 +30,8 @@
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
-  color: var(--text-primary);
-  background: var(--dark-bg);
+  color: #333333;
+  background: #fafafa;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -72,13 +42,40 @@ body {
   padding: 0 20px;
 }
 
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
 /***************** Team Overview Section Start *****************/
 .team-overview {
   position: relative;
-  top: 83px;
-  padding: 4rem 0;
+  top: 78px;
   min-height: 450px;
-  /* background: #f8fafc; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.team-overview .hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-overview .hero-slide.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .team-overview .hero-bg {
@@ -90,6 +87,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .team-overview .hero-bg::before {
@@ -102,67 +100,28 @@ body {
   background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
-.team-overview .section-header h1 {
-  max-width: 100%;
-}
-
-.overview-text {
-  background: white;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-  /* margin-bottom: 3rem; */
-}
-
-.overview-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #222222;
-  margin-bottom: 10px;
-}
-
-/* ===== MAIN SECTION STYLES ===== */
-.main {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  position: relative;
-  padding: 80px 0 0 0;
-  overflow: hidden;
-}
-
 .team-overview .container {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 40px;
   position: relative;
   z-index: 2;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1200px) {
-  .container {
-    padding: 0 30px;
-  }
-
-  .titles {
-    font-size: 3rem;
-  }
-
-  .intro-images-grid {
-    gap: 60px;
-  }
+.team-overview .section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
 }
 
-/*********** team Overview Section Ends *************/
-
-/***************** Teams Section Starts *****************/
-.teams-overview {
-  padding: 6rem 0;
-  background: #f8fafc;
-  padding-bottom: 3rem;
+.team-overview .section-header h1 {
+  max-width: 100%;
+  margin: 0px;
 }
 
-.teams-overview .overview-text {
+.team-overview .overview-content {
+  position: relative;
+  z-index: 2;
+}
+
+.team-overview .overview-text {
   background: white;
   padding: 3rem;
   border-radius: 12px;
@@ -170,282 +129,74 @@ body {
   margin-bottom: 3rem;
 }
 
-.teams-overview .overview-text p {
+.team-overview .overview-text p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #222222;
   margin-bottom: 1.5rem;
 }
 
-/***************** Teams Section End *****************/
-
-.step {
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: slideIn 0.8s ease-out forwards;
-}
-
-.step:nth-child(even) {
-  flex-direction: row-reverse;
-  transform: translateX(50px);
-}
-
-.step:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.step:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.step:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-.step:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
+@media screen and (max-width: 1200px) {
+  .team-overview {
+    min-height: 550px;
   }
 }
 
-.step-content {
-  flex: 1;
-  padding: 30px;
-  border-radius: 20px;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.step-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.step-1 .step-content {
-  background: linear-gradient(135deg,
-      var(--primary-color-2-hover) 0%,
-      var(--primary-color-2) 100%);
-}
-
-.step-2 .step-content {
-  background: linear-gradient(135deg, #e15354 0%, #c94f54 100%);
-}
-
-.step-3 .step-content {
-  background: linear-gradient(135deg,
-      var(--primary-color-2-hover) 0%,
-      var(--primary-color-2) 100%);
-}
-
-.step-4 .step-content {
-  background: linear-gradient(135deg, #e15354 0%, #c94f54 100%);
-}
-
-.step-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #fff;
-}
-
-.step-description {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.expert-info {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 15px;
-  border-radius: 10px;
-  border-left: 4px solid #2c3e50;
-}
-
-.expert-name {
-  font-weight: bold;
-  font-size: 18px;
-  color: #2c3e50;
-  margin-bottom: 5px;
-}
-
-.expert-designation {
-  color: #121212;
-  font-size: 14px;
-}
-
-.step-number {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
-  margin: 0 30px;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.step-1 .step-number {
-  background: linear-gradient(135deg, #e15354 0%, #c94f54 100%);
-}
-
-.step-2 .step-number {
-  background: linear-gradient(135deg,
-      var(--primary-color-2-hover) 0%,
-      var(--primary-color-2) 100%);
-}
-
-.step-3 .step-number {
-  background: linear-gradient(135deg, #e15354 0%, #c94f54 100%);
-}
-
-.step-4 .step-number {
-  background: linear-gradient(135deg,
-      var(--primary-color-2-hover) 0%,
-      var(--primary-color-2) 100%);
-}
-
-.connecting-line {
-  position: absolute;
-  left: 50%;
-  top: 80px;
-  width: 4px;
-  height: calc(100% - 160px);
-  background: linear-gradient(to bottom, #4ecdc4, #f093fb, #fcb69f, #a8edea);
-  transform: translateX(-50%);
-  z-index: -1;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .step {
-    flex-direction: column !important;
-    text-align: center;
-    margin-bottom: 30px;
+@media screen and (max-width: 920px) {
+  .team-overview {
+    min-height: 600px;
   }
 
-  .step:nth-child(even) {
-    flex-direction: column !important;
-  }
-
-  .step-content {
-    margin: 20px 0;
-    padding: 20px;
-  }
-
-  .step-number {
-    margin: 0 0 20px 0;
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-  }
-
-  .step-title {
-    font-size: 20px;
-  }
-
-  .step-description {
-    font-size: 14px;
-  }
-
-  .connecting-line {
-    display: none;
+  .team-overview .overview-text {
+    padding: 2rem;
   }
 }
 
-/* Tablet */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .step-content {
-    padding: 25px;
+@media screen and (max-width: 600px) {
+  .team-overview {
+    min-height: 600px;
   }
 
-  .step-number {
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
-    margin: 0 20px;
+  .team-overview .overview-text {
+    padding: 1.5rem;
+  }
+
+  .team-overview .overview-text p {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }
 
-/* Interactive elements */
-.step-content::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  background: linear-gradient(45deg,
-      transparent,
-      rgba(255, 255, 255, 0.3),
-      transparent);
-  border-radius: 25px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.step-content:hover::before {
-  opacity: 1;
-}
-
-/* Floating animation for step numbers */
-.step-number {
-  animation: float 3s ease-in-out infinite;
-}
-
-.step:nth-child(2) .step-number {
-  animation-delay: 0.5s;
-}
-
-.step:nth-child(3) .step-number {
-  animation-delay: 1s;
-}
-
-.step:nth-child(4) .step-number {
-  animation-delay: 1.5s;
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
+@media screen and (max-width: 520px) {
+  .team-overview {
+    min-height: 700px;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .team-overview {
+    width: 100%;
+    min-height: 750px;
+  }
+
+  .team-overview .overview-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/*********** Team Overview Section Ends *************/
 
 /***************** Leadership Section Starts *****************/
 .leadership-overview {
   position: relative;
-  top: 83px;
+  top: 78px;
   padding: 5rem 0;
-  /* background: linear-gradient(
-    135deg,
-    var(--primary-color-2-hover) 0%,
-    var(--primary-color-2)
-  ); */
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   color: #000;
 }
 
-.leadership-overview .leadership-content h2 {
+.leadership-overview .leadership-content h3 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
@@ -512,12 +263,25 @@ body {
 
 /***************** Leadership Section End *****************/
 
-/***************** Team Members Section Starts *****************/
+/*********** Team Members Section Starts *************/
 .team-members {
   position: relative;
-  top: 83px;
-  padding: 3rem 0;
+  top: 78px;
+  padding: 4rem;
+  margin: 0px;
+  max-width: 100%;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.team-members .connecting-line {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  width: 4px;
+  height: calc(100% - 160px);
+  background: linear-gradient(to bottom, #4ecdc4, #f093fb, #fcb69f, #a8edea);
+  transform: translateX(-50%);
+  z-index: -1;
 }
 
 .team-members .section-header {
@@ -525,7 +289,7 @@ body {
   margin-bottom: 4rem;
 }
 
-.team-members .section-header h2 {
+.team-members .section-header h3 {
   font-size: 2.8rem;
   font-weight: 700;
   color: var(--primary-color-2);
@@ -533,110 +297,256 @@ body {
   position: relative;
 }
 
-.team-members .section-header p {
-  font-size: 1.2rem;
-  color: #6b7280;
-  max-width: 800px;
-  margin: 0 auto;
-  font-weight: 400;
+.team-members .step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 0.8s ease-out forwards;
 }
 
-.team-members .teams-grid {
-  display: grid;
-  gap: 3rem;
+.team-members .step:nth-child(even) {
+  flex-direction: row-reverse;
+  transform: translateX(50px);
 }
 
-.team-members .team-member {
-  background: white;
-  padding: 3rem;
+.team-members .step:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.team-members .step:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.team-members .step:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.team-members .step:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.team-members .step-content {
+  flex: 1;
+  padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2.5rem;
-  align-items: start;
-  transition: all 0.3s ease;
-  border: 1px solid #e2e8f0;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-members .team-member:hover {
+.team-members .step-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: var(--primary-color-2-hover);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.team-members .member-avatar {
-  width: 120px;
-  height: 120px;
+.team-members .step-1 .step-content {
   background: linear-gradient(135deg,
       var(--primary-color-2-hover) 0%,
       var(--primary-color-2) 100%);
+}
+
+.team-members .step-2 .step-content {
+  background: linear-gradient(135deg, #e15354 0%, #c94f54 100%);
+}
+
+.team-members .step-3 .step-content {
+  background: linear-gradient(135deg,
+      var(--primary-color-2-hover) 0%,
+      var(--primary-color-2) 100%);
+}
+
+.team-members .step-4 .step-content {
+  background: linear-gradient(135deg, #e15354 0%, #c94f54 100%);
+}
+
+.team-members .step-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.team-members .step-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.team-members .expert-info {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #2c3e50;
+}
+
+.team-members .expert-name {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.team-members .expert-designation {
+  color: #121212;
+  font-size: 14px;
+}
+
+.team-members .step-number {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 32px;
+  font-weight: bold;
   color: white;
-  flex-shrink: 0;
-}
-
-.team-members .member-info h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 0.5rem;
-}
-
-.team-members .member-info h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--primary-color-2);
-  margin-bottom: 1rem;
-}
-
-.team-members .member-education {
-  font-style: italic;
-  color: #64748b;
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-}
-
-.team-members .member-highlights {
-  list-style: none;
-}
-
-.team-members .member-highlights li {
-  padding: 0.5rem 0;
+  margin: 0 30px;
   position: relative;
-  padding-left: 2rem;
-  color: #374151;
-  line-height: 1.6;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.team-members .member-highlights li::before {
-  content: "●";
-  position: absolute;
-  left: 0;
-  color: var(--primary-color-2);
-  font-size: 1.2rem;
+.team-members .step-1 .step-number {
+  background: linear-gradient(135deg, #e15354 0%, #c94f54 100%);
 }
 
-@media screen and (max-width: 650px) {
-  .team-members .team-member {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.team-members .step-2 .step-number {
+  background: linear-gradient(135deg,
+      var(--primary-color-2-hover) 0%,
+      var(--primary-color-2) 100%);
+}
+
+.team-members .step-3 .step-number {
+  background: linear-gradient(135deg, #e15354 0%, #c94f54 100%);
+}
+
+.team-members .step-4 .step-number {
+  background: linear-gradient(135deg,
+      var(--primary-color-2-hover) 0%,
+      var(--primary-color-2) 100%);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .team-members .step {
+    flex-direction: column !important;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .team-members .step:nth-child(even) {
+    flex-direction: column !important;
+  }
+
+  .team-members .step-content {
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  .team-members .step-number {
+    margin: 0 0 20px 0;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .team-members .step-title {
+    font-size: 20px;
+  }
+
+  .team-members .step-description {
+    font-size: 14px;
+  }
+
+  .team-members .connecting-line {
+    display: none;
   }
 }
 
-/***************** Team Members Section End *****************/
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .team-members .step-content {
+    padding: 25px;
+  }
 
-/* Footer */
+  .team-members .step-number {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+    margin: 0 20px;
+  }
+}
+
+/* Interactive elements */
+.team-members .step-content::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.team-members .step-content:hover::before {
+  opacity: 1;
+}
+
+/* Floating animation for step numbers */
+.team-members .step-number {
+  animation: float 3s ease-in-out infinite;
+}
+
+.team-members .step:nth-child(2) .step-number {
+  animation-delay: 0.5s;
+}
+
+.team-members .step:nth-child(3) .step-number {
+  animation-delay: 1s;
+}
+
+.team-members .step:nth-child(4) .step-number {
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/*********** Team Members Section Ends *************/
+
+/***************** Footer Starts *****************/
 .footer {
   position: relative;
   top: 78px;
 }
+
+/***************** Footer Ends *****************/
 
 /* Animation utilities */
 [data-aos] {

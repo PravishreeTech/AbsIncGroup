@@ -548,7 +548,7 @@ const sections = [
     'imageSection',
     'subheadingSection',
     'featuresSection',
-    'ctaSection'
+    'ctaSection'  //used for why Choose Us button in Home Page need to check why it is used
 ];
 
 sections.forEach(sectionId => {

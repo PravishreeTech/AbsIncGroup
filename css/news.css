@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+:root {
+    /* Our code */
+    /* colors */
+    --primary-color-1: #bd270d;
+    --primary-color-2: #123E7C;
+    --primary-color-2-hover: #135dc4;
+    --primary-color-3: #fda50b;
+    --primary-color-4: #ffdf0d;
+    --primary-color-5: #2A966F;
+
+    /* font-sizes */
+    --navbar-elements-size: 20px;
+    --navbar-social-icons: 20px;
+    --banner-heading: 32px;
+    --banner-subheading: 24px;
+    --section-subheadings: 28px;
+    --section-main-content: 20px;
+    --section-content: 18px;
+    --section-normal: 16px;
+    --footer-elements: 16px;
+    --footer-social-icons: 18px;
+    --copyright-section: 16px;
+}
+
+/*************** NEWS Section Starts *************/
+.news-section {
+    position: relative;
+    top: 78px;
+}
+
+.news-section .section-content {
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: var(--primary-color-2);
+}
+
+
+/*************** NEWS Section Ends *************/
