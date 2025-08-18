@@ -22,37 +22,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Root Variables */
-:root {
-    /* colors */
-    --primary-color-1: #B22234;
-    --primary-color-1-hover: #ea2c42;
-    --primary-color-2: #3C3B6E;
-    --primary-color-2-hover: #4543c6;
-    --primary-color-3: #0C7BC0;
-    --footer-color: #0F172A;
-    --footer-heading-color: #fff;
-    --footer-content-color: #b3bac4;
-    --footer-bottom-color: #1E293B;
-    --copyright-background: #123E70;
-
-    /* font-sizes */
-    --navbar-elements-size: 20px;
-    --navbar-social-icons: 20px;
-    --banner-heading: 32px;
-    --banner-subheading: 24px;
-    --section-headings: 40px;
-    --section-subheadings: 28px;
-    --section-main-content: 20px;
-    --section-content: 18px;
-    --section-normal: 16px;
-    --footer-elements: 16px;
-    --footer-social-icons: 18px;
-    --copyright-section: 16px;
-
-    /* relative-top */
-    --relative-top: 120px;
-}
+/* Root Variables are used from style.css file*/
 
 .container {
     max-width: 1200px;
@@ -64,13 +34,6 @@ body {
     .container {
         padding: 0 30px;
     }
-}
-
-.gradient-text {
-    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 /*************** NEWS Section Starts *************/

@@ -22,44 +22,8 @@ body {
     overflow-x: hidden;
 }
 
-/* Root Variables */
-:root {
-    /* colors */
-    --primary-color-1: #B22234;
-    --primary-color-1-hover: #ea2c42;
-    --primary-color-2: #3C3B6E;
-    --primary-color-2-hover: #4543c6;
-    --primary-color-3: #0C7BC0;
-    --footer-color: #0F172A;
-    --footer-heading-color: #fff;
-    --footer-content-color: #b3bac4;
-    --footer-bottom-color: #1E293B;
-    --copyright-background: #123E70;
+/* Root Variables are used from style.css file*/
 
-    /* font-sizes */
-    --navbar-elements-size: 20px;
-    --navbar-social-icons: 20px;
-    --banner-heading: 32px;
-    --banner-subheading: 24px;
-    --section-headings: 40px;
-    --section-subheadings: 28px;
-    --section-main-content: 20px;
-    --section-content: 18px;
-    --section-normal: 16px;
-    --footer-elements: 16px;
-    --footer-social-icons: 18px;
-    --copyright-section: 16px;
-
-    /* relative-top */
-    --relative-top: 120px;
-}
-
-.gradient-text {
-    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 /*********** Expertise Overview Section Starts *************/
 .expertise-overview {
@@ -469,7 +433,7 @@ body {
     padding: 1rem;
     background: #F5F7FA;
     border-radius: 16px;
-    border-left: 4px solid #1B365D;
+    border-left: 4px solid var(--primary-color-2);
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(30px);
@@ -486,7 +450,7 @@ body {
 }
 
 .what-sets-apart .feature-icon {
-    background: linear-gradient(135deg, #1B365D, #4A90E2);
+    background: linear-gradient(135deg, var(--primary-color-2-hover), var(--primary-color-2));
     color: white;
     width: 60px;
     height: 60px;
@@ -739,10 +703,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg,
-            rgba(27, 54, 93, 0.85) 0%,
-            rgba(27, 54, 93, 0.4) 60%,
-            transparent 100%);
+    background: linear-gradient(135deg, rgba(27, 54, 93, 0.85) 0%, rgba(27, 54, 93, 0.4) 60%, transparent 100%);
     z-index: 2;
     transition: background 0.3s ease;
 }
@@ -785,7 +746,7 @@ body {
     padding: 12px 24px;
     height: auto;
 
-    background: linear-gradient(135deg, #1B365D 0%, #4A90E2 100%);
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
     color: white;
     border-radius: 20px;
     text-decoration: none;
@@ -814,7 +775,9 @@ body {
 }
 
 .call-to-action .call-button:hover {
-    background: var(--primary-color-2-hover);
+    /* background: var(--primary-color-2hover); */
+    background: #fff;
+    color: var(--primary-color-2);
     border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-3px);
     box-shadow:
