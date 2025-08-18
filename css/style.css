@@ -25,9 +25,9 @@ body {
 /* Root Variables */
 :root {
     /* colors */
-    --primary-color-1: #B22234;
+    --primary-color-1: #BE0032;
     --primary-color-1-hover: #ea2c42;
-    --primary-color-2: #3C3B6E;
+    --primary-color-2: #02034b;
     --primary-color-2-hover: #4543c6;
     --primary-color-3: #0C7BC0;
     --footer-color: #0F172A;
@@ -66,7 +66,8 @@ body {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
+    background: var(--primary-color-2);
+    /* background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%); */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -781,7 +782,7 @@ body {
 .video-section {
     position: relative;
     top: var(--relative-top);
-    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
+    background: var(--primary-color-2);
     padding: 4rem 0;
     text-align: center;
     /* border: 4px solid rgb(2, 44, 5); */
@@ -930,13 +931,13 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    color: #475569;
+    color: var(--primary-color-3);
 }
 
 .services-section .tab-btn:hover,
 .services-section .tab-btn.active {
     background: white;
-    color: var(--primary-color-3);
+    color: var(--primary-color-2);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
@@ -966,7 +967,7 @@ body {
 .service-details h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color-2-hover);
+    color: var(--primary-color-2);
     margin-bottom: 1.5rem;
 }
 
@@ -1057,7 +1058,7 @@ body {
 }
 
 .team-info h3 {
-    font-size: var(--section-subheadings);
+    font-size: var(--primary-color-2);
     font-weight: 700;
     color: #0F172A;
     margin-bottom: 0.7rem;
@@ -1600,19 +1601,19 @@ body {
 .footer .social-link {
     width: 36px;
     height: 36px;
-    background: var(--primary-color-2-hover);
+    background: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #94A3B8;
+    color: var(--primary-color-2);
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
 .footer .social-link:hover {
     background: var(--primary-color-2-hover);
-    color: white;
+    color: #fff;
     transform: translateY(-2px);
 }
 
@@ -1657,7 +1658,7 @@ body {
 }
 
 .footer-contact .contact-item i {
-    color: var(--primary-color-2-hover);
+    color: #fff;
     margin-top: 2px;
 }
 
@@ -1773,7 +1774,7 @@ body {
     right: 1.5rem;
     width: 48px;
     height: 48px;
-    background: var(--primary-color-2-hover);
+    background: var(--primary-color-2);
     color: white;
     border: none;
     border-radius: 50%;
@@ -1791,7 +1792,7 @@ body {
 }
 
 .back-to-top:hover {
-    background: var(--primary-color-2);
+    background: var(--primary-color-2-hover);
     transform: translateY(-2px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
