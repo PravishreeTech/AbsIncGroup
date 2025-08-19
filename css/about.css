@@ -304,6 +304,11 @@ body {
     opacity: 0.3;
 }
 
+.why-choose-us .section-header {
+    position: relative;
+    z-index: 99;
+}
+
 .why-choose-us .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -733,7 +738,7 @@ body {
     position: relative;
     top: var(--relative-top);
     padding: 50px 0;
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
     color: white;
 }
 

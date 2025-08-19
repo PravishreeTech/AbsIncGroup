@@ -363,9 +363,13 @@ body {
   background: linear-gradient(135deg, #e15354 0%, #c94f54 100%);
 }
 
-.team-members .step-title {
+.team-members .step-content .step-title {
   font-size: 24px;
   font-weight: bold;
+  color: #fff;
+}
+
+.team-members .step-content p {
   margin-bottom: 15px;
   color: #fff;
 }
@@ -378,7 +382,7 @@ body {
 }
 
 .team-members .step-description {
-  list-style: none;
+  /* list-style: none; */
   padding: 3px;
 }
 

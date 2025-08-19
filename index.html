@@ -31,6 +31,7 @@
 </head>
 
 <body>
+
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
@@ -48,7 +49,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <a href="/">
+                <a href="./index.html">
                     <img src="./assets/logo.png" alt="">
                 </a>
                 <p class="tagline">“Operational excellence - Regulatory mastery”</p>
@@ -80,7 +81,7 @@
             <div class="hero-bg" style="background-image: url('./assets/images/banner-1.jpg')"></div>
             <div class="hero-content">
                 <h1 class="hero-title">Strategic Consulting for Biologics, Advanced Therapies, cGMP Manufacturing,
-                    Analytical Methods and Quality & Regulatory Excellence</h1>
+                    Analytical Methods, Quality & Regulatory Excellence</h1>
                 <p class="hero-description">
                     A strategic consulting firm serving the biopharmaceutical, pharmaceutical, biotechnology, medical
                     device and diagnostics sectors
@@ -93,7 +94,7 @@
             <div class="hero-bg" style="background-image: url('./assets/images/banner-2.jpg')"></div>
             <div class="hero-content">
                 <h1 class="hero-title">Strategic Consulting for Biologics, Advanced Therapies, cGMP Manufacturing,
-                    Analytical Methods and Quality & Regulatory Excellence</h1>
+                    Analytical Methods, Quality & Regulatory Excellence</h1>
                 <p class="hero-description">
                     A strategic consulting firm serving the biopharmaceutical, pharmaceutical, biotechnology, medical
                     device and diagnostics sectors
@@ -106,12 +107,13 @@
             <div class="hero-bg" style="background-image: url('./assets/images/banner-3.jpg')"></div>
             <div class="hero-content">
                 <h1 class="hero-title">Strategic Consulting for Biologics, Advanced Therapies, cGMP Manufacturing,
-                    Analytical Methods and Quality & Regulatory Excellence</h1>
+                    Analytical Methods, Quality & Regulatory Excellence</h1>
                 <p class="hero-description">
                     A strategic consulting firm serving the biopharmaceutical, pharmaceutical, biotechnology, medical
                     device and diagnostics sectors
                 </p>
-                <p class="hero-description">“Cut Costs. Speed Approvals. Stay Compliant — the AI & Lean Six Sigma way”
+                <p class="hero-description">“Cut Costs. Speed Approvals. Stay Compliant — the AI
+                    & Lean Six Sigma way”
                 </p>
             </div>
         </div>
@@ -119,7 +121,7 @@
     <!-- Hero Section End -->
 
     <!-- News Ticker (CALL TO ACTION) -->
-    <section class="news-ticker">
+    <section class=" news-ticker" data-aos="fade-up" data-aos-delay="200">
         <!-- <div class="section-header" data-aos="fade-up">
             <h2 class="section-title">Call To <span class="gradient-text">Action</span></h2>
             <p class="section-subtitle">Comprehensive consulting solutions for life sciences excellence</p>
@@ -187,14 +189,14 @@
         <section id="our-difference" class="fifty-fifty-section">
             <div class="container">
                 <div class="fifty-fifty-content">
-                    <div class="content-left">
+                    <div class="content-left" data-aos="fade-right" data-aos-delay="400">
                         <div class="image-container">
                             <div class="image-placeholder">
                                 <img data-src="./assets/images/mission.jpg" alt="" class="lazy-load" loading="lazy">
                             </div>
                         </div>
                     </div>
-                    <div class="content-right" data-aos="fade-up">
+                    <div class="content-right" data-aos="fade-left" data-aos-delay="600">
                         <h3 class="section-title">Our <span class="gradient-text">Mission</span></h3>
                         <p>To redefine excellence in life sciences consulting by uniting elite Regulatory Strategists,
                             CMC experts,
@@ -213,7 +215,7 @@
             <div class="container">
                 <div class="fifty-fifty-content">
 
-                    <div class="content-right" data-aos="fade-up">
+                    <div class="content-right" data-aos="fade-right" data-aos-delay="400">
                         <h3 class="section-title">Our <span class="gradient-text">Vision</span></h3>
                         <p>At ABSINCGROUP, our vision is to become the most trusted partner in the Biologics,
                             Pharmaceutical, Medical device and Combination drug consulting industry by providing
@@ -224,7 +226,7 @@
                             development to commercialization, we bring integrity, precision and agility to every
                             project.</p>
                     </div>
-                    <div class="content-left">
+                    <div class="content-left" data-aos="fade-left" data-aos-delay="600">
                         <div class="image-container">
                             <div class="image-placeholder">
                                 <img data-src="./assets/images/vision.jpg" alt="" class="lazy-load" loading="lazy">
@@ -406,17 +408,21 @@
             <div class="team-grid">
                 <div class="team-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="team-info">
-                        <h3>Dr. Niranjan M. Kumar, PhD</h3>
+                        <h3>Dr. Niranjan M. Kumar, PhD, MBA</h3>
                         <p class="team-title">President & Founding Director</p>
                         <p class="team-credentials">Masters in Management (Wharton Business School)</p>
                         <!-- <p class="team-description">Global biopharma leader with decades of experience in regulatory
                             strategy and quality leadership.</p> -->
-                        <p class="team-description">Global biopharma executive with 35 + years of proven leadership in
+                        <!-- <p class="team-description">Global biopharma executive with 35 + years of proven leadership in
                             regulatory strategy,
                             manufacturing, testing, GMP compliance and quality innovation. Trusted by industry leaders
                             for delivering
                             scalable solutions, accelerating market access and building high-impact partnerships across
-                            global life sciences markets.</p>
+                            global life sciences markets.</p> -->
+                        <p class="team-description">Global biopharma executive with 35+ years of leadership in
+                            regulatory strategy, manufacturing, testing, GMP compliance, and quality innovation. Trusted
+                            for delivering scalable solutions, accelerating market access, and building high-impact
+                            partnerships worldwide.</p>
                     </div>
                 </div>
 
@@ -424,37 +430,47 @@
                     <div class="team-info">
                         <h3>Ms. Sheila Smith, MBA</h3>
                         <p class="team-title">Vice President, Human Resources</p>
-                        <p class="team-description">Proven track record in building and nurturing strategic client
+                        <!-- <p class="team-description">Proven track record in building and nurturing strategic client
                             partnerships.
                             Expert in account growth and consulting delivery management. Focused on ensuring client’s
                             confidence
                             and long-term relationship success. Skilled in managing complex projects across
                             biopharma/biotech, pharma
-                            sectors. Strong communicator bridging client needs and internal employee teams.</p>
+                            sectors. Strong communicator bridging client needs and internal employee teams.</p> -->
+                        <p class="team-description">Proven leader in strategic client partnerships, account growth, and
+                            consulting delivery management. Skilled communicator driving long-term success and managing
+                            complex projects across biopharma, biotech, and pharma sectors.</p>
                     </div>
                 </div>
 
                 <div class="team-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="team-info">
                         <h3>Mr. V. Nathan Roy, BS</h3>
+                        <p class="team-title">Executive Business Development Studies </p>
                         <p class="team-title">Vice President, Business Development & Marketing</p>
-                        <p class="team-credentials">Executive Business Development Studies </p>
                         <p class="team-credentials">The Wharton School at the University of Pennsylvania, Philadelphia
                         </p>
-                        <p class="team-description">Expert in international market expansion and building strategic
-                            industry partnerships.</p>
+                        <!-- <p class="team-description">Expert in international market expansion and building strategic
+                            industry partnerships.</p> -->
+                        <p class="team-description">Expert in global market expansion and client acquisition across the
+                            U.S., Europe, and MENA, with proven success in biopharma partnerships and strategic industry
+                            alliances.</p>
                     </div>
                 </div>
 
                 <div class="team-card" data-aos="fade-up" data-aos-delay="800">
                     <div class="team-info">
-                        <h3>Senior Manufacturing & Quality Leader</h3>
+                        <h3>Senior Regulatory & Quality Leader</h3>
                         <p class="team-title">Operational Strategist</p>
-                        <p class="team-description">Extensive experience in quality gap assessment, remediation, data
+                        <!-- <p class="team-description">Extensive experience in quality gap assessment, remediation, data
                             integrity, validation, and site readiness. Proven ability to lead cross-functional teams for
                             FDA and EMA compliance.</p>
                         <p class="team-description">Operational Strategist and Manufacturing Systems Expert. FDA
-                            certified 3rd party consultants for global companies.</p>
+                            certified 3rd party consultants for global companies.</p> -->
+                        <p class="team-description">Extensive experience in quality gap assessment, remediation, data
+                            integrity, validation, and site readiness with proven leadership in FDA/EMA compliance.
+                            Operational strategist and manufacturing systems expert, serving as FDA-certified 3rd party
+                            consultant for global companies.</p>
                     </div>
                 </div>
             </div>
