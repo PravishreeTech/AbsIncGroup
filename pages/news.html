@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Website Icon -->
-    <link rel="icon" href="./assets/icon.png" type="image/png">
+    <link rel="icon" href="../assets/icon.png" type="image/png">
 
     <!-- Website Title -->
     <title>Powering Healthcare with Connected Intelligence - ABSINCGROUP</title>
@@ -33,6 +33,19 @@
 
 <body>
 
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="dna-helix">
+                    <div class="helix-strand"></div>
+                    <div class="helix-strand"></div>
+                </div>
+            </div>
+            <div class="loading-text">Loading ABSINCGROUP...</div>
+        </div>
+    </div>
+
     <!-- NavBar section -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -40,10 +53,10 @@
                 <a href="../index.html">
                     <img src="../assets/logo.png" alt="">
                 </a>
-                <p class="tagline">“Operational excellence - Regulatory mastery”</p>
+                <p class="tagline">Operational Excellence - Regulatory Mastery</p>
             </div>
             <ul class="nav-menu" id="navigation">
-                <!-- <li><a href="../index.html" class="nav-link">Home</a></li> -->
+                <li><a href="../index.html" class="nav-link">Home</a></li>
                 <li><a href="../pages/about.html" class="nav-link">About Us</a></li>
                 <li><a href="../pages/services.html" class="nav-link">Services</a></li>
                 <li><a href="../pages/expertise.html" class="nav-link">Expertise</a></li>
@@ -60,6 +73,44 @@
         </div>
     </nav>
 
+    <!-- News Overview Section Start-->
+    <section class="news-overview with-bubbles auto-slider" id="about">
+        <div class="hero-slide active">
+            <div class="hero-bg" style="background-image: url('../assets/images/banner-1.jpg')"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="heading">News and Podcasts</h2>
+                    <h2 class="sub-heading">Stay informed with the latest news, expert voices, and industry insights.
+                        <br>Your single hub for trends, analysis, and thought leadership in life sciences.
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slide">
+            <div class="hero-bg" style="background-image: url('../assets/images/banner-2.jpg')"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="heading">News and Podcasts</h2>
+                    <h2 class="sub-heading">Stay informed with the latest news, expert voices, and industry insights.
+                        <br>Your single hub for trends, analysis, and thought leadership in life sciences.
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slide">
+            <div class="hero-bg" style="background-image: url('../assets/images/banner-3.jpg')"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="heading">News and Podcasts</h2>
+                    <h2 class="sub-heading">Stay informed with the latest news, expert voices, and industry insights.
+                        <br>Your single hub for trends, analysis, and thought leadership in life sciences.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- News Overview Section End-->
+
     <!-- News Section Starts -->
     <section class="news-section">
         <div class="container">
@@ -68,8 +119,70 @@
                 <p class="section-subtitle">“News, Voices, and Insights — All in One Place.”</p>
             </div>
 
-            <div class="section-content">
-                <h6>News & Podcasts — Coming Soon. Stay Informed, Stay Inspired.</h6>
+            <div class="news-content">
+                <div class="news-card" data-aos="fade-right" data-aos-delay="400">
+                    <img src="../assets/images/news.jpg" alt="">
+                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
+                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
+                        characterization of the molecule to ensure safety,...</h5>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="news-card" data-aos="fade-left" data-aos-delay="600">
+                    <img src="../assets/images/news.jpg" alt="">
+                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
+                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
+                        characterization of the molecule to ensure safety,...</h5>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="news-card" data-aos="fade-right" data-aos-delay="400">
+                    <img src="../assets/images/news.jpg" alt="">
+                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
+                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
+                        characterization of the molecule to ensure safety,...</h5>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="news-card" data-aos="fade-left" data-aos-delay="600">
+                    <img src="../assets/images/news.jpg" alt="">
+                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
+                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
+                        characterization of the molecule to ensure safety,...</h5>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="news-card" data-aos="fade-right" data-aos-delay="400">
+                    <img src="../assets/images/news.jpg" alt="">
+                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
+                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
+                        characterization of the molecule to ensure safety,...</h5>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="news-card" data-aos="fade-left" data-aos-delay="600">
+                    <img src="../assets/images/news.jpg" alt="">
+                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
+                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
+                        characterization of the molecule to ensure safety,...</h5>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="news-card" data-aos="fade-right" data-aos-delay="400">
+                    <img src="../assets/images/news.jpg" alt="">
+                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
+                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
+                        characterization of the molecule to ensure safety,...</h5>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="news-card" data-aos="fade-left" data-aos-delay="600">
+                    <img src="../assets/images/news.jpg" alt="">
+                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
+                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
+                        characterization of the molecule to ensure safety,...</h5>
+                    <a href="#">Read More</a>
+                </div>
             </div>
 
         </div>
@@ -153,8 +266,8 @@
                         <p>&copy; 2018-2025 ABSINCGROUP USA®. All rights reserved.</p>
                     </div>
                     <div class="footer-bottom-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
+                        <a href="../pages/privacy-policy.html">Privacy Policy</a>
+                        <a href="../pages/terms-conditions.html">Terms of Use</a>
                         <a href="#">Accessibility</a>
                     </div>
                 </div>
@@ -167,6 +280,7 @@
             </a>
         </div>
     </footer>
+
     <!-- Footer Section End -->
 
     <!-- Back to Top Button -->

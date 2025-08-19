@@ -305,7 +305,7 @@ body {
 
 .navbar .tagline {
     color: var(--primary-color-2);
-    font-weight: 500;
+    font-weight: bold;
     font-size: 16px;
 }
 
@@ -1428,6 +1428,10 @@ body {
 
 .contact-section .contact-info {
     padding: 2rem;
+}
+
+.contact-section .contact-info a {
+    text-decoration: none;
 }
 
 .contact-section .contact-item {
