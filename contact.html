@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Website Icon -->
-    <link rel="icon" href=" assets/icon.png" type="image/png">
+    <link rel="icon" href="./assets/icon.png" type="image/png">
 
     <!-- Website Title -->
     <title>Powering Healthcare with Connected Intelligence - ABSINCGROUP</title>
@@ -19,9 +19,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href=" css/style.css">
-    <link rel="stylesheet" href=" css/animations.css">
-    <link rel="stylesheet" href=" css/contact.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/contact.css">
 
     <!-- Google Fonts -->
     <link rel="stylesheet"
@@ -34,7 +34,7 @@
 <body>
 
     <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
+    <!-- <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
             <div class="loading-logo">
                 <div class="dna-helix">
@@ -44,7 +44,7 @@
             </div>
             <div class="loading-text">Loading ABSINCGROUP...</div>
         </div>
-    </div>
+    </div> -->
 
     <!-- NavBar Section Start -->
     <nav class="navbar" id="navbar">
@@ -199,34 +199,46 @@
                         <form class="contact-form" id="contactForm">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <input type="text" name="firstName" placeholder="First Name" required>
+                                    <input type="text" id="firstname" name="firstName" placeholder="First Name"
+                                        required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="lastName" placeholder="Last Name" required>
+                                    <input type="text" id="lastname" name="lastName" placeholder="Last Name" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <input type="email" name="email" placeholder="Email Address" required>
+                                <input type="email" id="email" name="email" placeholder="Email Address" required>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="company" placeholder="Company" required>
+                                <input type="text" id="company" name="company" placeholder="Company" required>
                             </div>
 
                             <div class="form-group">
-                                <input type="tel" name="phone" placeholder="Phone Number" required>
+                                <input type="tel" id="contact" name="phone" placeholder="Phone Number" required>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="subject" placeholder="Subject (optional)">
+                                <input type="text" id="subject" name="subject" placeholder="Subject (optional)">
                             </div>
 
                             <div class="form-group">
-                                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                                <textarea id="message" name="message" rows="3" placeholder="Your Message"
+                                    required></textarea>
                             </div>
 
-                            <button type="submit" class="submit-btn">
+                            <div class="captcha">
+                                <label for="captcha-input">Enter Captcha</label>
+                                <div class="preview"></div>
+                                <div class="captcha-form">
+                                    <input type="text" class="captcha-input" placeholder="Enter the Captcha..."
+                                        required>
+                                    <button type="button" class="captcha-refresh"><i class="fa fa-refresh"></i></button>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn" id="submitbtn">
                                 <span class="btn-text">Send Message</span>
                             </button>
                         </form>
@@ -336,8 +348,16 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- Contact Form SWAL -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Contact Form EmailJs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
     <!-- Scripts -->
-    <script src=" js/main.js"></script>
-    <script src=" js/lazy-loading.js"></script>
-    <script src=" js/animations.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+    <script src="./js/lazy-loading.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/contact.js"></script>
 </body>

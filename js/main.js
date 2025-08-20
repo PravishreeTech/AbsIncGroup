@@ -16,7 +16,7 @@ class ABSINCGROUPWebsite {
             this.initSliders();
             this.initServicesTab();
             this.initTestimonials();
-            this.initContactForm();
+            // this.initContactForm();
             this.initBackToTop();
             this.initSmoothScrolling();
             this.initHeaderScroll();
@@ -195,36 +195,36 @@ class ABSINCGROUPWebsite {
         startAutoSlide();
     }
 
-    // Contact Form in Home Page but need to check once if it is working or not
-    initContactForm() {
-        const form = document.getElementById('contactForm');
-        const submitBtn = form?.querySelector('.submit-btn');
+    // // Contact Form in Home Page but need to check once if it is working or not
+    // initContactForm() {
+    //     const form = document.getElementById('contactForm');
+    //     const submitBtn = form?.querySelector('.submit-btn');
 
-        if (form && submitBtn) {
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
+    //     if (form && submitBtn) {
+    //         form.addEventListener('submit', async (e) => {
+    //             e.preventDefault();
 
-                // Add loading state
-                submitBtn.classList.add('loading');
-                submitBtn.disabled = true;
+    //             // Add loading state
+    //             submitBtn.classList.add('loading');
+    //             submitBtn.disabled = true;
 
-                // Simulate form submission
-                try {
-                    await new Promise(resolve => setTimeout(resolve, 2000));
+    //             // Simulate form submission
+    //             try {
+    //                 await new Promise(resolve => setTimeout(resolve, 2000));
 
-                    // Show success message
-                    this.showNotification('Message sent successfully!', 'success');
-                    form.reset();
-                } catch (error) {
-                    this.showNotification('Failed to send message. Please try again.', 'error');
-                } finally {
-                    // Remove loading state
-                    submitBtn.classList.remove('loading');
-                    submitBtn.disabled = false;
-                }
-            });
-        }
-    }
+    //                 // Show success message
+    //                 this.showNotification('Message sent successfully!', 'success');
+    //                 form.reset();
+    //             } catch (error) {
+    //                 this.showNotification('Failed to send message. Please try again.', 'error');
+    //             } finally {
+    //                 // Remove loading state
+    //                 submitBtn.classList.remove('loading');
+    //                 submitBtn.disabled = false;
+    //             }
+    //         });
+    //     }
+    // }
 
     initBackToTop() {
         const backToTopBtn = document.getElementById('backToTop');
