@@ -76,7 +76,7 @@
     <!-- News Overview Section Start-->
     <section class="news-overview with-bubbles auto-slider" id="about">
         <div class="hero-slide active">
-            <div class="hero-bg" style="background-image: url('../assets/images/banner-1.jpg')"></div>
+            <div class="hero-bg" style="background-image: url('../assets/images/banner1.jpg')"></div>
             <div class="container">
                 <div class="section-header">
                     <h2 class="heading">News and Podcasts</h2>
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="hero-slide">
-            <div class="hero-bg" style="background-image: url('../assets/images/banner-2.jpg')"></div>
+            <div class="hero-bg" style="background-image: url('../assets/images/banner2.jpg')"></div>
             <div class="container">
                 <div class="section-header">
                     <h2 class="heading">News and Podcasts</h2>
@@ -98,7 +98,7 @@
             </div>
         </div>
         <div class="hero-slide">
-            <div class="hero-bg" style="background-image: url('../assets/images/banner-3.jpg')"></div>
+            <div class="hero-bg" style="background-image: url('../assets/images/banner3.jpg')"></div>
             <div class="container">
                 <div class="section-header">
                     <h2 class="heading">News and Podcasts</h2>
@@ -120,68 +120,52 @@
             </div>
 
             <div class="news-content">
-                <div class="news-card" data-aos="fade-right" data-aos-delay="400">
-                    <img src="../assets/images/news.jpg" alt="">
-                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
-                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
-                        characterization of the molecule to ensure safety,...</h5>
-                    <a href="#">Read More</a>
+                <!-- Tab Navigation and Search -->
+                <div class="controls">
+                    <div class="tab-navigation" role="tablist">
+                        <button class="tab-btn active" data-tab="news" role="tab" aria-selected="true">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            News
+                        </button>
+                        <button class="tab-btn" data-tab="podcast" role="tab" aria-selected="false">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5,3 19,12 5,21 5,3"></polygon>
+                            </svg>
+                            Podcasts
+                        </button>
+                    </div>
+
+                    <div class="search-container">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Search..." class="search-input">
+                    </div>
                 </div>
 
-                <div class="news-card" data-aos="fade-left" data-aos-delay="600">
-                    <img src="../assets/images/news.jpg" alt="">
-                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
-                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
-                        characterization of the molecule to ensure safety,...</h5>
-                    <a href="#">Read More</a>
+                <!-- Results Count -->
+                <div class="results-count">
+                    <p id="resultsText">Showing 0 articles</p>
                 </div>
 
-                <div class="news-card" data-aos="fade-right" data-aos-delay="400">
-                    <img src="../assets/images/news.jpg" alt="">
-                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
-                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
-                        characterization of the molecule to ensure safety,...</h5>
-                    <a href="#">Read More</a>
+                <!-- Content Grid -->
+                <div class="content-grid" id="contentGrid" role="tabpanel">
+                    <!-- Content will be dynamically loaded here -->
                 </div>
 
-                <div class="news-card" data-aos="fade-left" data-aos-delay="600">
-                    <img src="../assets/images/news.jpg" alt="">
-                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
-                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
-                        characterization of the molecule to ensure safety,...</h5>
-                    <a href="#">Read More</a>
-                </div>
-
-                <div class="news-card" data-aos="fade-right" data-aos-delay="400">
-                    <img src="../assets/images/news.jpg" alt="">
-                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
-                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
-                        characterization of the molecule to ensure safety,...</h5>
-                    <a href="#">Read More</a>
-                </div>
-
-                <div class="news-card" data-aos="fade-left" data-aos-delay="600">
-                    <img src="../assets/images/news.jpg" alt="">
-                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
-                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
-                        characterization of the molecule to ensure safety,...</h5>
-                    <a href="#">Read More</a>
-                </div>
-
-                <div class="news-card" data-aos="fade-right" data-aos-delay="400">
-                    <img src="../assets/images/news.jpg" alt="">
-                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
-                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
-                        characterization of the molecule to ensure safety,...</h5>
-                    <a href="#">Read More</a>
-                </div>
-
-                <div class="news-card" data-aos="fade-left" data-aos-delay="600">
-                    <img src="../assets/images/news.jpg" alt="">
-                    <h4>A Roadmap of Drug Development and Analytical Method Progression</h4>
-                    <h5>Drug Development is a complex and lengthy process that requires extensive testing and
-                        characterization of the molecule to ensure safety,...</h5>
-                    <a href="#">Read More</a>
+                <!-- No Results Message -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <svg class="no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <h3>No content found</h3>
+                    <p>Try adjusting your search terms or browse all content.</p>
+                    <button class="clear-search-btn" id="clearSearchBtn">Clear search</button>
                 </div>
             </div>
 
@@ -292,5 +276,5 @@
     <script src="../js/main.js"></script>
     <script src="../js/lazy-loading.js"></script>
     <script src="../js/animations.js"></script>
-    <script src="../js/about.js"></script>
+    <script src="../js/news.js"></script>
 </body>

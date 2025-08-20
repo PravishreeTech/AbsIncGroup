@@ -291,7 +291,7 @@ class ABSINCGROUPWebsite {
         });
     }
 
-    // For the video in Home Page, to customize the controls of the video but need to check once after the video is ready
+    // Code is checked and it is working as expected
     initVideoPlayer() {
         const videoContainers = document.querySelectorAll('.video-placeholder');
 
@@ -300,20 +300,53 @@ class ABSINCGROUPWebsite {
             const videoSrc = container.dataset.video;
 
             if (playButton && videoSrc) {
+
+                let video;
+
                 playButton.addEventListener('click', () => {
-                    const video = document.createElement('video');
-                    video.src = videoSrc;
-                    video.controls = true;
-                    video.autoplay = true;
-                    video.playsInline = true;
-                    video.style.width = '100%';
-                    video.style.height = '100%';
-                    video.style.objectFit = 'cover';
 
-                    container.innerHTML = '';
-                    container.appendChild(video);
+                    if (!video) {
+                        video = document.createElement('video');
+                        video.src = videoSrc;
+                        video.controls = true;
+                        video.playsInline = true;
+                        video.style.width = '100%';
+                        video.style.height = '100%';
+                        video.style.objectFit = 'cover';
 
-                    video.play().catch(err => console.log("Autoplay blocked:", err));
+                        // Insert video but KEEP play button
+                        container.insertBefore(video, playButton);
+
+                        // Hide the thumbnail image after first click
+                        const thumbnail = container.querySelector('.video-thumbnail');
+                        if (thumbnail) {
+                            thumbnail.style.display = 'none';
+                        }
+
+                        // Hide button when playing
+                        video.addEventListener('play', () => {
+                            playButton.style.display = 'none';
+                        });
+
+                        // Show button when paused or ended
+                        video.addEventListener('pause', () => {
+                            playButton.style.display = 'flex';
+                            playButton.style.alignItems = 'center';
+                            playButton.style.justifyContent = 'center';
+                        });
+                        video.addEventListener('ended', () => {
+                            playButton.style.display = 'flex';
+                            playButton.style.alignItems = 'center';
+                            playButton.style.justifyContent = 'center';
+                        });
+                    }
+
+                    // Toggle play/pause
+                    if (video.paused) {
+                        video.play().catch(err => console.log("Autoplay blocked:", err));
+                    } else {
+                        video.pause();
+                    }
                 });
             }
         });
