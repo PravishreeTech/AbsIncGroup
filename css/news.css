@@ -302,9 +302,11 @@ body {
 /* Card Styles */
 .news-section .card {
     background: white;
+    border: 1px solid var(--primary-color-2);
     border-radius: 0.75rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    height: 250px;
     transition: all 0.3s ease;
     cursor: pointer;
 }

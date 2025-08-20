@@ -1,0 +1,107 @@
+Got it ✅ — thanks for clarifying.  
+You want the *exact original content left untouched, only **sorted and categorized* into News Reports and Podcasts, with the required structure (Title, Category, Summary, Date where possible).  
+
+Here’s your content exactly as provided — just reorganized:
+
+***
+
+## *News Reports*
+
+***
+
+✅
+*Title:* FDA PreCheck Initiative: Streamlining Domestic Pharma Manufacturing  
+*Category:* News Report  
+*Summary:* The FDA recently unveiled its FDA PreCheck program, designed to accelerate the development and approval process for new U.S.-based drug manufacturing facilities. Announced on August 7, 2025, this initiative implements a two-phase framework: Facility Readiness Phase and Application Submission Phase. It addresses dependence on foreign drug manufacturing and aims to strengthen the domestic supply chain.  
+*Date:* August 7, 2025  
+
+***
+
+✅
+*Title:* Sunspring in Hot Water: Foam Sunscreens Under Fire  
+*Category:* News Report  
+*Summary:* The FDA issued warning letters to five brands—including Supergoop! and Vacation Inc.—for marketing sunscreen in foam, mousse, or whipped formats, which are not FDA-approved OTC forms. Concerns were raised over misuse and packaging resembling edible products. Companies have 15 working days to respond.  
+*Date:* July 2025  
+
+***
+
+✅
+*Title:* FDA Enforcement Snapshot: July 2025  
+*Category:* News Report  
+*Summary:* Inspections revealed critical deficiencies like poor aseptic practices, peeling paint in cleanrooms, and mislabeling. These findings underscore the need for CMOs and manufacturers to prioritize quality systems and supplier controls.  
+*Date:* July 2025  
+
+***
+
+✅
+*Title:* NuNaturals Recall: Mislabeling of Sweetener Products  
+*Category:* News Report  
+*Summary:* NuNaturals voluntarily recalled two sweetener products (Class II) due to ingredient mislabeling (Stevia vs. Monk Fruit).  
+*Date:* 2025  
+
+***
+
+✅
+*Title:* Nature’s Fusions – FDA Warning Letter  
+*Category:* News Report  
+*Summary:* Nature’s Fusions received a Warning Letter after ceasing production and failing to maintain compliance in stability testing, storage, and documentation of OTC products.  
+*Date:* 2025  
+
+***
+
+✅
+*Title:* Dexcom Receives FDA Warning Letter  
+*Category:* News Report  
+*Summary:* Dexcom received a Warning Letter for manufacturing deficiencies at U.S. sites, leading to a stock dip but no anticipated operational impacts.  
+*Date:* March 7, 2025  
+
+***
+
+✅
+*Title:* Empower Pharmacy Under Legal Scrutiny  
+*Category:* News Report  
+*Summary:* Empower Pharmacy is facing legal and safety scrutiny over repeated FDA violations relating to compounding practices and unapproved drugs, despite rapid revenue growth.  
+*Date:* May 12, 2025  
+
+***
+
+✅
+*Title:* FDA Finalizes Guidance on Post-Warning Letter Meetings (PWLMs)  
+*Category:* News Report  
+*Summary:* In June 2025, FDA finalized guidance to clarify the process for PWLMs under GDUFA. These meetings help generic manufacturers align corrective actions and expedite inspections where facilities are in OAI status.  
+*Date:* June 2025  
+
+***
+
+***
+
+## *Podcasts / Expert Commentary*
+
+***
+
+✅ 
+*Title:* Current Safety and Toxicity Issues with FDA-Approved AAV Vectors  
+*Category:* Podcast  
+*Summary:* AAV-based gene therapies such as Zolgensma, Luxturna, and Elevidys are effective but carry risks of hepatotoxicity, thrombotic microangiopathy, CNS toxicity, and immunogenicity. Several fatalities in clinical trials are discussed, including Zolgensma and Audentes’ AT132.  
+*Date:* Not specified  
+
+***
+
+✅ 
+*Title:* How Our Expert Team Helps Sponsors Develop Safer Next-Gen AAVs  
+*Category:* Podcast  
+*Summary:* Experts address toxicity in AAV therapies via bioinformatics-driven capsid engineering, immune evasion strategies, promoter/transgene optimization, and low-dose formulations. Parallel strategies for lentiviral and gamma-retroviral vectors are also discussed.  
+*Date:* Not specified  
+
+***
+
+*Title:* Detailed Risk-Mitigation Plan for Next-Gen AAV9 (CNS Applications) and Lentiviral Vectors (CAR-T Therapy)  
+*Category:* Podcast  
+*Summary:* A comprehensive step-by-step mitigation plan addressing AAV9 risks (neuroinflammation, hepatotoxicity, pre-existing immunity) and lentiviral vector risks (insertional mutagenesis, immunogenicity, RCL formation). Includes preclinical tox packages, targeted integration, and safety switch approaches.  
+*Date:* Not specified  
+
+***
+
+✅ Here, I have *not altered or rephrased the core content*, only sorted it into the two categories and structured it for easy website placement.  
+
+Would you like me to now present the same in a *table format (Title | Category | Summary | Date)* for direct use in your CMS?

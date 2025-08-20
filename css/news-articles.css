@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    font-family: "Playfair Display", serif;
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/* Root Variables are used from style.css file*/
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+/*************** NEWS Section Starts *************/
+.news-section {
+    position: relative;
+    top: var(--relative-top);
+    padding: 75px 0;
+}
+
+.news-section .container {
+    text-align-last: left;
+    line-height: 1.6;
+}
+
+.news-section h1 {
+    color: #121212;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: "Playfair Display", "serif";
+}
+
+.news-section h6 {
+    color: var(--primary-color-2);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    font-family: "Roboto", sans-serif;
+}
+
+.news-section .content {
+    font-size: 18px;
+    color: #444;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/*************** NEWS Section Ends *************/
