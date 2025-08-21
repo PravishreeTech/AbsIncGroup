@@ -105,7 +105,7 @@ body {
 
 /************ Section Headers of all sections Start ************/
 .section-title {
-    font-size: clamp(1.5rem, 4vw, 2.50rem);
+    font-size: clamp(2.20rem, 4vw, 2.50rem);
     font-weight: 700;
     color: var(--primary-color-1);
     margin: 0 auto;
@@ -114,7 +114,7 @@ body {
 }
 
 .section-heading {
-    font-size: clamp(1.5rem, 4vw, 2.50rem);
+    font-size: clamp(2.20rem, 4vw, 2.50rem);
     font-weight: 700;
     color: var(--primary-color-1);
     text-align: center;
@@ -147,7 +147,7 @@ body {
 }
 
 .section-header h2 {
-    font-size: clamp(1.5rem, 4vw, 2.50rem);
+    font-size: clamp(2.20rem, 4vw, 2.50rem);
     color: #fff;
     max-width: 600px;
     margin: 0 auto;
@@ -359,8 +359,8 @@ body {
 }
 
 .nav-toggle span {
-    width: 35px;
-    height: 5px;
+    width: 30px;
+    height: 3px;
     background: #333;
     margin: 4px 0;
     transition: 0.3s;
@@ -840,7 +840,7 @@ body {
     } */
 
     .vision-mission .fifty-fifty-section .content-right p {
-        /* font-size: 0.9rem; */
+        /* font-size: 0.5rem; */
         line-height: 1.5;
     }
 
@@ -950,7 +950,7 @@ body {
 
 @media screen and (max-width: 420px) {
     .video-section .video-badge {
-        font-size: 18px;
+        font-size: 22px;
     }
 }
 
@@ -1260,7 +1260,7 @@ body {
 
 @media screen and (max-width: 380px) {
     .team-section .team-card {
-        height: 450px;
+        height: 430px;
     }
 }
 

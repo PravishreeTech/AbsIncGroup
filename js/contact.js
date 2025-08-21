@@ -1,11 +1,12 @@
-// alert('Heello Wolrd!');
-
 function getValue(id) {
     const el = document.getElementById(id);
     return (el && el.value) ? el.value.trim() : "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    // console.log(document.querySelectorAll("#phone"));
+
     const fonts = ["cursive", "sans-serif", "serif", "monospace"];
     let captchaValue = "";
 
@@ -59,9 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const lastname = getValue("lastname");
             const email = getValue("email");
             const company = getValue("company");
-            const contact = getValue("contact");
+            const contact = getValue("phone");
             const subject = getValue("subject");
             const message = getValue("message");
+
+
+            // console.log("Phone input value (via getValue):", contact);
 
             const params = {
                 from_firstname: firstname,

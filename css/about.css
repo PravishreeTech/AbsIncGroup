@@ -410,6 +410,12 @@ body {
     font-weight: 400;
 }
 
+@media screen and (max-width: 400px) {
+    .why-choose-us .features-grid {
+        margin: -8px;
+    }
+}
+
 /***************** Why Choose Us Section End *****************/
 
 /***************** Specialized Expertise Section Start *****************/
@@ -948,6 +954,17 @@ body {
     font-size: 1.5rem;
     color: #fbbf24;
 } */
+
+@media (max-width: 400px) {
+
+    .category-card h3 {
+        height: 70px;
+    }
+
+    .category-card p {
+        margin-bottom: 0.8rem;
+    }
+}
 
 /***************** Who We Serve Section End *****************/
 
