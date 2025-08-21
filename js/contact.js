@@ -63,9 +63,21 @@ document.addEventListener("DOMContentLoaded", () => {
             const subject = getValue("subject");
             const message = getValue("message");
 
+            // const firstname = document.getElementById("firstname").value.trim();
+            // const lastname = document.getElementById("lastname").value.trim();
+            // const email = document.getElementById("email").value.trim();
+            // const company = document.getElementById("company").value.trim();
+            // const contact = document.getElementById("contact").value.trim();
+            // const subject = document.getElementById("subject").value.trim();
+            // const message = document.getElementById("message").value.trim();
+
+            // Combine first and last name into fullname
+            // const fullname = firstname + " " + lastname;
+
             const params = {
                 from_firstname: firstname,
                 from_lastname: lastname,
+                // from_fullname: fullname,
                 from_email: email,
                 from_company: company,
                 from_contact: contact,
