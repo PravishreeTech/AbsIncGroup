@@ -402,7 +402,7 @@ body {
 .what-sets-apart .subheading {
     font-size: 25px;
     font-weight: 600;
-    color: var(--copyright-background);
+    color: var(--primary-color-2);
     font-style: italic;
 }
 
