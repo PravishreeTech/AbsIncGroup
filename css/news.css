@@ -384,6 +384,10 @@ body {
     color: var(--primary-color-2);
 }
 
+.news-section .card-date {
+    padding: 10px 0;
+}
+
 .news-section .card-description {
     color: #6b7280;
     margin-bottom: 1rem;

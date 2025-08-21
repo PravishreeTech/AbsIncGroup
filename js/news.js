@@ -6,7 +6,8 @@ const mockData = [
         type: 'news',
         title: 'FDA PreCheck Initiative: Streamlining Domestic Pharma Manufacturing',
         description: 'The FDA recently unveiled its FDA PreCheck program, designed to accelerate the development and approval process for new U.S.-based drug.....',
-        date: '2025-08-07',
+        // date: '2025-08-07',
+        date: '7th Aug, 2025',
         // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
         // readTime: '4 min read',
         link: './news/fda-precheck-initiative.html'
@@ -16,7 +17,8 @@ const mockData = [
         type: 'news',
         title: 'Sunspring in Hot Water: Foam Sunscreens Under Fire',
         description: 'The FDA issued warning letters to five brands—including Supergoop! and Vacation Inc.—for marketing sunscreen in foam, mousse, or whipped.....',
-        date: '2025-07',
+        // date: '2025-07',
+        date: 'July, 2025',
         // image: 'https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800',
         // readTime: '6 min read'
         link: './news/sunspring-in-hot-water.html'
@@ -27,7 +29,8 @@ const mockData = [
         title: 'FDA Enforcement Snapshot: July 2025',
         description: 'Inspections revealed critical deficiencies like poor aseptic practices, peeling paint in cleanrooms, and mislabeling.....',
         description: 'Updated FDA regulations streamline approval process while maintaining safety standards for innovative therapeutic approaches.',
-        date: '2025-07',
+        // date: '2025-07',
+        date: 'July, 2025',
         // image: 'https://images.pexels.com/photos/3984824/pexels-photo-3984824.jpeg?auto=compress&cs=tinysrgb&w=800',
         // readTime: '3 min read'
         link: './news/fda-enforcement-snapshot.html'
@@ -60,7 +63,8 @@ const mockData = [
         title: 'Dexcom Receives FDA Warning Letter',
         description: 'Dexcom received a Warning Letter for manufacturing deficiencies at U.S. sites, leading to a stock dip but no anticipated operational impacts.',
         // description: 'Compliance experts share insights on successfully managing regulatory requirements for emerging biotechnology companies.',
-        date: '2025-03-07',
+        // date: '2025-03-07',
+        date: '7th March, 2025',
         // image: 'https://images.pexels.com/photos/3984824/pexels-photo-3984824.jpeg?auto=compress&cs=tinysrgb&w=800',
         // duration: '38 min'
         link: './news/dexcom-receives-fda.html'
@@ -71,7 +75,8 @@ const mockData = [
         title: 'Empower Pharmacy Under Legal Scrutiny',
         description: 'Empower Pharmacy is facing legal and safety scrutiny over repeated FDA violations relating to compounding practices.....',
         // description: 'Leading researchers discuss innovative approaches to clinical trials that prioritize patient experience and outcomes.',
-        date: '2025-05-12',
+        // date: '2025-05-12',
+        date: '12th May, 2025',
         // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
         // duration: '45 min'
         link: './news/empower-pharmacy.html'
@@ -82,7 +87,8 @@ const mockData = [
         title: 'FDA Finalizes Guidance on Post-Warning Letter Meetings (PWLMs)',
         description: 'In June 2025, FDA finalized guidance to clarify the process for PWLMs under GDUFA. These meetings help generic.....',
         // description: 'Venture capital experts analyze current funding patterns and emerging opportunities in the pharmaceutical sector.',
-        date: '2025-06',
+        // date: '2025-06',
+        date: 'June 2025',
         // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
         // duration: '35 min'
         link: './news/fda-finalizes-guidance.html'
@@ -263,7 +269,7 @@ function createCard(item) {
     card.className = 'card';
     card.setAttribute('role', 'article');
 
-    const formattedDate = formatDate(item.date);
+    // const formattedDate = formatDate(item.date);
     const badgeText = item.type === 'news' ? 'News' : 'Podcast';
     const actionText = item.type === 'news' ? 'Read More' : 'Listen Now';
     // const metaInfo = item.type === 'news' ? item.readTime : item.duration;
@@ -315,7 +321,7 @@ function createCard(item) {
 
             <!-- Date only -->
             <div class="card-date">
-                <span>${formattedDate}</span>
+                <span>${item.date}</span>
             </div>
 
             <!-- Description -->
