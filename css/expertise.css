@@ -833,6 +833,7 @@ body {
 }
 
 @media (max-width: 480px) {
+
     .call-to-action .call-grid {
         padding: 10px 30px 20px;
     }
@@ -849,6 +850,12 @@ body {
         font-size: 13px;
         padding: 8px 16px;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .call-to-action {
+        padding: 20px;
     }
 }
 

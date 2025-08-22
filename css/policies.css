@@ -204,7 +204,7 @@ body {
 
 .policies-section .policy-content h4 {
     font-size: 1.4rem;
-    color: #1b365d;
+    color: var(--primary-color-2);
     margin: 20px 0 10px;
 }
 
@@ -239,24 +239,57 @@ body {
     }
 
     .policies-section .policy-content h4 {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
+    }
+
+    .policies-section .policy-content ul li {
+        font-size: 1rem;
     }
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .policies-section {
+        padding: 60px 15px;
+    }
+
     .policies-section .policy-content {
         padding: 20px;
     }
 
+    .policies-section .policy-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .policies-section .policy-content ul li {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .policies-section {
+        padding: 50px 10px;
+    }
+
+    .policies-section .policy-content {
+        padding: 18px;
+    }
+
     .policies-section .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .policies-section .section-title.terms-heading {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
     }
 
+    .policies-section .policy-content h4 {
+        font-size: 1rem;
+    }
+
+    .policies-section .policy-content ul li {
+        font-size: 0.9rem;
+    }
 
 }
 
