@@ -209,14 +209,11 @@
                     <div class="content-right" data-aos="fade-left" data-aos-delay="600">
                         <h3 class="section-title">Our <span class="gradient-text">Mission</span></h3>
                         <p>To redefine excellence in life sciences consulting by uniting elite Regulatory Strategists,
-                            CMC experts,
-                            clinical leaders and Wharton-trained advisors — empowering Pharmaceutical, Biotech and
-                            Medtech companies
-                            to achieve compliance, accelerate therapies and secure commercial success. We go beyond
-                            traditional consulting
-                            by combining deep technical expertise with financial due diligence, business strategy and
-                            partnership execution
-                            to transform science into sustainable patient impact.</p>
+                            CMC experts, clinical leaders, and Wharton-trained advisors. We empower biopharmaceutical,
+                            biotech, and medtech companies to achieve compliance, accelerate therapies, and secure
+                            commercial success. Beyond traditional consulting, we combine deep technical expertise with
+                            financial due diligence, business strategy, and partnership execution — turning science into
+                            lasting patient impact.</p>
                     </div>
                 </div>
             </div>
@@ -227,14 +224,13 @@
 
                     <div class="content-right" data-aos="fade-right" data-aos-delay="400">
                         <h3 class="section-title">Our <span class="gradient-text">Vision</span></h3>
-                        <p>At ABSINCGROUP, our vision is to become the most trusted partner in the Biologics,
-                            Pharmaceutical, Medical device and Combination drug consulting industry by providing
+                        <p>At ABSINCGROUP, our vision is to become the most trusted partner in the biologics,
+                            pharmaceutical, medical device, and combination drug consulting industry by providing
                             cutting-edge, science and technology-driven, regulatory-compliant solutions. We are
-                            dedicated to accelerating innovation, ensuring global compliance and transforming complex
+                            dedicated to accelerating innovation, ensuring global compliance, and transforming complex
                             regulatory and manufacturing challenges into strategic advantages for our clients. From
-                            early
-                            development to commercialization, we bring integrity, precision and agility to every
-                            project.</p>
+                            early development to commercialization, we bring integrity, precision, and agility
+                            to every project.</p>
                     </div>
                     <div class="content-left" data-aos="fade-left" data-aos-delay="600">
                         <div class="image-container">
@@ -461,8 +457,8 @@
                 <div class="team-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="team-info">
                         <h3>Mr. V. Nathan Roy, BS</h3>
-                        <p class="team-title">Executive Business Development Studies </p>
                         <p class="team-title">Vice President, Business Development & Marketing</p>
+                        <p class="team-title">Executive Business Development Studies</p>
                         <p class="team-credentials">The Wharton School at the University of Pennsylvania, Philadelphia
                         </p>
                         <!-- <p class="team-description">Expert in international market expansion and building strategic
@@ -797,12 +793,67 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- Cookie Banner -->
+    <!-- <div id="cookie-banner">
+        <span>We use cookies to improve your experience.</span>
+        <button id="accept-cookies">Accept</button>
+    </div> -->
+
     <!-- Contact Form SWAL -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Contact Form EmailJs -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+
+    <!-- Custom Js Script -->
+
+    <!-- <script>
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+        }
+
+        // Function to get a cookie by name
+        function getCookie(name) {
+            return document.cookie.split('; ').reduce((r, v) => {
+                const parts = v.split('=');
+                return parts[0] === name ? decodeURIComponent(parts[1]) : r
+            }, '');
+        }
+
+        // Show cookie banner only if cookie not set
+        window.addEventListener('load', () => {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const accepted = getCookie('cookieConsent');
+
+            if (!accepted) {
+                cookieBanner.style.display = 'flex';  // show banner
+            }
+
+            document.getElementById('accept-cookies').addEventListener('click', () => {
+                setCookie('cookieConsent', 'true', 365);  // store consent for 1 year
+                cookieBanner.style.display = 'none';      // hide banner
+            });
+        });
+    </script> -->
+
+    <!-- <script>
+        window.addEventListener('load', () => {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const accepted = getCookie('cookieConsent');
+
+            if (!accepted) {
+                cookieBanner.style.display = 'flex';  // show banner
+            }
+
+            document.getElementById('accept-cookies').addEventListener('click', () => {
+                setCookie('cookieConsent', 'true', 365);
+                cookieBanner.style.display = 'none';
+            });
+        });
+    </script> -->
 
     <!-- Scripts -->
     <script src="./js/main.js"></script>
