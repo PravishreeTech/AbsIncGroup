@@ -1862,6 +1862,11 @@ body {
     font-size: 0.875rem;
 }
 
+.copyright p:hover{
+    cursor: pointer;
+    color: #fff;
+}
+
 .footer-bottom-links {
     display: flex;
     gap: 1.5rem;
