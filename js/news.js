@@ -4,39 +4,61 @@ const mockData = [
     {
         id: 1,
         type: 'news',
+        title: 'FDA Begins Real-Time Reporting of Adverse Event Data',
+        description: 'The FDA started daily publication of adverse event data from the FDA Adverse Event Reporting System (FAERS), a key step in modernizing safety.....',
+        date: '21st Aug, 2025',
+        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/fda-begins-real-time-reporting.html'
+    },
+    {
+        id: 2,
+        type: 'news',
         title: 'FDA PreCheck Initiative: Streamlining Domestic Pharma Manufacturing',
         description: 'The FDA recently unveiled its FDA PreCheck program, designed to accelerate the development and approval process for new U.S.-based drug.....',
-        // date: '2025-08-07',
         date: '7th Aug, 2025',
         // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
         // readTime: '4 min read',
         link: './news/fda-precheck-initiative.html'
     },
     {
-        id: 2,
+        id: 3,
+        type: 'news',
+        title: 'Current and Resolved Drug Shortages and Discontinuations Reported to FDA',
+        description: 'Updated regularly Monday through Friday with reports on ongoing and resolved drug shortages and discontinuations affecting the U.S. .....',
+        date: 'Ongoing, updated Monday through Friday',
+        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/current-and-resolved-drug-shortages.html'
+    },
+    {
+        id: 4,
+        type: 'news',
+        title: 'Drug Firm Annual Registration Status',
+        description: 'The FDA updates information about drug firm annual registrations required for regulatory compliance, providing downloadable status.....',
+        date: 'Ongoing, updated Monday through Friday',
+        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/drug-firm-annual-registration-status.html'
+    },
+    {
+        id: 5,
         type: 'news',
         title: 'Sunspring in Hot Water: Foam Sunscreens Under Fire',
         description: 'The FDA issued warning letters to five brands—including Supergoop! and Vacation Inc.—for marketing sunscreen in foam, mousse, or whipped.....',
-        // date: '2025-07',
         date: 'July, 2025',
         // image: 'https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // readTime: '6 min read'
         link: './news/sunspring-in-hot-water.html'
     },
     {
-        id: 3,
+        id: 6,
         type: 'news',
         title: 'FDA Enforcement Snapshot: July 2025',
         description: 'Inspections revealed critical deficiencies like poor aseptic practices, peeling paint in cleanrooms, and mislabeling.....',
         description: 'Updated FDA regulations streamline approval process while maintaining safety standards for innovative therapeutic approaches.',
-        // date: '2025-07',
         date: 'July, 2025',
         // image: 'https://images.pexels.com/photos/3984824/pexels-photo-3984824.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // readTime: '3 min read'
         link: './news/fda-enforcement-snapshot.html'
     },
     {
-        id: 4,
+        id: 7,
         type: 'news',
         title: 'NuNaturals Recall: Mislabeling of Sweetener Products',
         description: 'NuNaturals voluntarily recalled two sweetener products (Class II) due to ingredient mislabeling (Stevia vs. Monk Fruit).',
@@ -47,84 +69,121 @@ const mockData = [
         link: './news/nunaturals-recall.html'
     },
     {
-        id: 5,
-        type: 'news',
-        title: 'Nature’s Fusions – FDA Warning Letter',
-        description: 'Nature’s Fusions received a Warning Letter after ceasing production and failing to maintain compliance in stability testing.....',
-        // description: 'Industry experts discuss how artificial intelligence is revolutionizing pharmaceutical research and development processes.',
-        date: '2025',
-        // image: 'https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // duration: '42 min'
-        link: './news/natures-fusions.html'
-    },
-    {
-        id: 6,
-        type: 'news',
-        title: 'Dexcom Receives FDA Warning Letter',
-        description: 'Dexcom received a Warning Letter for manufacturing deficiencies at U.S. sites, leading to a stock dip but no anticipated operational impacts.',
-        // description: 'Compliance experts share insights on successfully managing regulatory requirements for emerging biotechnology companies.',
-        // date: '2025-03-07',
-        date: '7th March, 2025',
-        // image: 'https://images.pexels.com/photos/3984824/pexels-photo-3984824.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // duration: '38 min'
-        link: './news/dexcom-receives-fda.html'
-    },
-    {
-        id: 7,
-        type: 'news',
-        title: 'Empower Pharmacy Under Legal Scrutiny',
-        description: 'Empower Pharmacy is facing legal and safety scrutiny over repeated FDA violations relating to compounding practices.....',
-        // description: 'Leading researchers discuss innovative approaches to clinical trials that prioritize patient experience and outcomes.',
-        // date: '2025-05-12',
-        date: '12th May, 2025',
-        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // duration: '45 min'
-        link: './news/empower-pharmacy.html'
-    },
-    {
         id: 8,
         type: 'news',
-        title: 'FDA Finalizes Guidance on Post-Warning Letter Meetings (PWLMs)',
-        description: 'In June 2025, FDA finalized guidance to clarify the process for PWLMs under GDUFA. These meetings help generic.....',
-        // description: 'Venture capital experts analyze current funding patterns and emerging opportunities in the pharmaceutical sector.',
-        // date: '2025-06',
-        date: 'June 2025',
+        title: 'National Drug Code Directory and Related Databases',
+        description: 'The National Drug Code Directory and associated data files—including excluded unfinished drugs and packages—are maintained and updated.....',
+        date: 'Ongoing, updated Monday through Friday',
         // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // duration: '35 min'
-        link: './news/fda-finalizes-guidance.html'
+        link: './news/national-drug-code-directory.html'
     },
-    // Podcast Items
     {
         id: 9,
-        type: 'podcast',
-        title: 'Current Safety and Toxicity Issues with FDA-Approved AAV Vectors',
-        description: 'AAV-based gene therapies such as Zolgensma, Luxturna, and Elevidys are effective but carry risks of hepatotoxicity.....',
-        // description: 'Venture capital experts analyze current funding patterns and emerging opportunities in the pharmaceutical sector.',
-        date: '',
+        type: 'news',
+        title: 'Wholesale Distributor and Third-Party Logistics Providers Reporting',
+        description: 'Weekly updates covering compliance reporting by wholesale drug distributors and third-party logistics providers, supporting drug supply.....',
+        date: 'Weekly',
         // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // duration: '35 min'
-        link: './podcasts/current-safety-toxicity-issues.html'
+        link: './news/wholesale-distributor-and-third-party-logistics.html'
     },
     {
         id: 10,
-        type: 'podcast',
-        title: 'How Our Expert Team Helps Sponsors Develop Safer Next-Gen AAVs',
-        description: 'Experts address toxicity in AAV therapies via bioinformatics-driven capsid engineering, immune evasion strategies.....',
-        // description: 'Venture capital experts analyze current funding patterns and emerging opportunities in the pharmaceutical sector.',
-        date: '',
+        type: 'news',
+        title: 'Drugs@FDA Data Files',
+        description: 'Biweekly updated data files providing comprehensive information on FDA drug approvals, labels, and regulatory actions to assist .....',
+        date: 'Biweekly',
         // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // duration: '35 min'
-        link: './podcasts/how-our-expert-team-helps-sponsors.html'
+        link: './news/drugs-fda-data-files.html'
     },
     {
         id: 11,
+        type: 'news',
+        title: 'Nature’s Fusions – FDA Warning Letter',
+        description: 'Nature’s Fusions received a Warning Letter after ceasing production and failing to maintain compliance in stability testing.....',
+        date: '2025',
+        // image: 'https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/natures-fusions.html'
+    },
+    {
+        id: 12,
+        type: 'news',
+        title: 'Dexcom Receives FDA Warning Letter',
+        description: 'Dexcom received a Warning Letter for manufacturing deficiencies at U.S. sites, leading to a stock dip but no anticipated operational impacts.',
+        date: '7th March, 2025',
+        // image: 'https://images.pexels.com/photos/3984824/pexels-photo-3984824.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/dexcom-receives-fda.html'
+    },
+    {
+        id: 13,
+        type: 'news',
+        title: 'Competitive Generic Therapy Approvals',
+        description: 'Reports on competitive generic drug approvals aimed at expanding affordable treatment options, with the latest update on August 22, 2025.',
+        date: '22nd August, 2025',
+        // image: 'https://images.pexels.com/photos/3984824/pexels-photo-3984824.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/competitive-generic-therapy-approvals.html'
+    },
+    {
+        id: 14,
+        type: 'news',
+        title: 'Empower Pharmacy Under Legal Scrutiny',
+        description: 'Empower Pharmacy is facing legal and safety scrutiny over repeated FDA violations relating to compounding practices.....',
+        date: '12th May, 2025',
+        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/empower-pharmacy.html'
+    },
+    {
+        id: 15,
+        type: 'news',
+        title: 'Financial Transparency and Efficiency of Prescription Drug User Fee Act and Amendments',
+        description: 'Public meeting held on August 20, 2025, focusing on financial transparency and effectiveness concerning the.....',
+        date: '20th August, 2025',
+        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/financial-transparency-and-efficiency-of-prescription-drug.html'
+    },
+    {
+        id: 16,
+        type: 'news',
+        title: 'FDA Finalizes Guidance on Post-Warning Letter Meetings (PWLMs)',
+        description: 'In June 2025, FDA finalized guidance to clarify the process for PWLMs under GDUFA. These meetings help generic.....',
+        date: 'June 2025',
+        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/fda-finalizes-guidance.html'
+    },
+    {
+        id: 17,
+        type: 'news',
+        title: 'Advancing Generic Drug Development: Translating Science to Approval 2025',
+        description: 'Workshop highlighting progress and innovative scientific strategies to accelerate generic drug development.....',
+        date: 'Recently 2025',
+        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './news/advancing-generic-drug-development.html'
+    },
+    // Podcast Items
+    {
+        id: 18,
+        type: 'podcast',
+        title: 'Current Safety and Toxicity Issues with FDA-Approved AAV Vectors',
+        description: 'AAV-based gene therapies such as Zolgensma, Luxturna, and Elevidys are effective but carry risks of hepatotoxicity.....',
+        date: '',
+        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './podcasts/current-safety-toxicity-issues.html'
+    },
+    {
+        id: 19,
+        type: 'podcast',
+        title: 'How Our Expert Team Helps Sponsors Develop Safer Next-Gen AAVs',
+        description: 'Experts address toxicity in AAV therapies via bioinformatics-driven capsid engineering, immune evasion strategies.....',
+        date: '',
+        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
+        link: './podcasts/how-our-expert-team-helps-sponsors.html'
+    },
+    {
+        id: 20,
         type: 'podcast',
         title: 'Detailed Risk-Mitigation Plan for Next-Gen AAV9 (CNS Applications) and Lentiviral Vectors (CAR-T Therapy)',
         description: 'A comprehensive step-by-step mitigation plan addressing AAV9 risks (neuroinflammation, hepatotoxicity, pre-existing.....',
-        // description: 'Venture capital experts analyze current funding patterns and emerging opportunities in the pharmaceutical sector.',
         date: '',
         // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // duration: '35 min'
         link: './podcasts/detailed-risk-mitigation-plan-for-next-gen.html'
     }
 ];
@@ -328,7 +387,7 @@ function createCard(item) {
             <p class="card-description">${item.description}</p>
 
             <!-- Action Button -->
-            <a href="${item.link}" class="card-action" aria-label="${actionText}: ${item.title}" target="_blank">
+            <a href="${item.link}" class="card-action" aria-label="${actionText}: ${item.title}">
                 ${actionText}
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>

@@ -72,4 +72,24 @@ body {
     text-align: justify;
 }
 
+.news-section a{
+    width: 200px;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.news-section .card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color-2);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.news-section svg{
+    width: 26px;
+}
+
 /*************** NEWS Section Ends *************/
