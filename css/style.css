@@ -305,8 +305,8 @@ body {
 
 .navbar .tagline {
     color: var(--primary-color-2);
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .nav-container .nav-menu {
