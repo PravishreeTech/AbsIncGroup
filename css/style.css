@@ -351,21 +351,50 @@ body {
     width: calc(100% - 24px);
 }
 
+/* default hamburger */
 .nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 30px;
+  height: 22px;
+  justify-content: center;
 }
 
 .nav-toggle span {
-    width: 30px;
-    height: 3px;
-    background: #333;
-    margin: 4px 0;
-    transition: 0.3s;
-    border-radius: 2px;
+  display: block;
+  height: 3px;
+  background: var(--primary-color-2); /* change color as needed */
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
+
+/* when active → cross */
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* mobile nav hidden by default */
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* show nav when active */
+.nav-menu.active {
+  display: flex;
+}
+
 
 @media screen and (max-width: 1200px) {
     .navbar .nav-container {

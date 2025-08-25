@@ -16,7 +16,6 @@ class ABSINCGROUPWebsite {
             this.initSliders();
             this.initServicesTab();
             this.initTestimonials();
-            // this.initContactForm();
             this.initBackToTop();
             this.initSmoothScrolling();
             this.initHeaderScroll();
