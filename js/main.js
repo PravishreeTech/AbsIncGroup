@@ -40,13 +40,22 @@ class ABSINCGROUPWebsite {
         const loadingScreen = document.getElementById('loadingScreen');
 
         window.addEventListener('load', () => {
+            // Hide preloader immediately when page is ready
+            loadingScreen.classList.add('hidden');
             setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 300); // Reduced transition time
+        });
+        
+        // Fallback: hide preloader if it takes too long (max 2 seconds)
+        setTimeout(() => {
+            if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
                 loadingScreen.classList.add('hidden');
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
-                }, 500);
-            }, 1500);
-        });
+                }, 300);
+            }
+        }, 2000);
     }
 
     initMobileNavigation() {
