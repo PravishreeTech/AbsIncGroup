@@ -411,8 +411,8 @@ body {
 }
 
 .team-members .step-number {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -423,6 +423,11 @@ body {
   margin: 0 30px;
   position: relative;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-members .step-number svg{
+  height: 80px;
+  width: 80px;
 }
 
 .team-members .step-1 .step-number {

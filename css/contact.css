@@ -226,7 +226,8 @@ body {
 
 .contact-header i {
     font-size: 2rem;
-    color: var(--primary-color-2);
+    /* color: var(--primary-color-2); */
+    color: var(--primary-color-1);
 }
 
 .contact-header h3 {
@@ -259,7 +260,7 @@ body {
 
 .contact-item i {
     color: var(--primary-color-2);
-    width: 20px;
+    font-size: 22px;
     text-align: center;
 }
 

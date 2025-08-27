@@ -1008,7 +1008,7 @@ body {
     justify-content: center;
     gap: 1rem;
     margin-bottom: 3rem;
-    background: #F1F5F9;
+    background: var(--primary-color-2);
     padding: 0.5rem;
     border-radius: 12px;
 }
@@ -1025,7 +1025,7 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    color: var(--primary-color-3);
+    color: #fff;
 }
 
 .services-section .tab-btn:hover,
@@ -1355,15 +1355,15 @@ body {
 }
 
 .testimonial-author h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #000;
+    color: var(--primary-color-2);
     margin-bottom: 0.25rem;
 }
 
 .testimonial-author p {
-    font-size: 0.875rem;
-    color: #000;
+    font-size: 1rem;
+    color: var(--primary-color-1);
 }
 
 .testimonial-navigation {
@@ -1482,13 +1482,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white !important;
     font-size: 1.8rem;
     flex-shrink: 0;
 }
 
 .contact-section .contact-icon i {
-    color: white !important;
+    color: var(--primary-color-1) !important;
 }
 
 .contact-section .contact-item h4 {
@@ -1862,7 +1861,7 @@ body {
     font-size: 0.875rem;
 }
 
-.copyright p:hover{
+.copyright p:hover {
     cursor: pointer;
     color: #fff;
 }
