@@ -517,7 +517,6 @@ body {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     animation: counterRotate 20s linear infinite;
-    /* animation: rotate 20s linear infinite; */
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
@@ -634,9 +633,6 @@ body {
 
 @media screen and (max-width: 768px) {
 
-    /* .expertise-item {
-        padding: 12px;
-    } */
     .expertise-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -946,14 +942,6 @@ body {
     opacity: 0.9;
     font-weight: 400;
 }
-
-/* .category-bullet {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 1.5rem;
-    color: #fbbf24;
-} */
 
 @media (max-width: 400px) {
 

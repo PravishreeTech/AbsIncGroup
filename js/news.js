@@ -7,7 +7,6 @@ const mockData = [
         title: 'FDA Begins Real-Time Reporting of Adverse Event Data',
         description: 'The FDA started daily publication of adverse event data from the FDA Adverse Event Reporting System (FAERS), a key step in modernizing safety.....',
         date: '21st Aug, 2025',
-        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/fda-begins-real-time-reporting.html'
     },
     {
@@ -16,8 +15,6 @@ const mockData = [
         title: 'FDA PreCheck Initiative: Streamlining Domestic Pharma Manufacturing',
         description: 'The FDA recently unveiled its FDA PreCheck program, designed to accelerate the development and approval process for new U.S.-based drug.....',
         date: '7th Aug, 2025',
-        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // readTime: '4 min read',
         link: './news/fda-precheck-initiative.html'
     },
     {
@@ -26,7 +23,6 @@ const mockData = [
         title: 'Current and Resolved Drug Shortages and Discontinuations Reported to FDA',
         description: 'Updated regularly Monday through Friday with reports on ongoing and resolved drug shortages and discontinuations affecting the U.S. .....',
         date: 'Ongoing, updated Monday through Friday',
-        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/current-and-resolved-drug-shortages.html'
     },
     {
@@ -35,7 +31,6 @@ const mockData = [
         title: 'Drug Firm Annual Registration Status',
         description: 'The FDA updates information about drug firm annual registrations required for regulatory compliance, providing downloadable status.....',
         date: 'Ongoing, updated Monday through Friday',
-        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/drug-firm-annual-registration-status.html'
     },
     {
@@ -44,7 +39,6 @@ const mockData = [
         title: 'Sunspring in Hot Water: Foam Sunscreens Under Fire',
         description: 'The FDA issued warning letters to five brands—including Supergoop! and Vacation Inc.—for marketing sunscreen in foam, mousse, or whipped.....',
         date: 'July, 2025',
-        // image: 'https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/sunspring-in-hot-water.html'
     },
     {
@@ -54,7 +48,6 @@ const mockData = [
         description: 'Inspections revealed critical deficiencies like poor aseptic practices, peeling paint in cleanrooms, and mislabeling.....',
         description: 'Updated FDA regulations streamline approval process while maintaining safety standards for innovative therapeutic approaches.',
         date: 'July, 2025',
-        // image: 'https://images.pexels.com/photos/3984824/pexels-photo-3984824.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/fda-enforcement-snapshot.html'
     },
     {
@@ -62,10 +55,7 @@ const mockData = [
         type: 'news',
         title: 'NuNaturals Recall: Mislabeling of Sweetener Products',
         description: 'NuNaturals voluntarily recalled two sweetener products (Class II) due to ingredient mislabeling (Stevia vs. Monk Fruit).',
-        // description: 'Novel checkpoint inhibitor combination demonstrates unprecedented response rates in late-stage clinical trials across multiple tumor types.',
         date: '2025',
-        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // readTime: '5 min read'
         link: './news/nunaturals-recall.html'
     },
     {
@@ -74,7 +64,6 @@ const mockData = [
         title: 'National Drug Code Directory and Related Databases',
         description: 'The National Drug Code Directory and associated data files—including excluded unfinished drugs and packages—are maintained and updated.....',
         date: 'Ongoing, updated Monday through Friday',
-        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/national-drug-code-directory.html'
     },
     {
@@ -83,7 +72,6 @@ const mockData = [
         title: 'Wholesale Distributor and Third-Party Logistics Providers Reporting',
         description: 'Weekly updates covering compliance reporting by wholesale drug distributors and third-party logistics providers, supporting drug supply.....',
         date: 'Weekly',
-        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/wholesale-distributor-and-third-party-logistics.html'
     },
     {
@@ -92,7 +80,6 @@ const mockData = [
         title: 'Drugs@FDA Data Files',
         description: 'Biweekly updated data files providing comprehensive information on FDA drug approvals, labels, and regulatory actions to assist .....',
         date: 'Biweekly',
-        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/drugs-fda-data-files.html'
     },
     {
@@ -101,7 +88,6 @@ const mockData = [
         title: 'Nature’s Fusions – FDA Warning Letter',
         description: 'Nature’s Fusions received a Warning Letter after ceasing production and failing to maintain compliance in stability testing.....',
         date: '2025',
-        // image: 'https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/natures-fusions.html'
     },
     {
@@ -110,7 +96,6 @@ const mockData = [
         title: 'Dexcom Receives FDA Warning Letter',
         description: 'Dexcom received a Warning Letter for manufacturing deficiencies at U.S. sites, leading to a stock dip but no anticipated operational impacts.',
         date: '7th March, 2025',
-        // image: 'https://images.pexels.com/photos/3984824/pexels-photo-3984824.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/dexcom-receives-fda.html'
     },
     {
@@ -119,7 +104,6 @@ const mockData = [
         title: 'Competitive Generic Therapy Approvals',
         description: 'Reports on competitive generic drug approvals aimed at expanding affordable treatment options, with the latest update on August 22, 2025.',
         date: '22nd August, 2025',
-        // image: 'https://images.pexels.com/photos/3984824/pexels-photo-3984824.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/competitive-generic-therapy-approvals.html'
     },
     {
@@ -128,7 +112,6 @@ const mockData = [
         title: 'Empower Pharmacy Under Legal Scrutiny',
         description: 'Empower Pharmacy is facing legal and safety scrutiny over repeated FDA violations relating to compounding practices.....',
         date: '12th May, 2025',
-        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/empower-pharmacy.html'
     },
     {
@@ -137,7 +120,6 @@ const mockData = [
         title: 'Financial Transparency and Efficiency of Prescription Drug User Fee Act and Amendments',
         description: 'Public meeting held on August 20, 2025, focusing on financial transparency and effectiveness concerning the.....',
         date: '20th August, 2025',
-        // image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/financial-transparency-and-efficiency-of-prescription-drug.html'
     },
     {
@@ -146,7 +128,6 @@ const mockData = [
         title: 'FDA Finalizes Guidance on Post-Warning Letter Meetings (PWLMs)',
         description: 'In June 2025, FDA finalized guidance to clarify the process for PWLMs under GDUFA. These meetings help generic.....',
         date: 'June 2025',
-        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/fda-finalizes-guidance.html'
     },
     {
@@ -155,7 +136,6 @@ const mockData = [
         title: 'Advancing Generic Drug Development: Translating Science to Approval 2025',
         description: 'Workshop highlighting progress and innovative scientific strategies to accelerate generic drug development.....',
         date: 'Recently 2025',
-        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './news/advancing-generic-drug-development.html'
     },
     // Podcast Items
@@ -165,7 +145,6 @@ const mockData = [
         title: 'Current Safety and Toxicity Issues with FDA-Approved AAV Vectors',
         description: 'AAV-based gene therapies such as Zolgensma, Luxturna, and Elevidys are effective but carry risks of hepatotoxicity.....',
         date: '',
-        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './podcasts/current-safety-toxicity-issues.html'
     },
     {
@@ -174,7 +153,6 @@ const mockData = [
         title: 'How Our Expert Team Helps Sponsors Develop Safer Next-Gen AAVs',
         description: 'Experts address toxicity in AAV therapies via bioinformatics-driven capsid engineering, immune evasion strategies.....',
         date: '',
-        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './podcasts/how-our-expert-team-helps-sponsors.html'
     },
     {
@@ -183,7 +161,6 @@ const mockData = [
         title: 'Detailed Risk-Mitigation Plan for Next-Gen AAV9 (CNS Applications) and Lentiviral Vectors (CAR-T Therapy)',
         description: 'A comprehensive step-by-step mitigation plan addressing AAV9 risks (neuroinflammation, hepatotoxicity, pre-existing.....',
         date: '',
-        // image: 'https://images.pexels.com/photos/3938026/pexels-photo-3938026.jpeg?auto=compress&cs=tinysrgb&w=800',
         link: './podcasts/detailed-risk-mitigation-plan-for-next-gen.html'
     }
 ];
@@ -332,45 +309,6 @@ function createCard(item) {
     const badgeText = item.type === 'news' ? 'News' : 'Podcast';
     const actionText = item.type === 'news' ? 'Read More' : 'Listen Now';
     // const metaInfo = item.type === 'news' ? item.readTime : item.duration;
-
-    // Old Card Design
-    // card.innerHTML = `
-    //     <div class="card-image">
-    //         <img src="${item.image}" alt="${item.title}" loading="lazy">
-    //         <div class="card-badge">${badgeText}</div>
-    //     </div>
-    //     <div class="card-content">
-    //         <div class="card-meta">
-    //             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    //                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-    //                 <line x1="16" y1="2" x2="16" y2="6"></line>
-    //                 <line x1="8" y1="2" x2="8" y2="6"></line>
-    //                 <line x1="3" y1="10" x2="21" y2="10"></line>
-    //             </svg>
-    //             <span>${formattedDate}</span>
-    //             ${metaInfo ? `
-    //                 <span class="separator">•</span>
-    //                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    //                     ${item.type === 'news' ?
-    //             '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>' :
-    //             '<polygon points="5,3 19,12 5,21 5,3"></polygon>'
-    //         }
-    //                 </svg>
-    //                 <span>${metaInfo}</span>
-    //             ` : ''}
-    //         </div>
-    //         <h3 class="card-title">${item.title}</h3>
-    //         <p class="card-description">${item.description}</p>
-    //         <a href="${item.link}" class="card-action" aria-label="${actionText}: ${item.title}" target="_blank">
-    //             ${actionText}
-    //             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    //                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-    //                 <polyline points="15,3 21,3 21,9"></polyline>
-    //                 <line x1="10" y1="14" x2="21" y2="3"></line>
-    //             </svg>
-    //         </a>
-    //     </div>
-    // `;   
 
     // New Card Design
     card.innerHTML = `

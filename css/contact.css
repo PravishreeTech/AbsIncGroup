@@ -45,7 +45,6 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* border: 4px solid rgb(0, 255, 0); */
 }
 
 .contact-overview .hero-slide {
@@ -184,7 +183,6 @@ body {
     padding: 2rem 0;
     background: #f8fafc;
     color: white;
-    /* border: 4px solid red; */
 }
 
 .contact .section-header {
@@ -226,7 +224,6 @@ body {
 
 .contact-header i {
     font-size: 2rem;
-    /* color: var(--primary-color-2); */
     color: var(--primary-color-1);
 }
 
@@ -317,7 +314,6 @@ body {
 .contact-section {
     position: relative;
     top: var(--relative-top);
-    /* border: 4px solid rgb(0, 255, 0); */
 }
 
 .contact-section .contact-grid {
@@ -334,7 +330,6 @@ body {
 .contact-section .contact-form-card {
     background: #F8FAFC;
     padding: 3rem;
-    /* bigger form look */
     border-radius: 16px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
@@ -343,7 +338,6 @@ body {
 .contact-section .contact-form textarea {
     width: 100%;
     padding: 1rem;
-    /* bigger input */
     font-size: 1.1rem;
 }
 
@@ -378,14 +372,6 @@ body {
     }
 }
 
-/*********** Footer Starts *************/
-
-.footer {
-    position: relative;
-    top: var(--relative-top);
-    /* border: 4px solid white; */
-}
-
 /* ---- Captcha ---- */
 .contact-form .captcha {
     margin-top: 1rem;
@@ -411,12 +397,10 @@ body {
     user-select: none;
     margin-bottom: .75rem;
     letter-spacing: 8px;
-    /* only on the characters area */
 }
 
 .contact-form .captcha .preview span {
     display: inline-block;
-    /* each char gets its own transform */
     will-change: transform;
 }
 
@@ -460,4 +444,11 @@ body {
 
 .captcha .captcha-refresh:active {
     transform: translateY(1px);
+}
+
+/*********** Footer Starts *************/
+
+.footer {
+    position: relative;
+    top: var(--relative-top);
 }

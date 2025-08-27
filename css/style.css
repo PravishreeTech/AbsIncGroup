@@ -25,19 +25,15 @@ body {
 /* Root Variables */
 :root {
     /* colors */
-    /* --primary-color-1: #BE0032; */
     --primary-color-1: #B31942;
     --primary-color-1-hover: #ea2c42;
-    /* --primary-color-2: #02034b; */
     --primary-color-2: #0A3161;
     --primary-color-2-hover: #0f4a93;
-    /* --primary-color-3: #0C7BC0; */
     --footer-color: #0F172A;
     --footer-heading-color: #fff;
     --footer-content-color: #b3bac4;
     --footer-bottom-color: #1E293B;
     --copyright-background: #fff;
-    /* --copyright-background: #123E70; */
 
     /* font-sizes */
     --navbar-elements-size: 18px;
@@ -181,32 +177,6 @@ body {
     background: linear-gradient(45deg, #1d4ed8, #1e40af);
 }
 
-/* Interactive Elements */
-/* .interactive-element {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.interactive-element:hover {
-    transform: translateY(-2px);
-} */
-
-/* Text Animations */
-/* .text-reveal {
-    overflow: hidden;
-}
-
-.text-reveal span {
-    display: inline-block;
-    transform: translateY(100%);
-    animation: textReveal 0.8s ease forwards;
-}
-
-@keyframes textReveal {
-    to {
-        transform: translateY(0);
-    }
-} */
-
 /************ Loading Screen Starts *************/
 .loading-screen {
     position: fixed;
@@ -285,7 +255,6 @@ body {
     z-index: 1000;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    /* border: 2px solid red; */
 }
 
 .navbar .nav-container {
@@ -328,7 +297,6 @@ body {
 
 .nav-link.active {
     color: var(--primary-color-1);
-    /* background: rgba(15, 38, 114, 0.1); */
 }
 
 .nav-link:hover {
@@ -457,7 +425,6 @@ body {
     top: var(--relative-top);
     min-height: 450px;
     overflow: hidden;
-    /* border: 4px solid rgb(2, 44, 5); */
 }
 
 .hero-section .hero-slider {
@@ -620,22 +587,6 @@ body {
     overflow: hidden;
 }
 
-/* .news-ticker .section-title {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.news-ticker .section-subtitle {
-    font-size: 1.125rem;
-    color: #000;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-} */
-
 .news-ticker .ticker-content {
     display: flex;
     width: max-content;
@@ -678,7 +629,6 @@ body {
     top: var(--relative-top);
     background: #fff;
     padding: 3rem 1.5rem;
-    /* border: 4px solid red; */
 }
 
 .vision-mission .fifty-fifty-section .container {
@@ -709,7 +659,6 @@ body {
 }
 
 .vision-mission .fifty-fifty-section .content-right h3 {
-    /* font-size: var(--section-headings); */
     line-height: 1.3;
     margin-bottom: 1rem;
 }
@@ -721,8 +670,6 @@ body {
     color: #1e1d1d;
     margin-bottom: 1.5rem;
     text-align: justify;
-    /* border: 2px solid red; */
-    /* width: 600px; */
 }
 
 .vision-mission .fifty-fifty-section .image-placeholder {
@@ -808,7 +755,7 @@ body {
         width: 100%;
     }
 
-    /* Force content to come first, video after */
+    /* Force content to come first image, content after */
     .vision-mission .fifty-fifty-content>.content-right {
         order: 1;
     }
@@ -819,15 +766,9 @@ body {
 
     .vision-mission .fifty-fifty-section .content-right h3 {
         text-align: center;
-        /* font-size: 35px; */
     }
 
-    /* .vision-mission .fifty-fifty-section .content-right p {
-        font-size: 18px;
-    } */
-
     .vision-mission .button-section .why-choose-button {
-        /* font-size: 18px; */
         padding: 14px 32px;
     }
 }
@@ -837,12 +778,7 @@ body {
         padding: 2rem 0.8rem;
     }
 
-    /* .vision-mission .fifty-fifty-section .content-right h3 {
-        font-size: 1.4rem;
-    } */
-
     .vision-mission .fifty-fifty-section .content-right p {
-        /* font-size: 0.5rem; */
         line-height: 1.5;
     }
 
@@ -861,7 +797,6 @@ body {
     background: var(--primary-color-2);
     padding: 4rem 0;
     text-align: center;
-    /* border: 4px solid rgb(2, 44, 5); */
 }
 
 .video-section.video-in-expertise {
@@ -980,7 +915,6 @@ body {
     top: var(--relative-top);
     padding: 20px 0;
     background: white;
-    /* border: 4px solid red; */
 }
 
 .services-section .container {
@@ -1106,7 +1040,6 @@ body {
     top: var(--relative-top);
     padding: 1.875rem 0;
     background: #F8FAFC;
-    /* border: 4px solid rgb(2, 44, 5); */
 }
 
 .team-section .container {
@@ -1291,7 +1224,6 @@ body {
     background: var(--primary-color-2);
     color: white;
     padding: 2rem 4rem;
-    /* border: 4px solid red; */
 }
 
 .testimonials-section .container {
@@ -1423,7 +1355,6 @@ body {
     top: var(--relative-top);
     padding: 4rem 0;
     background: white;
-    /* border: 4px solid rgb(2, 44, 5); */
 }
 
 .contact-section .container {
@@ -1604,12 +1535,10 @@ body {
     user-select: none;
     margin-bottom: .75rem;
     letter-spacing: 8px;
-    /* only on the characters area */
 }
 
 .contact-form .captcha .preview span {
     display: inline-block;
-    /* each char gets its own transform */
     will-change: transform;
 }
 
@@ -1722,7 +1651,6 @@ body {
     top: var(--relative-top);
     background: var(--primary-color-2);
     color: white;
-    /* border: 4px solid white; */
 }
 
 .footer-main {
@@ -1951,59 +1879,6 @@ body {
 }
 
 /*********** Footer Section Ends *************/
-
-/*********** Cookies Section Starts *************/
-#cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--primary-color-2);
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    /* display: none; */
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
-}
-
-#cookie-banner .banner-content {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-#cookie-banner p {
-    margin: 0;
-    font-size: 1rem;
-    flex: 1;
-}
-
-#accept-cookies {
-    background: var(--primary-color-1);
-    border: none;
-    padding: 0.6rem 1.2rem;
-    margin-right: 100px;
-    font-weight: 600;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-#accept-cookies:hover {
-    background: var(--primary-color-1-hover);
-}
-
-/*********** Cookies Section Ends *************/
 
 /************ Back to Top Button Starts ************/
 .back-to-top {
