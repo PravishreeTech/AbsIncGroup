@@ -31,6 +31,7 @@
 
     <!-- Preconnect to critical origins -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
 
     <!-- Preload critical resources -->
     <link rel="preload" href="./assets/logo.png" as="image" type="image/png">
@@ -149,55 +150,29 @@
     <section class=" news-ticker" data-aos="fade-up" data-aos-delay="200">
         <div class="ticker-content" id="news-ticker">
             <div class="ticker-item">
-                <a href="#">Best biopharma consulting</a>
+                <a href="#" aria-label="Best biopharma consulting services">Best biopharma consulting</a>
             </div>
             <div class="ticker-item">
-                <a href="#">Top biologics regulatory consulting</a>
+                <a href="#" aria-label="Top biologics regulatory consulting">Top biologics regulatory consulting</a>
             </div>
             <div class="ticker-item">
-                <a href="#">Bio/Pharma CMC consulting</a>
+                <a href="#" aria-label="Bio/Pharma CMC consulting">Bio/Pharma CMC consulting</a>
             </div>
             <div class="ticker-item">
-                <a href="#">Clinical trial consulting services</a>
+                <a href="#" aria-label="Clinical trial consulting services">Clinical trial consulting services</a>
             </div>
             <div class="ticker-item">
-                <a href="#">FDA compliance consulting for biologics</a>
+                <a href="#" aria-label="FDA compliance consulting for biologics">FDA compliance consulting for biologics</a>
             </div>
             <div class="ticker-item">
-                <a href="#">Biopharmaceutical market access strategy</a>
+                <a href="#" aria-label="Biopharmaceutical market access strategy">Biopharmaceutical market access strategy</a>
             </div>
             <div class="ticker-item">
-                <a href="#">CMC strategy for FDA submission</a>
+                <a href="#" aria-label="CMC strategy for FDA submission">CMC strategy for FDA submission</a>
             </div>
             <div class="ticker-item">
-                <a href="#">Best consulting firms for innovative drugs & biosimilars development</a>
+                <a href="#" aria-label="Best consulting firms for innovative drugs & biosimilars development">Best consulting firms for innovative drugs & biosimilars development</a>
             </div>
-
-            <div class="ticker-item">
-                <a href="#">Best biopharma consulting</a>
-            </div>
-            <div class="ticker-item">
-                <a href="#">Top biologics regulatory consulting</a>
-            </div>
-            <div class="ticker-item">
-                <a href="#">Bio/Pharma CMC consulting</a>
-            </div>
-            <div class="ticker-item">
-                <a href="#">Clinical trial consulting services</a>
-            </div>
-            <div class="ticker-item">
-                <a href="#">FDA compliance consulting for biologics</a>
-            </div>
-            <div class="ticker-item">
-                <a href="#">Biopharmaceutical market access strategy</a>
-            </div>
-            <div class="ticker-item">
-                <a href="#">CMC strategy for FDA submission</a>
-            </div>
-            <div class="ticker-item">
-                <a href="#">Best consulting firms for innovative drugs & biosimilars development</a>
-            </div>
-
         </div>
     </section>
 
@@ -273,7 +248,7 @@
                             data-video-url="https://player.vimeo.com/video/1114473005?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&autoplay=1">
                             <div class="video-thumbnail"
                                 style="background-image: url('./assets/images/compressed/video-pic.png')"></div>
-                            <button class="play-button">
+                            <button class="play-button" aria-label="Play video about ABSINCGROUP">
                                 <i class="fas fa-play"></i>
                             </button>
                         </div>
@@ -295,19 +270,19 @@
 
             <div class="services-tabs">
                 <div class="tab-navigation" data-aos="fade-up" data-aos-delay="200">
-                    <button class="tab-btn active" data-tab="regulatory">
+                    <button class="tab-btn active" data-tab="regulatory" aria-label="View Regulatory Affairs services">
                         <i class="fas fa-clipboard-check"></i>
                         <span>Regulatory Affairs</span>
                     </button>
-                    <button class="tab-btn" data-tab="quality">
+                    <button class="tab-btn" data-tab="quality" aria-label="View Quality & Compliance services">
                         <i class="fas fa-shield-alt"></i>
                         <span>Quality & Compliance</span>
                     </button>
-                    <button class="tab-btn" data-tab="analytical">
+                    <button class="tab-btn" data-tab="analytical" aria-label="View Analytical Services">
                         <i class="fas fa-flask"></i>
                         <span>Analytical Services</span>
                     </button>
-                    <button class="tab-btn" data-tab="manufacturing">
+                    <button class="tab-btn" data-tab="manufacturing" aria-label="View Manufacturing services">
                         <i class="fa-solid fa-industry"></i>
                         <span>Manufacturing</span>
                     </button>
@@ -562,9 +537,9 @@
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <div class="testimonial-dots">
-                        <button class="dot active" data-slide="0"></button>
-                        <button class="dot" data-slide="1"></button>
-                        <button class="dot" data-slide="2"></button>
+                        <button class="dot active" data-slide="0" aria-label="View testimonial 1"></button>
+                        <button class="dot" data-slide="1" aria-label="View testimonial 2"></button>
+                        <button class="dot" data-slide="2" aria-label="View testimonial 3"></button>
                     </div>
                     <button class="testimonial-next" aria-label="Next testimonial">
                         <i class="fas fa-chevron-right"></i>
@@ -662,11 +637,11 @@
                                 <div class="captcha-form">
                                     <input type="text" class="captcha-input" placeholder="Enter the Captcha..."
                                         required>
-                                    <button type="button" class="captcha-refresh"><i class="fa fa-refresh"></i></button>
+                                    <button type="button" class="captcha-refresh" aria-label="Refresh captcha"><i class="fa fa-refresh"></i></button>
                                 </div>
                             </div>
 
-                            <button type="submit" class="submit-btn" id="submitbtn">
+                            <button type="submit" class="submit-btn" id="submitbtn" aria-label="Send contact message">
                                 <span class="btn-text">Send Message</span>
                             </button>
                         </form>
@@ -779,8 +754,8 @@
     </button>
 
     <!-- Critical Scripts -->
-    <script src="./js/performance-optimizer.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/performance-optimizer.js" defer></script>
+    <script src="./js/main.js" defer></script>
 
     <!-- Non-critical Scripts - Load asynchronously -->
     <script src="./js/lazy-loading.js" defer></script>
