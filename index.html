@@ -22,22 +22,36 @@
     <meta property="og:url" content="https://www.absincgroup.com" />
     <meta property="og:type" content="website" />
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        as="style">
+    <!-- DNS Prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+    <!-- Preconnect to critical origins -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- CSS Files -->
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./assets/logo.png" as="image" type="image/png">
+    <link rel="preload" href="./assets/images/compressed/banner1.jpg" as="image" type="image/jpeg">
+    <link rel="preload" href="./css/style.css" as="style">
+
+    <!-- Critical CSS Files -->
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/animations.css">
     <link rel="stylesheet" href="./css/performance.css">
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;700;800;900&display=swap">
+    <!-- Non-critical CSS - Load asynchronously -->
+    <link rel="preload" href="./css/animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./css/animations.css"></noscript>
 
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Optimized Google Fonts - Single request -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap"></noscript>
+
+    <!-- Font Awesome - Load asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 
 </head>
 
@@ -63,7 +77,7 @@
                 <a href="./index.html">
                     <img src="./assets/logo.png" alt="">
                 </a>
-                <p class="tagline">"Operational Excellence - Regulatory Mastery"</p>
+                <p class="tagline">"Operational Excellence - Regulatory Mastery"</p>
             </div>
 
             <ul class="nav-menu" id="navigation">
@@ -156,7 +170,7 @@
                 <a href="#">CMC strategy for FDA submission</a>
             </div>
             <div class="ticker-item">
-                <a href="#">Best consulting firms for innovative drugs & biosimilars development</a>
+                <a href="#">Best consulting firms for innovative drugs & biosimilars development</a>
             </div>
 
             <div class="ticker-item">
@@ -181,7 +195,7 @@
                 <a href="#">CMC strategy for FDA submission</a>
             </div>
             <div class="ticker-item">
-                <a href="#">Best consulting firms for innovative drugs & biosimilars development</a>
+                <a href="#">Best consulting firms for innovative drugs & biosimilars development</a>
             </div>
 
         </div>
@@ -207,7 +221,7 @@
                             biotech, and medtech companies to achieve compliance, accelerate therapies, and secure
                             commercial success. Beyond traditional consulting, we combine deep technical expertise with
                             financial due diligence, business strategy, and partnership execution — turning science into
-                            lasting patient impact.</p>
+                            lasting patient impact.</p>
                     </div>
                 </div>
             </div>
@@ -224,7 +238,7 @@
                             dedicated to accelerating innovation, ensuring global compliance, and transforming complex
                             regulatory and manufacturing challenges into strategic advantages for our clients. From
                             early development to commercialization, we bring integrity, precision, and agility
-                            to every project.</p>
+                            to every project.</p>
                     </div>
                     <div class="content-left" data-aos="fade-left" data-aos-delay="600">
                         <div class="image-container">
@@ -391,7 +405,7 @@
                                         & gene therapies.</li>
                                     <li><i class="fas fa-check"></i> Scale. Sustain. Deliver. — Single use 2000L, fixed
                                         60K L, resilient supply chains.</li>
-                                    <li><i class="fas fa-check"></i> Contamination Control & Floor training.</li>
+                                    <li><i class="fas fa-check"></i> Contamination Control & Floor training.</li>
                                 </ul>
                             </div>
                         </div>
@@ -739,7 +753,7 @@
             <div class="container">
                 <div class="footer-bottom-content">
                     <div class="copyright">
-                        <p>&copy; 2018-2025 ABSINCGROUP USA®. All rights reserved.</p>
+                        <p>&copy; 2018-2025 ABSINCGROUP USA. All rights reserved.</p>
                     </div>
                     <div class="footer-bottom-links">
                         <a href="./privacy-policy.html">Privacy Policy</a>
@@ -764,19 +778,35 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Contact Form SWAL -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <!-- Contact Form EmailJs -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-
-    <!-- Scripts -->
-    <script src="./js/main.js"></script>
-    <script src="./js/lazy-loading.js"></script>
-    <script src="./js/animations.js"></script>
+    <!-- Critical Scripts -->
     <script src="./js/performance-optimizer.js"></script>
-    <script src="./js/contact.js"></script>
+    <script src="./js/main.js"></script>
+
+    <!-- Non-critical Scripts - Load asynchronously -->
+    <script src="./js/lazy-loading.js" defer></script>
+    <script src="./js/animations.js" defer></script>
+    <script src="./js/contact.js" defer></script>
+
+    <!-- Third-party Scripts - Load on interaction -->
+    <script>
+        // Load SweetAlert only when needed
+        window.loadSweetAlert = function() {
+            if (!window.swal) {
+                const script = document.createElement('script');
+                script.src = 'https://unpkg.com/sweetalert/dist/sweetalert.min.js';
+                document.head.appendChild(script);
+            }
+        };
+
+        // Load EmailJS only when contact form is interacted with
+        window.loadEmailJS = function() {
+            if (!window.emailjs) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+                document.head.appendChild(script);
+            }
+        };
+    </script>
 </body>
 
 </html>

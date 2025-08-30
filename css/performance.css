@@ -37,25 +37,26 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    will-change: transform;
 }
 
-/* Performance optimizations */
-* {
-    /* Use hardware acceleration for transforms */
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
+/* Optimized performance - removed universal transforms */
 
-/* Optimize animations */
-[data-aos] {
+/* Optimize animations - only when needed */
+[data-aos]:not(.aos-animate) {
     will-change: transform, opacity;
 }
 
-/* Reduce paint operations */
-.navbar {
+[data-aos].aos-animate {
+    will-change: auto;
+}
+
+/* Reduce paint operations - only when scrolling */
+.navbar.scrolled {
     will-change: transform;
+}
+
+.navbar:not(.scrolled) {
+    will-change: auto;
 }
 
 /* Optimize images */
@@ -131,13 +132,18 @@ img {
 /* Critical button styles */
 .cta-button,
 .why-choose-button {
-    will-change: transform;
     transition: transform 0.15s ease-out;
 }
 
 .cta-button:hover,
 .why-choose-button:hover {
     transform: translateY(-2px);
+    will-change: transform;
+}
+
+.cta-button:not(:hover),
+.why-choose-button:not(:hover) {
+    will-change: auto;
 }
 
 /* Optimize scroll performance */
@@ -147,36 +153,54 @@ html {
     /* Account for fixed navbar */
 }
 
-/* Reduce repaints for fixed elements */
-.navbar,
-.back-to-top {
+/* Reduce repaints for fixed elements - conditional */
+.back-to-top.visible {
     will-change: transform;
 }
 
-/* Optimize background images */
-.hero-bg,
-.service-visual img {
+.back-to-top:not(.visible) {
+    will-change: auto;
+}
+
+/* Optimize background images - only during animations */
+.hero-bg.animating,
+.service-visual img.animating {
     will-change: transform;
-    transform: translateZ(0);
+}
+
+.hero-bg:not(.animating),
+.service-visual img:not(.animating) {
+    will-change: auto;
 }
 
 /* Performance-friendly hover effects */
 .service-card,
 .team-card {
-    will-change: transform;
     transition: transform 0.2s ease-out;
 }
 
 .service-card:hover,
 .team-card:hover {
     transform: translateY(-5px);
+    will-change: transform;
 }
 
-/* Optimize form elements */
-input,
-textarea,
-button {
+.service-card:not(:hover),
+.team-card:not(:hover) {
+    will-change: auto;
+}
+
+/* Optimize form elements - only when focused */
+input:focus,
+textarea:focus,
+button:active {
     will-change: transform;
+}
+
+input:not(:focus),
+textarea:not(:focus),
+button:not(:active) {
+    will-change: auto;
 }
 
 /* Reduce layout shifts for images */

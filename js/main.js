@@ -22,12 +22,26 @@ class ABSINCGROUPWebsite {
             this.initVideoPlayer();
         });
 
+        // Throttled scroll handler for better performance
+        let scrollTimeout;
         window.addEventListener('scroll', () => {
-            this.handleScroll();
-        });
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(() => {
+                this.handleScroll();
+            }, 16); // ~60fps
+        }, { passive: true });
 
+        // Debounced resize handler
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-            this.handleResize();
+            if (resizeTimeout) {
+                clearTimeout(resizeTimeout);
+            }
+            resizeTimeout = setTimeout(() => {
+                this.handleResize();
+            }, 250);
         });
     }
 

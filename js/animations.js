@@ -280,122 +280,8 @@ class AnimationController {
             add(element, properties, duration = 300, delay = 0) {
                 this.animations.push({ element, properties, duration, delay });
                 return this;
-            },
-            play() {
-                this.animations.forEach(({ element, properties, duration, delay }) => {
-                    setTimeout(() => {
-                        Object.assign(element.style, {
-                            transition: `all ${duration}ms ease-out`,
-                            ...properties
-                        });
-                    }, delay);
-                });
             }
         };
-    }
-
-    animateCSS(element, animationName, duration = 1000) {
-        return new Promise(resolve => {
-            const animationEnd = 'animationend';
-            
-            element.style.animationDuration = `${duration}ms`;
-            element.classList.add('animated', animationName);
-            
-            const handleAnimationEnd = () => {
-                element.classList.remove('animated', animationName);
-                element.removeEventListener(animationEnd, handleAnimationEnd);
-                resolve();
-            };
-            
-            element.addEventListener(animationEnd, handleAnimationEnd);
-        });
-    }
-
-    // Performance optimizations
-    setupPerformanceOptimizations() {
-        // Use will-change for elements that will be animated
-        const animatedElements = document.querySelectorAll('[data-aos], [data-parallax]');
-        animatedElements.forEach(element => {
-            element.style.willChange = 'transform, opacity';
-        });
-
-        // Throttle scroll events
-        let ticking = false;
-        const throttledScroll = () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    this.handleScroll();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        };
-
-        window.addEventListener('scroll', throttledScroll, { passive: true });
-    }
-
-    handleScroll() {
-        // Handle scroll-based animations
-        const scrollY = window.pageYOffset;
-        const windowHeight = window.innerHeight;
-        
-        // Update any scroll-dependent animations
-        this.animations.forEach((isActive, element) => {
-            if (isActive && element.hasAttribute('data-parallax')) {
-                const rect = element.getBoundingClientRect();
-                if (rect.top < windowHeight && rect.bottom > 0) {
-                    // Element is in viewport, continue parallax
-                    const speed = parseFloat(element.getAttribute('data-parallax')) || 0.5;
-                    const parallax = scrollY * speed;
-                    element.style.transform = `translateY(${parallax}px)`;
-                }
-            }
-        });
-    }
-
-    // Advanced easing functions
-    easing = {
-        linear: t => t,
-        easeInQuad: t => t * t,
-        easeOutQuad: t => t * (2 - t),
-        easeInOutQuad: t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t,
-        easeInCubic: t => t * t * t,
-        easeOutCubic: t => (--t) * t * t + 1,
-        easeInOutCubic: t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
-        easeInQuart: t => t * t * t * t,
-        easeOutQuart: t => 1 - (--t) * t * t * t,
-        easeInOutQuart: t => t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t
-    };
-
-    // Custom animation function with easing
-    animate(element, properties, duration = 300, easingFunction = this.easing.easeOutQuad) {
-        const startTime = Date.now();
-        const startValues = {};
-        
-        // Get initial values
-        Object.keys(properties).forEach(prop => {
-            startValues[prop] = parseFloat(getComputedStyle(element)[prop]) || 0;
-        });
-        
-        const animateStep = () => {
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const easedProgress = easingFunction(progress);
-            
-            Object.keys(properties).forEach(prop => {
-                const startValue = startValues[prop];
-                const endValue = properties[prop];
-                const currentValue = startValue + (endValue - startValue) * easedProgress;
-                
-                element.style[prop] = `${currentValue}px`;
-            });
-            
-            if (progress < 1) {
-                requestAnimationFrame(animateStep);
-            }
-        };
-        
-        requestAnimationFrame(animateStep);
     }
 
     // Cleanup method
@@ -408,12 +294,25 @@ class AnimationController {
     }
 }
 
-// Initialize animations when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    const animationController = new AnimationController();
+// Optimized AOS initialization with performance considerations
+document.addEventListener('DOMContentLoaded', function() {
+    // Only initialize AOS if not on mobile for better performance
+    const isMobile = window.innerWidth <= 768;
     
-    // Make it available globally for potential use
-    window.animationController = animationController;
+    if (!isMobile) {
+        const animationController = new AnimationController();
+        
+        // Make it available globally for potential use
+        window.animationController = animationController;
+    } else {
+        // For mobile, just show all elements without animation
+        const aosElements = document.querySelectorAll('[data-aos]');
+        aosElements.forEach(el => {
+            el.classList.add('aos-animate');
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+        });
+    }
 });
 
 // Export for use in other modules

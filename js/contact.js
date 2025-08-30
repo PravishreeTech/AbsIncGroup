@@ -3,7 +3,24 @@ function getValue(id) {
     return (el && el.value) ? el.value.trim() : "";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// Load third-party dependencies on first interaction
+function initializeContactForm() {
+    // Load SweetAlert and EmailJS when form is first interacted with
+    if (typeof window.loadSweetAlert === 'function') {
+        window.loadSweetAlert();
+    }
+    if (typeof window.loadEmailJS === 'function') {
+        window.loadEmailJS();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listeners for lazy loading third-party scripts
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('focus', initializeContactForm, { once: true });
+        contactForm.addEventListener('click', initializeContactForm, { once: true });
+    }
 
     // console.log(document.querySelectorAll("#phone"));
 
