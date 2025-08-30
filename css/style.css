@@ -1,3 +1,5 @@
+/* Removed @import for better performance - fonts loaded in HTML head */
+
 /* Reset and Base Styles */
 *,
 *::before,
@@ -61,7 +63,13 @@ body {
     padding: 4rem 0;
 }
 
-.gradient-text{background:var(--primary-color-2);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.gradient-text {
+    background: var(--primary-color-2);
+    /* background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%); */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 .visually-hidden {
     position: absolute !important;
@@ -684,7 +692,7 @@ body {
     text-align: center;
     margin-top: 3rem;
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.25, 0.25, 0.25, 1);
 }
 
@@ -1063,14 +1071,14 @@ body {
     padding: 1.25rem;
     text-align: center;
     height: 480px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+    box-shadow: 1.5rem;
     transition: all 0.3s ease-in-out;
     border: 1px solid var(--primary-color-2);
 }
 
 .team-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),0 10px 10px -5px rgba(0,0,0,.04);
+    box-shadow: 2rem;
 }
 
 .team-info h3 {
@@ -1162,7 +1170,7 @@ body {
 @media (max-width: 768px) {
     .team-grid {
         grid-template-columns: 1fr;
-        gap:1rem;
+        gap: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
 
     .team-section .team-card {
@@ -1371,7 +1379,7 @@ body {
     padding: 2rem;
 }
 
-.contact-section .contact-info a{
+.contact-section .contact-info a {
     text-decoration: none;
 }
 
@@ -1431,6 +1439,7 @@ body {
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    ;
 }
 
 .contact-form-card h3 {

@@ -1,9 +1,76 @@
+// Main JavaScript functionality
 class ABSINCGROUPWebsite {
-    constructor() { this.init() }
-    init() { this.setupEventListeners(); this.initializeComponents(); this.handleLoading() }
-    setupEventListeners() { document.addEventListener('DOMContentLoaded', () => { this.initMobileNavigation(); this.initSliders(); this.initServicesTab(); this.initTestimonials(); this.initBackToTop(); this.initSmoothScrolling(); this.initHeaderScroll(); this.initVideoPlayer() }); let scrollTimeout; window.addEventListener('scroll', () => { if (scrollTimeout) { clearTimeout(scrollTimeout) } scrollTimeout = setTimeout(() => { this.handleScroll() }, 16) }, { passive: true }); let resizeTimeout; window.addEventListener('resize', () => { if (resizeTimeout) { clearTimeout(resizeTimeout) } resizeTimeout = setTimeout(() => { this.handleResize() }, 250) }) }
-    initializeComponents() { this.initParticles() }
-    handleLoading() { const loadingScreen = document.getElementById('loadingScreen'); window.addEventListener('load', () => { loadingScreen.classList.add('hidden'); setTimeout(() => { loadingScreen.style.display = 'none' }, 300) }); setTimeout(() => { if (loadingScreen && !loadingScreen.classList.contains('hidden')) { loadingScreen.classList.add('hidden'); setTimeout(() => { loadingScreen.style.display = 'none' }, 300) } }, 2000) }
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+        this.initializeComponents();
+        this.handleLoading();
+    }
+
+    setupEventListeners() {
+        document.addEventListener('DOMContentLoaded', () => {
+            this.initMobileNavigation();
+            this.initSliders();
+            this.initServicesTab();
+            this.initTestimonials();
+            this.initBackToTop();
+            this.initSmoothScrolling();
+            this.initHeaderScroll();
+            this.initVideoPlayer();
+        });
+
+        // Throttled scroll handler for better performance
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(() => {
+                this.handleScroll();
+            }, 16); // ~60fps
+        }, { passive: true });
+
+        // Debounced resize handler
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            if (resizeTimeout) {
+                clearTimeout(resizeTimeout);
+            }
+            resizeTimeout = setTimeout(() => {
+                this.handleResize();
+            }, 250);
+        });
+    }
+
+    initializeComponents() {
+        // Initialize any other components here
+        this.initParticles();
+    }
+
+    handleLoading() {
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        window.addEventListener('load', () => {
+            // Hide preloader immediately when page is ready
+            loadingScreen.classList.add('hidden');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 300); // Reduced transition time
+        });
+
+        // Fallback: hide preloader if it takes too long (max 2 seconds)
+        setTimeout(() => {
+            if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 300);
+            }
+        }, 2000);
+    }
 
     initMobileNavigation() {
         const mobileToggle = document.getElementById('mobileToggle');
@@ -150,24 +217,197 @@ class ABSINCGROUPWebsite {
         startAutoSlide();
     }
 
-    initBackToTop() { const backToTopBtn = document.getElementById('backToTop'); if (backToTopBtn) { backToTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }) }) } }
+    initBackToTop() {
+        const backToTopBtn = document.getElementById('backToTop');
 
-    initSmoothScrolling() { const links = document.querySelectorAll('a[href^="#"]'); links.forEach(link => { link.addEventListener('click', (e) => { const href = link.getAttribute('href'); if (href === '#') return; const target = document.querySelector(href); if (target) { e.preventDefault(); const headerHeight = document.querySelector('.header')?.offsetHeight || 0; const targetPosition = target.offsetTop - headerHeight; window.scrollTo({ top: targetPosition, behavior: 'smooth' }); this.updateActiveNavLink(href.substring(1)) } }) }) }
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    }
 
-    initHeaderScroll() { const header = document.getElementById('header'); let lastScrollY = window.scrollY; window.addEventListener('scroll', () => { const currentScrollY = window.scrollY; if (header) { if (currentScrollY > 100) { header.classList.add('scrolled') } else { header.classList.remove('scrolled') }; if (currentScrollY > lastScrollY && currentScrollY > 500) { header.style.transform = 'translateY(-100%)' } else { header.style.transform = 'translateY(0)' } } lastScrollY = currentScrollY }) }
+    initSmoothScrolling() {
+        const links = document.querySelectorAll('a[href^="#"]');
 
-    initVideoPlayer() { const videoContainers = document.querySelectorAll('.video-placeholder'); videoContainers.forEach(container => { const playButton = container.querySelector('.play-button'); const thumbnail = container.querySelector('.video-thumbnail'); const videoUrl = container.dataset.videoUrl; if (playButton && videoUrl) { playButton.addEventListener('click', () => { playButton.style.display = 'none'; if (thumbnail) thumbnail.style.display = 'none'; if (!container.querySelector('iframe')) { const videoIframe = document.createElement('iframe'); videoIframe.src = videoUrl; videoIframe.frameBorder = '0'; videoIframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share'; videoIframe.referrerPolicy = 'strict-origin-when-cross-origin'; Object.assign(videoIframe.style, { position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', objectFit: 'cover' }); container.appendChild(videoIframe) } }) } }) }
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href === '#') return;
+
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Update active nav link
+                    this.updateActiveNavLink(href.substring(1));
+                }
+            });
+        });
+    }
+
+    initHeaderScroll() {
+        const header = document.getElementById('header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (header) {
+                if (currentScrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Hide/show header on scroll
+                if (currentScrollY > lastScrollY && currentScrollY > 500) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    }
+
+    initVideoPlayer() {
+        const videoContainers = document.querySelectorAll('.video-placeholder');
+
+        videoContainers.forEach(container => {
+            const playButton = container.querySelector('.play-button');
+            const thumbnail = container.querySelector('.video-thumbnail');
+            const videoUrl = container.dataset.videoUrl;
+
+            if (playButton && videoUrl) {
+                playButton.addEventListener('click', () => {
+                    // Hide play button and thumbnail
+                    playButton.style.display = 'none';
+                    if (thumbnail) thumbnail.style.display = 'none';
+
+                    // Insert Vimeo iframe if not already present
+                    if (!container.querySelector('iframe')) {
+                        const videoIframe = document.createElement('iframe');
+                        videoIframe.src = videoUrl;
+                        videoIframe.frameBorder = '0';
+                        videoIframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share';
+                        videoIframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                        videoIframe.style.position = 'absolute';
+                        videoIframe.style.top = '0';
+                        videoIframe.style.left = '0';
+                        videoIframe.style.width = '100%';
+                        videoIframe.style.height = '100%';
+                        videoIframe.style.objectFit = 'cover';
+                        container.appendChild(videoIframe);
+                    }
+                });
+            }
+        });
+    }
 
 
-    initParticles() { const createParticle = (section) => { const particle = document.createElement('div'); particle.className = 'particle'; particle.style.left = Math.random() * window.innerWidth + 'px'; particle.style.animationDelay = Math.random() * 3 + 's'; particle.style.animationDuration = (Math.random() * 3 + 2) + 's'; const particlesContainer = section.querySelector('.particles') || (() => { const container = document.createElement('div'); container.className = 'particles'; section.appendChild(container); return container })(); particlesContainer.appendChild(particle); setTimeout(() => { particle.remove() }, 6000) }; const bubbleSections = document.querySelectorAll('.with-bubbles'); bubbleSections.forEach(section => { setInterval(() => createParticle(section), 500) }) }
+    // For the bubble effect on the banners
+    initParticles() {
+        const createParticle = (section) => {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.animationDelay = Math.random() * 3 + 's';
+            particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
 
-    handleScroll() { const backToTopBtn = document.getElementById('backToTop'); if (backToTopBtn) { if (window.scrollY > 300) { backToTopBtn.classList.add('visible') } else { backToTopBtn.classList.remove('visible') } } this.updateActiveSection() }
+            const particlesContainer = section.querySelector('.particles') || (() => {
+                const container = document.createElement('div');
+                container.className = 'particles';
+                section.appendChild(container);
+                return container;
+            })();
 
-    handleResize() { const navigation = document.getElementById('navigation'); const mobileToggle = document.getElementById('mobileToggle'); if (window.innerWidth > 768) { if (navigation) navigation.classList.remove('active'); if (mobileToggle) mobileToggle.classList.remove('active'); document.body.style.overflow = '' } }
+            particlesContainer.appendChild(particle);
 
-    updateActiveSection() { const sections = document.querySelectorAll('section[id]'); const navLinks = document.querySelectorAll('.nav-link[data-section]'); let currentSection = ''; const headerHeight = document.querySelector('.header')?.offsetHeight || 0; sections.forEach(section => { const sectionTop = section.offsetTop - headerHeight - 100; const sectionHeight = section.offsetHeight; if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) { currentSection = section.id } }); navLinks.forEach(link => { link.classList.remove('active'); if (link.dataset.section === currentSection) { link.classList.add('active') } }) }
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        };
 
-    updateActiveNavLink(sectionId) { const navLinks = document.querySelectorAll('.nav-link'); navLinks.forEach(link => { link.classList.remove('active'); if (link.dataset.section === sectionId) { link.classList.add('active') } }) }
+        // Attach particles to every section that has "with-bubbles" class
+        const bubbleSections = document.querySelectorAll('.with-bubbles');
+        bubbleSections.forEach(section => {
+            setInterval(() => createParticle(section), 500);
+        });
+
+    }
+
+    handleScroll() {
+        // Back to top button visibility
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }
+
+        // Update active section in navigation
+        this.updateActiveSection();
+    }
+
+    handleResize() {
+        // Handle any resize-specific logic
+        const navigation = document.getElementById('navigation');
+        const mobileToggle = document.getElementById('mobileToggle');
+
+        if (window.innerWidth > 768) {
+            if (navigation) navigation.classList.remove('active');
+            if (mobileToggle) mobileToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    updateActiveSection() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link[data-section]');
+
+        let currentSection = '';
+        const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - headerHeight - 100;
+            const sectionHeight = section.offsetHeight;
+
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentSection = section.id;
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.dataset.section === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    updateActiveNavLink(sectionId) {
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.dataset.section === sectionId) {
+                link.classList.add('active');
+            }
+        });
+    }
 
     showNotification(message, type = 'info') {
         const notification = document.createElement('div');
@@ -220,7 +460,12 @@ class ABSINCGROUPWebsite {
             }, 300);
         };
 
-        const closeBtn = notification.querySelector('.notification-close'); closeBtn.addEventListener('click', removeNotification); setTimeout(removeNotification, 5000);
+        // Close button
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.addEventListener('click', removeNotification);
+
+        // Auto remove after 5 seconds
+        setTimeout(removeNotification, 5000);
     }
 }
 
@@ -469,4 +714,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-if (typeof module !== 'undefined' && module.exports) { module.exports = ABSINCGROUPWebsite }
+// Export for potential use in other modules
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = ABSINCGROUPWebsite;
+}
+

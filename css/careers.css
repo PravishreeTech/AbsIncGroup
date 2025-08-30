@@ -13,12 +13,16 @@ html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
+    font-family: "Oswald", sans-serif;
+    font-family: "Playfair Display", serif;
     font-family: "Roboto", sans-serif;
     color: #333;
     background-color: #fff;
     overflow-x: hidden;
 }
+
+/* Root Variables are used from style.css file*/
 
 .container {
     max-width: 1200px;
@@ -188,14 +192,14 @@ body{
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
-.now-hiring .careers-grid{
+.now-hiring .careers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
     gap: 1rem;
     margin-bottom: 4rem;
 }
 
-.now-hiring .career-card{
+.now-hiring .career-card {
     background: white;
     padding: 2.5rem;
     border-radius: 20px;
