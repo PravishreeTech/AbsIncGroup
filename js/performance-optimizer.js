@@ -32,7 +32,7 @@ class PerformanceOptimizer {
     preloadCriticalResources() {
         const criticalResources = [
             { href: './assets/logo.png', as: 'image', type: 'image/png' },
-            { href: './assets/images/compressed/banner1-min.jpg', as: 'image', type: 'image/jpeg' },
+            { href: './assets/images/compressed/banner1.jpg', as: 'image', type: 'image/jpeg' },
             { href: './css/style.css', as: 'style' },
             { href: './js/main.js', as: 'script' }
         ];

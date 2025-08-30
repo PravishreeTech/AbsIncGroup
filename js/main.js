@@ -46,7 +46,7 @@ class ABSINCGROUPWebsite {
                 loadingScreen.style.display = 'none';
             }, 300); // Reduced transition time
         });
-        
+
         // Fallback: hide preloader if it takes too long (max 2 seconds)
         setTimeout(() => {
             if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
@@ -273,60 +273,35 @@ class ABSINCGROUPWebsite {
 
         videoContainers.forEach(container => {
             const playButton = container.querySelector('.play-button');
-            const videoSrc = container.dataset.video;
+            const thumbnail = container.querySelector('.video-thumbnail');
+            const videoUrl = container.dataset.videoUrl;
 
-            if (playButton && videoSrc) {
-
-                let video;
-
+            if (playButton && videoUrl) {
                 playButton.addEventListener('click', () => {
+                    // Hide play button and thumbnail
+                    playButton.style.display = 'none';
+                    if (thumbnail) thumbnail.style.display = 'none';
 
-                    if (!video) {
-                        video = document.createElement('video');
-                        video.src = videoSrc;
-                        video.controls = true;
-                        video.playsInline = true;
-                        video.style.width = '100%';
-                        video.style.height = '100%';
-                        video.style.objectFit = 'cover';
-
-                        // Insert video but KEEP play button
-                        container.insertBefore(video, playButton);
-
-                        // Hide the thumbnail image after first click
-                        const thumbnail = container.querySelector('.video-thumbnail');
-                        if (thumbnail) {
-                            thumbnail.style.display = 'none';
-                        }
-
-                        // Hide button when playing
-                        video.addEventListener('play', () => {
-                            playButton.style.display = 'none';
-                        });
-
-                        // Show button when paused or ended
-                        video.addEventListener('pause', () => {
-                            playButton.style.display = 'flex';
-                            playButton.style.alignItems = 'center';
-                            playButton.style.justifyContent = 'center';
-                        });
-                        video.addEventListener('ended', () => {
-                            playButton.style.display = 'flex';
-                            playButton.style.alignItems = 'center';
-                            playButton.style.justifyContent = 'center';
-                        });
-                    }
-
-                    // Toggle play/pause
-                    if (video.paused) {
-                        video.play().catch(err => console.log("Autoplay blocked:", err));
-                    } else {
-                        video.pause();
+                    // Insert Vimeo iframe if not already present
+                    if (!container.querySelector('iframe')) {
+                        const videoIframe = document.createElement('iframe');
+                        videoIframe.src = videoUrl;
+                        videoIframe.frameBorder = '0';
+                        videoIframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share';
+                        videoIframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                        videoIframe.style.position = 'absolute';
+                        videoIframe.style.top = '0';
+                        videoIframe.style.left = '0';
+                        videoIframe.style.width = '100%';
+                        videoIframe.style.height = '100%';
+                        videoIframe.style.objectFit = 'cover';
+                        container.appendChild(videoIframe);
                     }
                 });
             }
         });
     }
+
 
     // For the bubble effect on the banners
     initParticles() {
