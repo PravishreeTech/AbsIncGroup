@@ -1,9 +1,8 @@
-// Advanced Animation Controller
 class AnimationController {
     constructor() {
         this.animations = new Map();
         this.observers = new Map();
-        this.init();
+        this.init()
     }
 
     init() {
@@ -12,11 +11,10 @@ class AnimationController {
         this.initParallaxAnimations();
         this.initMorphingAnimations();
         this.initStaggerAnimations();
-        this.setupPerformanceOptimizations();
+        this.setupPerformanceOptimizations()
     }
 
     initScrollAnimations() {
-        // Custom AOS-like functionality
         const observerConfig = {
             rootMargin: '0px 0px -100px 0px',
             threshold: 0.1
@@ -27,26 +25,23 @@ class AnimationController {
                 if (entry.isIntersecting) {
                     const element = entry.target;
                     this.animateElement(element);
-                    scrollObserver.unobserve(element);
+                    scrollObserver.unobserve(element)
                 }
             });
         }, observerConfig);
 
-        // Observe all elements with data-aos attributes
         const animatedElements = document.querySelectorAll('[data-aos]');
         animatedElements.forEach(element => {
-            scrollObserver.observe(element);
+            scrollObserver.observe(element)
         });
 
-        this.observers.set('scroll', scrollObserver);
+        this.observers.set('scroll', scrollObserver)
     }
 
     animateElement(element) {
         const animationType = element.getAttribute('data-aos');
         const delay = parseInt(element.getAttribute('data-aos-delay')) || 0;
         const duration = parseInt(element.getAttribute('data-aos-duration')) || 600;
-
-        // Apply initial styles
         element.style.transition = `all ${duration}ms ease-out`;
         
         setTimeout(() => {
