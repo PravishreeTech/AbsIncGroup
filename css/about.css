@@ -1,77 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* Reset and Base Styles */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x:hidden}
-
-/* Utilities */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 /***************** About Overview Section Start *****************/
 .about-overview {
-    position: relative;
-    top: var(--relative-top);
-    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 .about-overview .hero-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    visibility: hidden;
     transition: opacity 1s ease, visibility 1s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.about-overview .hero-slide.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.about-overview .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
-}
-
-.about-overview .hero-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
 .about-overview .container {
@@ -117,7 +55,7 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
 
 @media screen and (max-width: 600px) {
     .about-overview {
-        min-height: 600px;
+        min-height: 500px;
     }
 
     .about-overview .overview-text {
@@ -133,7 +71,7 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
 @media screen and (max-width: 450px) {
     .about-overview {
         width: 100%;
-        min-height: 700px;
+        min-height: 600px;
     }
 
     .about-overview .overview-text p {
@@ -141,8 +79,6 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
         line-height: 1.6;
     }
 }
-
-/***************** About Overview Section End *****************/
 
 /***************** AI Section Start *****************/
 .ai-section {
@@ -166,6 +102,27 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
     gap: 3rem;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.ai-section .section-heading {
+    font-size: clamp(2.20rem, 4vw, 2.50rem);
+    font-weight: 700;
+    color: var(--primary-color-1);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.ai-section .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    height: 3px;
+    background: var(--primary-color-2);
+    border-radius: 2px;
 }
 
 .ai-section .ai-icon {
@@ -273,8 +230,6 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
         height: 40px;
     }
 }
-
-/***************** AI Section Ends *****************/
 
 /***************** Why Choose Us Section Start *****************/
 .why-choose-us {
@@ -406,8 +361,6 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
         margin: -8px;
     }
 }
-
-/***************** Why Choose Us Section End *****************/
 
 /***************** Specialized Expertise Section Start *****************/
 .expertise {
@@ -724,8 +677,6 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
     }
 }
 
-/***************** Specialized Expertise Section End *****************/
-
 /***************** Who We Serve Section Start *****************/
 .clients {
     position: relative;
@@ -781,8 +732,20 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
     animation: regionGlow 2s ease-in-out infinite;
 }
 
+@keyframes regionGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(59, 130, 246, 0.8);
+    }
+}
+
 .region-pulse {
-    content: "";
+    /* content: ""; */
     position: absolute;
     top: 69%;
     left: 25%;
@@ -792,6 +755,18 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
 }
 
 .region.usa::before {
@@ -820,30 +795,6 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
     position: relative;
     bottom: 10px;
     font-size: 18px;
-}
-
-@keyframes regionGlow {
-
-    0%,
-    100% {
-        box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
-    }
-
-    50% {
-        box-shadow: 0 0 35px rgba(59, 130, 246, 0.8);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(2.5);
-        opacity: 0;
-    }
 }
 
 .usa {
@@ -945,12 +896,9 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
     }
 }
 
-/***************** Who We Serve Section End *****************/
 
 /***************** Footer Start *****************/
 .footer {
     position: relative;
     top: 200px;
 }
-
-/***************** Footer End *****************/

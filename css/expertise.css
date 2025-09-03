@@ -1,60 +1,15 @@
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x:hidden}
-
-/* Root Variables are used from style.css file*/
-
-
 /*********** Expertise Overview Section Starts *************/
 .expertise-overview {
-    position: relative;
-    top: var(--relative-top);
-    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 .expertise-overview .hero-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    visibility: hidden;
     transition: opacity 1s ease, visibility 1s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.expertise-overview .hero-slide.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.expertise-overview .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
-}
-
-.expertise-overview .hero-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
 .expertise-overview .container {
@@ -148,7 +103,48 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
     }
 }
 
-/*********** Expertise Overview Section Ends *************/
+/*********** News Ticker Starts *************/
+.news-ticker {
+    position: relative;
+    top: var(--relative-top);
+    background: #fff;
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.news-ticker .ticker-content {
+    display: flex;
+    width: max-content;
+    animation: ticker 30s linear infinite;
+    gap: 4rem;
+}
+
+.news-ticker .ticker-item a {
+    color: var(--primary-color-2);
+    font-size: var(--section-main-content);
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.news-ticker .ticker-item a:hover {
+    color: var(--primary-color-1-hover);
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.news-ticker .ticker-controls {
+    display: none;
+}
 
 /*********** What Sets ABSINCGROUP Apart Starts *************/
 .what-sets-apart {
@@ -568,7 +564,123 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
     }
 }
 
-/*********** NEW What Sets ABSINCGROUP Apart Ends *************/
+/*********** Video Section Starts *************/
+.video-section {
+    position: relative;
+    top: var(--relative-top);
+    background: var(--primary-color-2);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.video-section .container {
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.video-header {
+    margin-bottom: 3rem;
+}
+
+.video-badge {
+    display: inline-block;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-bottom: 1.125rem;
+}
+
+.video-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1);
+}
+
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #0F172A;
+    cursor: pointer;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.video-section.video-in-expertise {
+    background-color: #fff;
+}
+
+.video-section.video-in-expertise .video-header {
+    margin-bottom: 0;
+}
+
+.video-badge.expertise-heading {
+    color: var(--primary-color-2);
+}
+
+@media screen and (max-width: 420px) {
+    .video-section .video-badge.video-badge.expertise-heading {
+        font-size: 32px;
+    }
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(12, 123, 192, .9);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.play-button:hover {
+    background: #0C7BC0;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media screen and (max-width: 920px) {
+    .video-section .video-badge {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .video-section .video-badge {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .video-section .video-badge {
+        font-size: 22px;
+    }
+}
 
 /***************************** Call Section Start *****************************/
 .call-to-action {
@@ -834,29 +946,6 @@ body{font-family:"Roboto",sans-serif;color:#333;background-color:#fff;overflow-x
         padding: 20px;
     }
 }
-
-/* ===== Site Map ===== */
-@media (prefers-reduced-motion: reduce) {
-
-    .call-to-action .call-cards,
-    .call-to-action .call-backgrounds,
-    .call-to-action .call-button {
-        transition: none;
-    }
-
-    .call-to-action .call-cards::before {
-        animation: none;
-    }
-}
-
-/* ===== FOCUS STYLES ===== */
-.call-to-action .call-button:focus,
-.call-to-action .call-cards:focus {
-    outline: 2px solid #06b6d4;
-    outline-offset: 2px;
-}
-
-/***************************** Call Section End *****************************/
 
 /***************************** Footer Section *****************************/
 .footer {

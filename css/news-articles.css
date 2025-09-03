@@ -1,41 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* Reset and Base Styles */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Oswald", sans-serif;
-    font-family: "Playfair Display", serif;
-    font-family: "Roboto", sans-serif;
-    color: #333;
-    background-color: #fff;
-    overflow-x: hidden;
-}
-
-/* Root Variables are used from style.css file*/
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 30px;
-    }
-}
-
 /*************** NEWS Section Starts *************/
 .news-section {
     position: relative;
@@ -91,5 +53,3 @@ body {
 .news-section svg{
     width: 26px;
 }
-
-/*************** NEWS Section Ends *************/

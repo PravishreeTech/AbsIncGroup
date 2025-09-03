@@ -1,3 +1,5 @@
+// Nothing to change in this code everything is working as expected and well structured
+
 // Mock data for news and podcasts 
 const mockData = [
     // News Items
@@ -201,20 +203,6 @@ function setupEventListeners() {
 
     // Clear search button
     clearSearchBtn.addEventListener('click', clearSearch);
-
-    // Newsletter form (basic functionality)
-    const subscribeBtn = document.querySelector('.subscribe-btn');
-    const emailInput = document.querySelector('.email-input');
-
-    subscribeBtn.addEventListener('click', function () {
-        const email = emailInput.value.trim();
-        if (email && isValidEmail(email)) {
-            alert('Thank you for subscribing! You will receive updates at ' + email);
-            emailInput.value = '';
-        } else {
-            alert('Please enter a valid email address.');
-        }
-    });
 }
 
 // Handle tab click

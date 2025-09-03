@@ -312,8 +312,8 @@ class LazyLoader {
     // Preload critical images
     preloadCriticalImages() {
         const criticalImages = [
-            'https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
-            'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop'
+            // 'https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
+            // 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop'
         ];
 
         criticalImages.forEach(src => {

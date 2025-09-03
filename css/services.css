@@ -1,93 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* Reset and Base Styles */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Oswald", sans-serif;
-    font-family: "Playfair Display", serif;
-    font-family: "Roboto", sans-serif;
-    color: #333;
-    background-color: #fff;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 30px;
-}
-
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 30px;
-    }
-}
-
-/* Root Variables are used from style.css file*/
-
-
 /***************** Services Overview Section Start *****************/
 .services-overview {
-    position: relative;
-    top: var(--relative-top);
     padding: 4rem 0;
-    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 .services-overview .hero-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    visibility: hidden;
     transition: opacity 1s ease, visibility 1s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.services-overview .hero-slide.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.services-overview .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
-}
-
-.services-overview .hero-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(27, 54, 93, 0.8) 0%, rgba(12, 123, 192, 0.6) 100%);
 }
 
 .services-overview .container {
@@ -200,8 +123,6 @@ body {
         min-height: 750px;
     }
 }
-
-/***************** Services Overview Section Ends *****************/
 
 /***************** Interactive-Service-Categories Section Start *****************/
 .service-categories {
@@ -352,8 +273,6 @@ body {
     font-size: 18px;
 }
 
-/***************** Interactive-Service-Categories Section Ends *****************/
-
 /***************** HEXAGONAL EXPERTISE Section Start *****************/
 .hexagonal-expertise {
     position: relative;
@@ -392,26 +311,6 @@ body {
     text-align: center;
     margin-bottom: 5rem;
     position: relative;
-}
-
-.hexagonal-expertise .section-heading {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    animation: titleWordFloat 4s ease-in-out infinite;
-}
-
-@keyframes titleWordFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
 }
 
 .hexagonal-expertise .hexagonal-grid {
@@ -491,21 +390,6 @@ body {
 
 .hexagonal-expertise .hex-item:hover .hex-glow {
     opacity: 0.1;
-}
-
-@media screen and (max-width: 540px) {
-    .hexagonal-expertise .section-heading {
-        font-size: 2.3rem;
-    }
-}
-
-/***************** HEXAGONAL EXPERTISE Section Ends *****************/
-
-/* ===== Site Map ===== */
-@media (prefers-reduced-motion: reduce) {
-    .section-header {
-        transition: none;
-    }
 }
 
 /***************** Footer ***************/

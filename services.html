@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Website Icon -->
-    <link rel="icon" href="./assets/icon.png" type="image/png">
-
     <!-- Website Title -->
     <title>ABSINCGROUP USA | Biologics, Cell & Gene Therapy, GMP & Regulatory Consulting</title>
     <meta name="description"
@@ -22,24 +19,51 @@
     <meta property="og:url" content="https://www.absincgroup.com" />
     <meta property="og:type" content="website" />
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        as="style">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Website FavIcon -->
+    <link rel="icon" href="./assets/icon.png" type="image/png">
 
-    <!-- CSS Files -->
+    <!-- DNS Prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+    <!-- Preconnect for faster font and CDN loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./css/style.css" as="style">
+    <link rel="preload" href="./css/animations.css" as="style">
+    <link rel="preload" href="./css/services.css" as="style">
+    
+    <!-- Critical CSS Files -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/animations.css">
     <link rel="stylesheet" href="./css/services.css">
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;700;800;900&display=swap">
+    <!-- Optimized Google Fonts - Single request -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        as="style">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+    </noscript>
 
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <!-- Font Awesome - Load asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
 </head>
+
 
 <body>
 
@@ -86,7 +110,7 @@
     </nav>
 
     <!-- Services Overview Section Start-->
-    <section class="services-overview with-bubbles auto-slider" id="services">
+    <section class="hero-section services-overview with-bubbles auto-slider" id="services">
         <div class="hero-slide active">
             <div class="hero-bg" style="background-image: url('./assets/images/compressed/banner1.jpg')"></div>
             <div class="container">
@@ -186,23 +210,23 @@
                 <!-- Interactive Service Categories Tabs -->
                 <div class="service-tabs">
                     <div class="tab-buttons">
-                        <button class="tab-btn active" onclick="showTab('regulatory')">
+                        <button class="tab-btn active" data-tab="regulatory">
                             <i class="fas fa-shield-alt"></i>
                             Regulatory Compliance
                         </button>
-                        <button class="tab-btn" onclick="showTab('manufacturing')">
+                        <button class="tab-btn active" data-tab="manufacturing">
                             <i class="fas fa-industry"></i>
                             Manufacturing and Engineering
                         </button>
-                        <button class="tab-btn" onclick="showTab('quality')">
+                        <button class="tab-btn active" data-tab="quality">
                             <i class="fas fa-microscope"></i>
                             Quality Systems
                         </button>
-                        <button class="tab-btn" onclick="showTab('oversight')">
+                        <button class="tab-btn active" data-tab="oversight">
                             <i class="fas fa-search"></i>
                             Third-party Oversight
                         </button>
-                        <button class="tab-btn" onclick="showTab('therapeutic')">
+                        <button class="tab-btn active" data-tab="therapeutic">
                             <i class="fas fa-dna"></i>
                             Therapeutic Areas
                         </button>
@@ -423,7 +447,7 @@
 
                 <div class="hex-item" data-service="Quality Control">
                     <div class="hex-content">
-                        \ <svg width="64" height="64" viewBox="0 0 64 64">
+                        <svg width="64" height="64" viewBox="0 0 64 64">
                             <ellipse cx="38" cy="32" rx="8" ry="6" fill="#b366ef" />
                             <rect x="20" y="14" width="8" height="32" rx="2" fill="#8e24aa" />
                             <line x1="28" y1="18" x2="48" y2="40" stroke="#4b1f89" stroke-width="3" />
@@ -620,7 +644,7 @@
                                 <i class="fab fa-twitter"></i>
                             </a>
                             <a href="https://www.instagram.com/absincgroup_usa?igsh=MTVuNGxzeWMwc3F2dA=="
-                                class="social-link" aria-label="Instagram">
+                                target="_blank" class="social-link" aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
@@ -695,9 +719,13 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <script src=" js/main.js"></script>
-    <script src=" js/lazy-loading.js"></script>
-    <script src=" js/animations.js"></script>
-    <script src=" js/services.js"></script>
+    <!-- Critical Scripts -->
+    <script src="./js/performance-optimizer.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/services.js" defer></script>
+
+    <!-- Non-critical Scripts - Load asynchronously -->
+    <script src="./js/lazy-loading.js" defer></script>
+    <script src="./js/animations.js" defer></script>
+
 </body>

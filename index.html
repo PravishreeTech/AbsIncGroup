@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Website Icon -->
-    <link rel="icon" href="./assets/icon.png" type="image/png">
-
     <!-- Website Title -->
     <title>ABSINCGROUP USA | Biologics, Cell & Gene Therapy, GMP & Regulatory Consulting</title>
     <meta name="description"
@@ -22,6 +19,9 @@
     <meta property="og:url" content="https://www.absincgroup.com" />
     <meta property="og:type" content="website" />
 
+    <!-- Website FavIcon -->
+    <link rel="icon" href="./assets/icon.png" type="image/png">
+
     <!-- DNS Prefetch for external domains -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -30,16 +30,19 @@
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
 
     <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="./assets/logo.png" as="image" type="image/png">
-    <link rel="preload" href="./assets/images/compressed/banner1.jpg" as="image" type="image/jpeg">
     <link rel="preload" href="./css/style.css" as="style">
+    <link rel="preload" href="./css/home.css" as="style">
+    <link rel="preload" href="./css/performance.css" as="style">
+    <link rel="preload" href="./assets/images/compressed/banner1.jpg" as="image" type="image/jpeg">
 
     <!-- Critical CSS Files -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/performance.css">
 
     <!-- Non-critical CSS - Load asynchronously -->
@@ -99,7 +102,6 @@
             </div>
         </div>
     </nav>
-    <!-- NavBar Section End -->
 
     <!-- Hero Section Start -->
     <section class="hero-section with-bubbles auto-slider">
@@ -144,7 +146,6 @@
             </div>
         </div>
     </section>
-    <!-- Hero Section End -->
 
     <!-- News Ticker (CALL TO ACTION) -->
     <section class=" news-ticker" data-aos="fade-up" data-aos-delay="200">
@@ -232,7 +233,6 @@
             </div>
         </section>
     </div>
-    <!-- Vision-Mission Section Start -->
 
     <!-- Video Section Start -->
     <section class="video-section" data-aos="fade-up">
@@ -258,7 +258,6 @@
             </div>
         </div>
     </section>
-    <!-- Video Section End -->
 
     <!-- Our Core Focus Areas Section Start -->
     <section class="services-section" id="services">
@@ -389,7 +388,6 @@
             </div>
         </div>
     </section>
-    <!-- Our Core Focus Areas Section End -->
 
     <!-- Team Section Start -->
     <section class="team-section" id="team">
@@ -455,7 +453,6 @@
             </div>
         </div>
     </section>
-    <!-- Team Section End -->
 
     <!-- Testimonials Section Start -->
     <section class="testimonials-section" id="testimonials">
@@ -548,7 +545,6 @@
             </div>
         </div>
     </section>
-    <!-- Testimonials Section Start -->
 
     <!-- Contact Section Start -->
     <section class="contact-section" id="contact">
@@ -650,7 +646,6 @@
             </div>
         </div>
     </section>
-    <!-- Contact Section End -->
 
     <!-- Footer Section Start -->
     <footer class="footer">
@@ -669,7 +664,7 @@
                             <a href="http://www.linkedin.com/in/absincgroup-usa/" class="social-link" target="_blank"
                                 aria-label="LinkedIn">
                                 <i class="fab fa-linkedin"></i>
-                            </a>
+                            </a> 
                             <a href="#" class="social-link" aria-label="Facebook">
                                 <i class="fab fa-facebook"></i>
                             </a>
@@ -746,7 +741,6 @@
             </a>
         </div>
     </footer>
-    <!-- Footer Section End -->
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
@@ -756,7 +750,6 @@
     <!-- Critical Scripts -->
     <script src="./js/performance-optimizer.js" defer></script>
     <script src="./js/main.js" defer></script>
-    <script src="./js/contact.js" defer></script>
 
     <!-- Non-critical Scripts - Load asynchronously -->
     <script src="./js/lazy-loading.js" defer></script>

@@ -11,7 +11,7 @@ class AnimationController {
         this.initParallaxAnimations();
         this.initMorphingAnimations();
         this.initStaggerAnimations();
-        this.setupPerformanceOptimizations()
+        // this.setupPerformanceOptimizations()
     }
 
     initScrollAnimations() {
