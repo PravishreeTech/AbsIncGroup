@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Website Title -->
-    <title>ABSINCGROUP USA | Biologics, Cell & Gene Therapy, GMP & Regulatory Consulting</title>
+    <title>ABSINCGROUP | Biologics, Cell & Gene Therapy, GMP & Regulatory Consulting</title>
     <meta name="description"
-        content="ABSINCGROUP USA delivers world-class consulting in biologics, cell and gene therapy, mRNA vaccines, cGMP manufacturing, regulatory affairs, analytical validation, and global compliance. AI-powered solutions for IND, BLA, biosimilars, and Lean Six Sigma implementations—serving life sciences innovators worldwide.">
+        content="ABSINCGROUP delivers world-class consulting in biologics, cell and gene therapy, mRNA vaccines, cGMP manufacturing, regulatory affairs, analytical validation, and global compliance. AI-powered solutions for IND, BLA, biosimilars, and Lean Six Sigma implementations—serving life sciences innovators worldwide.">
     <meta name="keywords"
         content="biologics consulting, cell and gene therapy experts, mRNA vaccine consulting, cGMP manufacturing consultants, regulatory compliance, FDA consulting, biosimilar pathways, analytical method validation, quality systems experts, Lean Six Sigma biopharma, AI quality systems, IND to approval strategy, GMP pharmaceutical consulting, global biopharma consultants, CMC regulatory affairs, clinical quality compliance, technical writers for pharma, CRO/GCP audit support, ISO 13485 consultants, CSV validation, regulatory affairs USA">
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="ABSINCGROUP USA – Biologics & Regulatory Consulting Experts" />
+    <meta property="og:title" content="ABSINCGROUP – Biologics & Regulatory Consulting Experts" />
     <meta property="og:description"
         content="AI-powered cGMP, regulatory, and analytical consulting for biopharma, medical device, and biotech companies. Global reach, proven expertise." />
     <meta property="og:url" content="https://www.absincgroup.com" />
@@ -38,7 +38,7 @@
     <link rel="preload" href="./css/style.css" as="style">
     <link rel="preload" href="./css/animations.css" as="style">
     <link rel="preload" href="./css/services.css" as="style">
-    
+
     <!-- Critical CSS Files -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/animations.css">
@@ -110,7 +110,9 @@
     </nav>
 
     <!-- Services Overview Section Start-->
-    <section class="hero-section services-overview with-bubbles auto-slider" id="services">
+    <section class="hero-section services-overview  with-bubbles auto-slider" role="region" aria-label="Homepage hero slider">
+        <div class="sr-announcer" aria-live="polite" aria-atomic="true"></div>
+    
         <div class="hero-slide active">
             <div class="hero-bg" style="background-image: url('./assets/images/compressed/banner1.jpg')"></div>
             <div class="container">
@@ -121,67 +123,7 @@
                 <div class="overview-content">
                     <div class="overview-text">
                         <p>
-                            ABSINCGROUP USA is AI-Powered cGMP Manufacturing, Analytical Methods, Regulatory
-                            & Quality Consulting from IND to Approval & PAI Readiness. Driven by Lean Six Sigma
-                            Black Belt Methodology for Smarter, Faster, Compliant, and Affordable Solutions. With a
-                            global
-                            network of highly experienced consultants, we provide full-spectrum support across
-                            drug development, regulatory compliance, quality systems, and AI-driven analytics.
-
-                        </p>
-                        <p>
-                            We specialize in high-stakes engagements including FDA 483/warning letter remediation,
-                            consent
-                            decree, regulatory submissions, cGMP readiness, and digital transformation of quality
-                            systems across both emerging biotechs and Fortune 500 companies. We also provide business,
-                            technical,
-                            financial due diligence and partnerships.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-slide">
-            <div class="hero-bg" style="background-image: url('./assets/images/compressed/banner2.jpg')"></div>
-            <div class="container">
-                <div class="section-header">
-                    <h1>Services</h1>
-                </div>
-
-                <div class="overview-content">
-                    <div class="overview-text">
-                        <p>
-                            ABSINCGROUP USA is AI-Powered cGMP Manufacturing, Analytical Methods, Regulatory
-                            & Quality Consulting from IND to Approval & PAI Readiness. Driven by Lean Six Sigma
-                            Black Belt Methodology for Smarter, Faster, Compliant, and Affordable Solutions. With a
-                            global
-                            network of highly experienced consultants, we provide full-spectrum support across
-                            drug development, regulatory compliance, quality systems, and AI-driven analytics.
-
-                        </p>
-                        <p>
-                            We specialize in high-stakes engagements including FDA 483/warning letter remediation,
-                            consent
-                            decree, regulatory submissions, cGMP readiness, and digital transformation of quality
-                            systems across both emerging biotechs and Fortune 500 companies. We also provide business,
-                            technical,
-                            financial due diligence and partnerships.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-slide">
-            <div class="hero-bg" style="background-image: url('./assets/images/compressed/banner3.jpg')"></div>
-            <div class="container">
-                <div class="section-header">
-                    <h1>Services</h1>
-                </div>
-
-                <div class="overview-content">
-                    <div class="overview-text">
-                        <p>
-                            ABSINCGROUP USA is AI-Powered cGMP Manufacturing, Analytical Methods, Regulatory
+                            ABSINCGROUP is AI-Powered cGMP Manufacturing, Analytical Methods, Regulatory
                             & Quality Consulting from IND to Approval & PAI Readiness. Driven by Lean Six Sigma
                             Black Belt Methodology for Smarter, Faster, Compliant, and Affordable Solutions. With a
                             global
@@ -208,7 +150,7 @@
         <div class="container">
             <div class="overview-content">
                 <!-- Interactive Service Categories Tabs -->
-                <div class="service-tabs">
+                <div class="service-tabs" id="services-tabs">
                     <div class="tab-buttons">
                         <button class="tab-btn active" data-tab="regulatory">
                             <i class="fas fa-shield-alt"></i>
@@ -223,8 +165,8 @@
                             Quality Systems
                         </button>
                         <button class="tab-btn active" data-tab="oversight">
-                            <i class="fas fa-search"></i>
-                            Third-party Oversight
+                            <i class="fas fa-flask"></i>
+                            Analytical and Validation
                         </button>
                         <button class="tab-btn active" data-tab="therapeutic">
                             <i class="fas fa-dna"></i>
@@ -236,85 +178,146 @@
                     <div class="tab-content">
                         <!-- Regulatory Compliance Tab -->
                         <div class="tab-panel active" id="regulatory">
-                            <h4>Regulatory Compliance and Remediation</h4>
+                            <div class="headings">
+                                <h4>Regulatory Affairs and Compliance</h4>
+                                <h5>Navigate global regulations with confidence. We streamline submissions, prepare you
+                                    for
+                                    inspections, and resolve compliance challenges quickly.
+                                </h5>
+                            </div>
                             <div class="service-list">
                                 <div class="service-item">
-                                    <h5>FDA 483s, Warning Letters and Consent Decree Support</h5>
-                                    <p>Rapid-response remediation strategies for FDA enforcement actions, backed by
-                                        proven expertise in root cause analysis, CAPA, and regulatory liaison.</p>
+                                    <p>INDs, NDAs, ANDAs, BLAs, eCTDs & global submission strategies</p>
                                 </div>
                                 <div class="service-item">
-                                    <h5>Change Control and Investigations</h5>
-                                    <p>Robust investigations, change control systems, and complaint handling—aligned
-                                        with global regulatory expectations.</p>
+                                    <p>FDA 505(b)(2), biosimilar & advanced pathway expertise</p>
                                 </div>
                                 <div class="service-item">
-                                    <h5>Clinical and Post-Market Compliance</h5>
-                                    <p>Comprehensive support for clinical trial compliance, biostatistics and
-                                        post-market surveillance
-                                        requirements.</p>
+                                    <p>Pre-IND, Type B/C Meeting prep & agency interactions</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Regulatory writing, data integrity audits & submission review</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>FDA 483, Warning Letter & Consent Decree remediation</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Change control, investigations & complaint handling systems</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Clinical trial compliance, biostatistics & post-market surveillance</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Third-party audits for FDA, EMA & WHO compliance</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Manufacturing Tab -->
                         <div class="tab-panel" id="manufacturing">
-                            <h4>Manufacturing and Engineering</h4>
+                            <div class="headings">
+                                <h4>Manufacturing and Tech Ops</h4>
+                                <h5>Scale with speed and confidence. From DNA to dose, we design and deliver
+                                    manufacturing platforms that are agile, compliant, and future-proof.</h5>
+                            </div>
+                            <h5 class="side-heading">Core Capabilities</h5>
                             <div class="service-list">
                                 <div class="service-item">
-                                    <h5>cGMP Manufacturing / Manufacturing Engineering</h5>
-                                    <p>From facility design to ongoing cGMP operations, we help biologics, vaccines, and
-                                        gene therapy firms establish compliant and scalable production systems.</p>
+                                    <p>Integrated CMC & Tech Ops solutions</p>
                                 </div>
                                 <div class="service-item">
-                                    <h5>Lean Six Sigma and Continuous Improvement</h5>
-                                    <p>Integrate performance improvement, cost reduction, and data-driven quality
-                                        enhancement using certified Six Sigma Black Belt expertise.</p>
+                                    <p>Expertise across vaccines, mAbs, cell & gene therapies</p>
                                 </div>
                                 <div class="service-item">
-                                    <h5>Product Development and Specification Setting</h5>
-                                    <p>Expert guidance in product development lifecycle and specification establishment
-                                        for regulatory compliance.</p>
+                                    <p>Flexible platforms: E. coli, yeast, CHO, HEK293, SF9, egg-based systems</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Scale-up solutions: single-use 2000L to fixed 60K L capacity</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Contamination control & workforce training</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Independent oversight for CROs, CMOs & testing labs</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Certified PMP project management for facility buildout & launches</p>
+                                </div>
+                            </div>
+                            <h5 class="side-heading">Six Sigma & Continuous Improvement</h5>
+                            <div class="service-list">
+                                <div class="service-item">
+                                    <p>Lean Six Sigma programs to reduce cost & boost efficiency</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Black Belt–led process optimization and waste reduction</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Data-driven performance improvement systems</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Embedding a culture of continuous improvement across operations</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Quality Systems Tab -->
                         <div class="tab-panel" id="quality">
-                            <h4>Quality Systems and Laboratory Services</h4>
+                            <div class="headings">
+                                <h4>Quality Systems and Compliance Excellence</h4>
+                                <h5>Strong quality systems drive trust, compliance, and performance. We build,
+                                    remediate, and optimize QMS frameworks that last.</h5>
+                            </div>
                             <div class="service-list">
                                 <div class="service-item">
-                                    <h5>Quality Control (QC) and Assurance (QA)</h5>
-                                    <p>Comprehensive support for setting up or remediating QC and QA systems in line
-                                        with ICH, FDA, and EMA guidelines.</p>
+                                    <p>cGMP audits, gap assessments & remediation plans</p>
                                 </div>
                                 <div class="service-item">
-                                    <h5>OOS Investigations and Laboratory Data Integrity</h5>
-                                    <p>Detailed support for laboratory investigations, root cause analysis, and ensuring
-                                        compliance with ALCOA+ principles.</p>
+                                    <p>QA/QC design, SOP writing & training</p>
                                 </div>
                                 <div class="service-item">
-                                    <h5>Validation Engineering</h5>
-                                    <p>Specialized in analytical methods, process validation, equipment qualification
-                                        (IQ/OQ/PQ), cleaning
-                                        validation, and software/system validation.</p>
+                                    <p>Process, cleaning & aseptic validation programs</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Mock inspections & 483/NOD response strategies</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Risk-based QMS development tailored to operations</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>OOS investigations & ALCOA+ data integrity assurance</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Training programs for floor teams & management</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Third-party Oversight Tab -->
                         <div class="tab-panel" id="oversight">
-                            <h4>Third-party and Regulatory Oversight</h4>
+                            <div class="headings">
+                                <h4>Analytical, Validation and Technical Services</h4>
+                                <h5>Your science, our precision. We deliver robust analytical methods and validation
+                                    strategies that accelerate approvals and ensure compliance.</h5>
+                            </div>
                             <div class="service-list">
                                 <div class="service-item">
-                                    <h5>Regulatory Inspection Readiness and 3rd-Party Audits</h5>
-                                    <p>Act as your independent oversight body for CROs, CMOs, and testing labs—ensuring
-                                        alignment with agency requirements.</p>
+                                    <p>Analytical method development, validation & transfer</p>
                                 </div>
                                 <div class="service-item">
-                                    <h5>Certified Project Management Consultants (PMP)</h5>
-                                    <p>From site construction to launch execution, our certified PM professionals ensure
-                                        milestone achievement, timeline adherence, and stakeholder alignment.</p>
+                                    <p>Bioassay & potency testing for biologics & biosimilars</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Stability, impurity & comparability study design</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Validation engineering: IQ/OQ/PQ, process, equipment & software</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>Technology transfer (domestic & international)</p>
+                                </div>
+                                <div class="service-item">
+                                    <p>End-to-end CMC support from preclinical to commercial phases</p>
                                 </div>
                             </div>
                         </div>
@@ -695,7 +698,7 @@
             <div class="container">
                 <div class="footer-bottom-content">
                     <div class="copyright">
-                        <p>&copy; 2018-2025 ABSINCGROUP USA®. All rights reserved.</p>
+                        <p>&copy; 2018-2025 ABSINCGROUP®. All rights reserved.</p>
                     </div>
                     <div class="footer-bottom-links">
                         <a href="./privacy-policy.html">Privacy Policy</a>

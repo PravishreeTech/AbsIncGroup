@@ -296,7 +296,7 @@
     }
 }
 
-/*********** Our Core Focus Areas Section Starts *************/
+/*********** Core Focus Areas Section Starts *************/
 .services-section {
     position: relative;
     top: var(--relative-top);
@@ -309,6 +309,12 @@
     padding: 0 15px;
     width: 100%;
     max-width: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .services-section .section-subtitle {
@@ -319,284 +325,134 @@
     line-height: 1.6;
 }
 
-.services-tabs {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.services-section .tab-navigation {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    background: var(--primary-color-2);
-    padding: .5rem;
-    border-radius: 12px;
-}
-
-.services-section .tab-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: none;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    color: #fff;
-}
-
-.services-section .tab-btn:hover,
-.services-section .tab-btn.active {
-    background: white;
-    color: var(--primary-color-1);
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-.services-section .tab-content {
-    display: none;
-}
-
-.services-section .tab-content.active {
-    display: block;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.service-visual img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.service-details h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color-2);
-    margin-bottom: 1.5rem;
-}
-
-.service-list {
-    list-style: none;
-    padding: 0;
-}
-
-.service-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    color: #334155;
-    line-height: 1.6;
-    font-weight: 600;
-}
-
-.service-list i {
-    color: var(--primary-color-1);
-    margin-top: 2px;
-    flex-shrink: 0;
-}
-
-@media (max-width: 768px) {
-    .service-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .tab-navigation {
-        flex-direction: column;
-        gap: .5rem;
-    }
-}
-
-/*********** Team Section Starts *************/
-.team-section {
-    position: relative;
-    top: var(--relative-top);
-    padding: 1.875rem 0;
-    background: #F8FAFC;
-}
-
-.team-section .container {
-    margin: 0 auto;
-    padding: 0 15px;
-    width: 100%;
-    max-width: 1300px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.team-section .section-subtitle {
-    font-size: 1.125rem;
-    color: #000;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.team-grid {
+.services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
 }
 
-.team-card {
-    background: white;
-    border-radius: 16px;
-    padding: 1.25rem;
-    text-align: center;
-    height: 480px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
-    transition: all .3s ease-in-out;
-    border: 1px solid var(--primary-color-2);
-}
-
-.team-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),0 10px 10px -5px rgba(0,0,0,.04);
-}
-
-.team-info h3 {
-    font-size: var(--section-subheadings);
-    font-weight: 700;
-    color: var(--primary-color-2);
-    margin-bottom: 0.7rem;
-}
-
-.team-title {
-    font-size: var(--section-content);
-    font-weight: 700;
-    color: var(--primary-color-1);
-    margin-bottom: 1.5rem;
-}
-
-.team-credentials {
-    font-size: var(--section-content);
-    font-weight: 500;
-    color: #131212;
-    margin-bottom: 0.5rem;
-}
-
-.team-description {
-    font-size: var(--section-normal);
-    color: #131212;
-    line-height: 1.6;
-}
-
-.team-section .meet-our-team-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.team-section .meet-team-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
+.service-card {
     position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    padding: 1.35rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(16, 24, 40, 0.06);
+    transition: transform .18s ease, box-shadow .18s ease;
+    text-align: center;
+    min-height: 150px;
     overflow: hidden;
 }
 
-.team-section .meet-team-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(12, 123, 192, 0.3);
+.service-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: all .4s ease;
+    transform: translateX(-50%);
 }
 
-.team-section .meet-team-button .tile {
+.service-card:hover::before{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-color: var(--primary-color-2);
+    transform: none;
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-size: 1.25rem;
+    background: linear-gradient(135deg, var(--primary-color-2) 0%, var(--primary-color-2-hover) 100%);
+    color: #fff;
+}
+
+.service-name {
+    font-size: 1.02rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.service-desc {
+    margin: .45rem 0 0;
+    font-size: .95rem;
+    color: #000;
+    line-height: 1.45;
+}
+
+.services-section .services-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color-2-hover) 0%, var(--primary-color-2) 100%);
+    color: white;
+    padding: 16px 40px;
+    margin: 20px 0;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
     position: relative;
-    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(32, 73, 132, 0.3);
 }
 
-@media screen and (max-width: 1200px) {
-    .team-section .team-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .team-section .team-card {
-        height: 450px;
-    }
+.services-section .services-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
-@media screen and (max-width: 920px) {
-    .team-section .team-card {
-        height: 500px;
-    }
+.services-section .services-button:hover::before {
+    left: 100%;
 }
 
-@media screen and (max-width: 900px) {
-    .team-section .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .team-section .team-card {
-        height: 400px;
-    }
+.services-section .services-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(27, 54, 93, 0.4);
 }
 
-@media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-        gap:1rem;
-    }
-
-    .team-section .team-card {
-        height: 420px;
+@media (max-width: 980px) {
+    .services-grid{
+        grid-template-columns: repeat(3,1fr);
     }
 }
 
 @media (max-width: 640px) {
-    .team-section .team-card {
-        height: 500px;
+    .services-grid{
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
-@media screen and (max-width: 540px) {
-    .team-section .team-grid {
-        grid-template-columns: repeat(1, 1fr);
+@media (max-width: 480px) {
+    .services-grid{
+        grid-template-columns: repeat(1,1fr);
     }
 
-    .team-section .team-card {
-        height: 300px;
+    .service-card {
+        padding: 1rem;
     }
-}
 
-@media screen and (max-width: 460px) {
-    .team-section .team-card {
-        height: 360px;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .team-section .team-card {
-        height: 420px;
-    }
-}
-
-@media screen and (max-width: 380px) {
-    .team-section .team-card {
-        height: 430px;
+    .service-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.05rem;
     }
 }
 
@@ -763,7 +619,7 @@
     padding: 2rem;
 }
 
-.contact-section .contact-info a{
+.contact-section .contact-info a {
     text-decoration: none;
 }
 
@@ -799,7 +655,7 @@
 }
 
 .contact-section .contact-icon i {
-    color: var(--primary-color-1) !important;
+    color: #fff !important;
 }
 
 .contact-section .contact-item h4 {

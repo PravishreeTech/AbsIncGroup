@@ -202,28 +202,37 @@
     }
 }
 
-.service-categories .tab-panel h4 {
+.service-categories .headings{
+    padding: 10px;
+}
+
+.service-categories .headings h4 {
     font-size: 1.5rem;
     color: var(--primary-color-1);
-    margin-bottom: 2rem;
     font-weight: 600;
+}
+
+.service-categories .side-heading{
+    font-size: 20px;
+    padding: 5px;
+    margin: 20px 10px;
+}
+
+.service-categories .headings h5{
+    padding: 10px 0;
+    font-size: 1.1rem;
+    color: var(--primary-color-2);
 }
 
 .service-categories .service-list {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .service-categories .service-item {
     border-left: 4px solid var(--primary-color-2);
     padding-left: 1.5rem;
-}
-
-.service-categories .service-item h5 {
-    font-size: 1.2rem;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+    margin-left: 1.5rem;
 }
 
 .service-categories .service-item p {

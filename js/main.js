@@ -1,59 +1,56 @@
 class ABSINCGROUPWebsite {
 
-    constructor() 
-    { 
-        this.init() 
+    constructor() {
+        this.init()
     }
-    
-    init() 
-    { 
-        this.setupEventListeners(); 
-        this.initializeComponents(); 
-        this.handleLoading() 
+
+    init() {
+        this.setupEventListeners();
+        this.initializeComponents();
+        this.handleLoading()
     }
-    
-    setupEventListeners() { 
-        document.addEventListener('DOMContentLoaded', () => { 
-            this.initMobileNavigation(); 
-            this.initSliders(); 
-            this.initServicesTab(); 
-            this.initTestimonials(); 
-            this.initBackToTop(); 
+
+    setupEventListeners() {
+        document.addEventListener('DOMContentLoaded', () => {
+            this.initMobileNavigation();
+            this.initSliders();
+            this.initTestimonials();
+            this.initBackToTop();
             this.initContactForm();
-            this.initVideoPlayer() 
-        }); 
-        let scrollTimeout; 
-        window.addEventListener('scroll', () => { 
-            if (scrollTimeout) { 
-                clearTimeout(scrollTimeout) 
-            } 
-            scrollTimeout = setTimeout(() => { 
-                this.handleScroll() 
-            }, 16) 
-        }, 
-        { passive: true }); 
+            this.initVideoPlayer()
+        });
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout)
+            }
+            scrollTimeout = setTimeout(() => {
+                this.handleScroll()
+            }, 16)
+        },
+            { passive: true });
     }
-    
-    initializeComponents() { 
-        this.initParticles() 
+
+    initializeComponents() {
+        this.initParticles()
     }
-    
+
     // for loading animation at the start of every page
-    handleLoading() { 
-        const loadingScreen = document.getElementById('loadingScreen'); 
-        window.addEventListener('load', () => { 
-            loadingScreen.classList.add('hidden'); 
-            setTimeout(() => { 
-                loadingScreen.style.display = 'none' 
-            }, 300) 
-        }); setTimeout(() => { 
-            if (loadingScreen && !loadingScreen.classList.contains('hidden')) { 
-                loadingScreen.classList.add('hidden'); 
-                setTimeout(() => { 
-                    loadingScreen.style.display = 'none' 
-                }, 300) 
-            } 
-        }, 2000) 
+    handleLoading() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        window.addEventListener('load', () => {
+            loadingScreen.classList.add('hidden');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none'
+            }, 300)
+        }); setTimeout(() => {
+            if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none'
+                }, 300)
+            }
+        }, 2000)
     }
 
     // to get menu-icon and navbar functionality in mobile and tab-views
@@ -82,54 +79,35 @@ class ABSINCGROUPWebsite {
 
     // for banner section automatic image-changes
     initSliders() {
-        const sliders = document.querySelectorAll('.auto-slider');
+        const slider = document.querySelector('.auto-slider');
+        if (!slider) return;
 
-        sliders.forEach(slider => {
-            const slides = slider.querySelectorAll('.hero-slide');
-            if (!slides.length) return;
+        const bg = slider.querySelector('.hero-bg');
+        const announcer = slider.querySelector('.sr-announcer');
 
-            let currentSlide = 0;
+        const images = [
+            './assets/images/compressed/banner1.jpg',
+            './assets/images/compressed/banner2.jpg',
+            './assets/images/compressed/banner3.jpg'
+        ];
 
-            const showSlide = (index) => {
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
-                });
-            };
+        let current = 0;
 
-            const nextSlide = () => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            };
+        const showSlide = (index) => {
+            bg.style.backgroundImage = `url(${images[index]})`;
+            if (announcer) announcer.textContent = `Background ${index + 1} of ${images.length}`;
+        };
 
-            // Initialize first slide
-            showSlide(0);
+        const nextSlide = () => {
+            current = (current + 1) % images.length;
+            showSlide(current);
+        };
 
-            // Auto change every 3s
+        showSlide(0);
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             setInterval(nextSlide, 3000);
-        });
-    }
-
-    // for our-core-focus-areas section
-    initServicesTab() {
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const targetTab = button.getAttribute('data-tab');
-
-                // Remove active class from all buttons and contents
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-
-                // Add active class to clicked button and corresponding content
-                button.classList.add('active');
-                const targetContent = document.getElementById(targetTab);
-                if (targetContent) {
-                    targetContent.classList.add('active');
-                }
-            });
-        });
+        }
     }
 
     // for reviews section
@@ -205,70 +183,72 @@ class ABSINCGROUPWebsite {
     }
 
     // back-to-top icon
-    initBackToTop() { 
-        const backToTopBtn = document.getElementById('backToTop'); 
-        if (backToTopBtn) { 
-            backToTopBtn.addEventListener('click', () => { 
-                window.scrollTo({ top: 0, behavior: 'smooth' }) 
-            }) 
-        } 
+    initBackToTop() {
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            })
+        }
     }
 
     // for video section to play the video
-    initVideoPlayer() { 
-        const videoContainers = document.querySelectorAll('.video-placeholder'); 
-        videoContainers.forEach(container => { 
-            const playButton = container.querySelector('.play-button'); 
-            const thumbnail = container.querySelector('.video-thumbnail'); 
-            const videoUrl = container.dataset.videoUrl; 
-            if (playButton && videoUrl) { 
-                playButton.addEventListener('click', () => { 
-                    playButton.style.display = 'none'; 
-                    if (thumbnail) thumbnail.style.display = 'none'; 
-                    if (!container.querySelector('iframe')) { 
-                        const videoIframe = document.createElement('iframe'); 
-                        videoIframe.src = videoUrl; 
-                        videoIframe.frameBorder = '0'; 
-                        videoIframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share'; 
-                        videoIframe.referrerPolicy = 'strict-origin-when-cross-origin'; 
-                        Object.assign(videoIframe.style, { 
-                            position: 'absolute', 
-                            top: '0', 
-                            left: '0', 
-                            width: '100%', 
-                            height: '100%', 
-                            objectFit: 'cover' 
-                        }); 
-                        container.appendChild(videoIframe) 
-                    } 
-                }) 
-            } 
-        }) 
+    initVideoPlayer() {
+        const videoContainers = document.querySelectorAll('.video-placeholder');
+        videoContainers.forEach(container => {
+            const playButton = container.querySelector('.play-button');
+            const thumbnail = container.querySelector('.video-thumbnail');
+            const videoUrl = container.dataset.videoUrl;
+            if (playButton && videoUrl) {
+                playButton.addEventListener('click', () => {
+                    playButton.style.display = 'none';
+                    if (thumbnail) thumbnail.style.display = 'none';
+                    if (!container.querySelector('iframe')) {
+                        const videoIframe = document.createElement('iframe');
+                        videoIframe.src = videoUrl;
+                        videoIframe.frameBorder = '0';
+                        videoIframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share';
+                        videoIframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                        Object.assign(videoIframe.style, {
+                            position: 'absolute',
+                            top: '0',
+                            left: '0',
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                        });
+                        container.appendChild(videoIframe)
+                    }
+                })
+            }
+        })
     }
 
     // For bubbles effect on the banners
-    initParticles() { 
-        const createParticle = (section) => { 
-        const particle = document.createElement('div'); 
-        particle.className = 'particle'; 
-        particle.style.left = Math.random() * window.innerWidth + 'px'; 
-        particle.style.animationDelay = Math.random() * 3 + 's'; 
-        particle.style.animationDuration = (Math.random() * 3 + 2) + 's'; 
-        const particlesContainer = section.querySelector('.particles') || (() => { 
-            const container = document.createElement('div'); 
-            container.className = 'particles'; 
-            section.appendChild(container); 
-            return container 
-        })(); 
-        particlesContainer.appendChild(particle); 
-        setTimeout(() => { 
-            particle.remove() }, 6000) 
-        }; 
-        const bubbleSections = document.querySelectorAll('.with-bubbles'); 
-        bubbleSections.forEach(section => { setInterval(() => 
-            createParticle(section), 500) 
-        }) 
-        
+    initParticles() {
+        const createParticle = (section) => {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.animationDelay = Math.random() * 3 + 's';
+            particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            const particlesContainer = section.querySelector('.particles') || (() => {
+                const container = document.createElement('div');
+                container.className = 'particles';
+                section.appendChild(container);
+                return container
+            })();
+            particlesContainer.appendChild(particle);
+            setTimeout(() => {
+                particle.remove()
+            }, 6000)
+        };
+        const bubbleSections = document.querySelectorAll('.with-bubbles');
+        bubbleSections.forEach(section => {
+            setInterval(() =>
+                createParticle(section), 500)
+        })
+
     }
 
     // For Contact Form
@@ -370,15 +350,15 @@ class ABSINCGROUPWebsite {
     }
 
     // the below is logic is responsible for back-to-top icon visible on screen, if it is not present the button won't display
-    handleScroll() { 
-        const backToTopBtn = document.getElementById('backToTop'); 
-        if (backToTopBtn) { 
-            if (window.scrollY > 300) { 
-                backToTopBtn.classList.add('visible') 
-            } else { 
-                backToTopBtn.classList.remove('visible') 
-            } 
-        } 
+    handleScroll() {
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible')
+            } else {
+                backToTopBtn.classList.remove('visible')
+            }
+        }
     }
 
 }
