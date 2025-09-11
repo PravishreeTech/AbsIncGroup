@@ -83,7 +83,7 @@ class ABSINCGROUPWebsite {
         if (!slider) return;
 
         const bg = slider.querySelector('.hero-bg');
-        const announcer = slider.querySelector('.sr-announcer');
+        // const announcer = slider.querySelector('.sr-announcer');
 
         const images = [
             './assets/images/compressed/banner1.jpg',
@@ -95,7 +95,7 @@ class ABSINCGROUPWebsite {
 
         const showSlide = (index) => {
             bg.style.backgroundImage = `url(${images[index]})`;
-            if (announcer) announcer.textContent = `Background ${index + 1} of ${images.length}`;
+            // if (announcer) announcer.textContent = `Background ${index + 1} of ${images.length}`;
         };
 
         const nextSlide = () => {
